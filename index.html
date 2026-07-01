@@ -26,7 +26,7 @@
       try {
         var t = localStorage.getItem('theme');
         if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('light-theme', t);
+        document.documentElement.setAttribute('data-theme', t);
       } catch (e) {}
     })();
   </script>
