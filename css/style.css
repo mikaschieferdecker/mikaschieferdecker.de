@@ -110,7 +110,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 /* ---------- Layout helpers ---------- */
 .container {
   width: 100%;
-  max-width: var(--container);
+  max-width: 1200px;
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
