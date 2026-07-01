@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutzerklärung — Mika Schieferdecker</title>
+  <meta name="description" content="Informationen zum Datenschutz nach DSGVO." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand__mark" aria-hidden="true">MS</span>
+        <span class="brand__name">Mika&nbsp;Schieferdecker</span>
+      </a>
+      <a class="btn btn--ghost" href="index.html">Zurück</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <h1>Datenschutz&shy;erklärung</h1>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
+        <span class="placeholder">[Vor- und Nachname]</span>,
+        <span class="placeholder">[Anschrift]</span>,
+        E-Mail: <a href="mailto:mika@mikaschieferdecker.de">mika@mikaschieferdecker.de</a>.
+      </p>
+
+      <h2>2. Grundsatz</h2>
+      <p>
+        Der Schutz deiner persönlichen Daten ist mir wichtig. Diese Website ist
+        bewusst datensparsam gestaltet: Es werden keine Tracking-Cookies gesetzt
+        und keine Analyse-Dienste eingesetzt.
+      </p>
+
+      <h2>3. Hosting &amp; Server-Logs</h2>
+      <p>
+        Beim Aufruf der Website erhebt der Hosting-Provider
+        (<span class="placeholder">[Hoster nennen]</span>) automatisch technisch
+        notwendige Daten (u.&nbsp;a. IP-Adresse, Datum/Uhrzeit, abgerufene Datei,
+        Browsertyp). Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        (berechtigtes Interesse an sicherem Betrieb).
+      </p>
+
+      <h2>4. Schriftarten (Google Fonts)</h2>
+      <p>
+        Diese Website lädt Schriftarten von Google Fonts. Dabei wird eine
+        Verbindung zu Servern von Google aufgebaut und deine IP-Adresse
+        übermittelt. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO.
+        <em>Hinweis: Für maximale Datensparsamkeit können die Schriften lokal
+        eingebunden werden — sag Bescheid, dann stelle ich das um.</em>
+      </p>
+
+      <h2>5. Kontaktaufnahme</h2>
+      <p>
+        Das Kontaktformular öffnet dein eigenes E-Mail-Programm (mailto). Es
+        werden dabei keine Daten auf dieser Website gespeichert oder an Dritte
+        übermittelt. Bei Kontaktaufnahme per E-Mail verarbeite ich deine Angaben
+        ausschließlich zur Bearbeitung deiner Anfrage (Art.&nbsp;6 Abs.&nbsp;1
+        lit.&nbsp;b bzw. f DSGVO).
+      </p>
+
+      <h2>6. Deine Rechte</h2>
+      <p>
+        Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+        Verarbeitung, Datenübertragbarkeit sowie Widerspruch. Zudem steht dir ein
+        Beschwerderecht bei einer Aufsichtsbehörde zu — in Bremen die
+        Landesbeauftragte für Datenschutz und Informationsfreiheit der Freien
+        Hansestadt Bremen.
+      </p>
+
+      <p style="margin-top:2rem"><small>Hinweis: Bitte alle <span class="placeholder">markierten</span> Felder ergänzen und den Text an die tatsächlich eingesetzten Dienste anpassen. Dieser Entwurf ersetzt keine Rechtsberatung.</small></p>
+
+      <a class="back-home" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Mika Schieferdecker</p>
+      <nav class="footer__nav" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="index.html">Startseite</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> — Gestaltet &amp; gebaut in Bremen.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
