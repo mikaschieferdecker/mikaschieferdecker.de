@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leistungen — Mika Schieferdecker</title>
+  <meta name="description" content="Webdesign, Frontend-Entwicklung, UX/UI Design und Branding — von der Idee bis zum Livegang." />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
+        <span class="brand__mark" aria-hidden="true">MS</span>
+        <span class="brand__name">Mika&nbsp;Schieferdecker</span>
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list" id="navList">
+          <li><a href="arbeiten.html">Arbeiten</a></li>
+          <li><a href="ueber.html">Über mich</a></li>
+          <li><a href="leistungen.html" aria-current="page">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-head__kicker reveal" data-reveal><span class="dot" aria-hidden="true"></span>Was ich anbiete</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Leistungen</h1>
+        <p class="page-head__lead reveal" data-reveal>
+          Von der ersten Skizze bis zum Livegang — Gestaltung und Entwicklung
+          aus einer Hand. Weniger, aber genauer.
+        </p>
+      </div>
+    </section>
+
+    <section class="services" aria-label="Leistungen im Detail">
+      <div class="container">
+        <ul class="service-list">
+          <li class="service reveal" data-reveal>
+            <span class="service__idx">01</span>
+            <h2 class="service__title">Webdesign</h2>
+            <p class="service__desc">Redaktionelle, moderne Gestaltung mit klarer Typografie und Bildsprache — vom Konzept über Wireframes bis zum fertigen, responsiven Layout. Immer maßgeschneidert, nie von der Stange.</p>
+          </li>
+          <li class="service reveal" data-reveal>
+            <span class="service__idx">02</span>
+            <h2 class="service__title">Frontend-Entwicklung</h2>
+            <p class="service__desc">Sauberer, performanter Code. Semantisches HTML, moderne CSS-Technik und schlankes JavaScript — barrierefrei, schnell und ohne unnötigen Ballast. Optional mit CMS-Anbindung.</p>
+          </li>
+          <li class="service reveal" data-reveal>
+            <span class="service__idx">03</span>
+            <h2 class="service__title">UX &amp; UI Design</h2>
+            <p class="service__desc">Nutzerführung, Informationsarchitektur, Prototyping und Interface-Design, die Komplexität reduzieren und Freude beim Bedienen machen — auf jedem Bildschirm.</p>
+          </li>
+          <li class="service reveal" data-reveal>
+            <span class="service__idx">04</span>
+            <h2 class="service__title">Branding</h2>
+            <p class="service__desc">Visuelle Identitäten mit Charakter — Logo, Farbwelt, Typografie und ein konsistentes System, das auf allen Kanälen funktioniert und in Erinnerung bleibt.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title" style="border-top:1px solid var(--border)">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title reveal" data-reveal id="process-title">Ablauf</h2>
+          <p class="section__note reveal" data-reveal>So arbeiten wir zusammen — transparent und in klaren Schritten.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal" data-reveal>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Kennenlernen</h3>
+            <p class="step__desc">Wir sprechen über Ziele, Zielgruppe und Rahmen. Du bekommst eine ehrliche Einschätzung und ein transparentes Angebot.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Konzept</h3>
+            <p class="step__desc">Struktur, Inhalte und erste Gestaltungsrichtung. Wir legen gemeinsam das Fundament, bevor es ins Detail geht.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Design &amp; Bau</h3>
+            <p class="step__desc">Ich gestalte und entwickle in enger Abstimmung — mit Zwischenständen, die du live ansehen und kommentieren kannst.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">04</span>
+            <h3 class="step__title">Livegang</h3>
+            <p class="step__desc">Feinschliff, Tests auf allen Geräten und der Start. Auf Wunsch kümmere ich mich auch danach um Pflege und Weiterentwicklung.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band__inner">
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Klingt passend?</h2>
+          <p class="cta-band__text reveal" data-reveal>Lass uns über dein Projekt sprechen — unverbindlich.</p>
+          <div class="cta-band__actions reveal" data-reveal>
+            <a class="btn btn--primary" href="kontakt.html">Projekt anfragen</a>
+            <a class="btn btn--ghost" href="arbeiten.html">Arbeiten ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand-col">
+        <a class="brand" href="index.html" aria-label="Startseite">
+          <span class="brand__mark" aria-hidden="true">MS</span>
+          <span class="brand__name">Mika&nbsp;Schieferdecker</span>
+        </a>
+        <p class="footer__tag">Webdesign &amp; Frontend aus Bremen. Klar, schnell, charaktervoll.</p>
+      </div>
+      <nav class="footer__col" aria-label="Seiten">
+        <h3>Seiten</h3>
+        <a href="arbeiten.html">Arbeiten</a>
+        <a href="ueber.html">Über mich</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <nav class="footer__col" aria-label="Rechtliches">
+        <h3>Rechtliches</h3>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <div class="footer__col">
+        <h3>Kontakt</h3>
+        <a href="mailto:mika@mikaschieferdecker.de">mika@mikaschieferdecker.de</a>
+        <div class="footer__socials">
+          <a href="#" rel="noopener">LinkedIn</a>
+          <a href="#" rel="noopener">Instagram</a>
+          <a href="#" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Mika Schieferdecker — gebaut in Bremen.</p>
+      <a class="footer__top" href="#top">Nach oben ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

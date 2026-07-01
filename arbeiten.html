@@ -3,23 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mika Schieferdecker — Webdesign &amp; Frontend aus Bremen und umzu</title>
-  <meta name="description" content="Freelance Webdesign und Frontend-Entwicklung aus Bremen. Ich gestalte klare, schnelle und charaktervolle Websites für Marken, die auffallen wollen." />
-  <meta name="author" content="Mika Schieferdecker" />
+  <title>Arbeiten — Mika Schieferdecker</title>
+  <meta name="description" content="Ausgewählte Projekte aus Webdesign, Branding, E-Commerce, UX/UI und Frontend-Entwicklung." />
   <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mika Schieferdecker — Webdesign &amp; Frontend aus Bremen" />
-  <meta property="og:description" content="Klare, schnelle und charaktervolle Websites aus Bremen." />
-  <meta property="og:locale" content="de_DE" />
-
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-
   <script>
     (function () {
       document.documentElement.classList.add('js');
@@ -35,7 +27,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <span id="top"></span>
 
-  <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="siteHeader">
     <div class="container header__inner">
       <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
@@ -44,7 +35,7 @@
       </a>
       <nav class="nav" aria-label="Hauptnavigation">
         <ul class="nav__list" id="navList">
-          <li><a href="arbeiten.html">Arbeiten</a></li>
+          <li><a href="arbeiten.html" aria-current="page">Arbeiten</a></li>
           <li><a href="ueber.html">Über mich</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
@@ -63,51 +54,31 @@
   </header>
 
   <main id="main">
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="page-head" aria-labelledby="page-title">
       <div class="container">
-        <p class="hero__kicker reveal" data-reveal>
-          <span class="dot" aria-hidden="true"></span>
-          Webdesign &amp; Frontend — Bremen, DE
-        </p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="line reveal" data-reveal style="--i:1">Ich gestalte Websites,</span>
-          <span class="line reveal" data-reveal style="--i:2">die man <em>spürt</em> —</span>
-          <span class="line reveal" data-reveal style="--i:3">klar, schnell, charaktervoll.</span>
-        </h1>
-        <div class="hero__meta">
-          <p class="hero__lead reveal" data-reveal style="--i:4">
-            Freelance Designer &amp; Entwickler aus Bremen. Ich verbinde ruhige,
-            redaktionelle Gestaltung mit sauberem Code — für Marken, die
-            Wirkung statt Lautstärke suchen.
-          </p>
-          <div class="hero__cta reveal" data-reveal style="--i:5">
-            <a class="btn btn--primary" href="arbeiten.html">Arbeiten ansehen</a>
-            <a class="btn btn--ghost" href="kontakt.html">Projekt anfragen</a>
-          </div>
-        </div>
-        <p class="hero__status reveal" data-reveal style="--i:6">
-          <span class="status-dot" aria-hidden="true"></span>
-          Verfügbar für neue Projekte ab <strong>Herbst&nbsp;2026</strong>
+        <p class="page-head__kicker reveal" data-reveal><span class="dot" aria-hidden="true"></span>Portfolio</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Ausgewählte Arbeiten</h1>
+        <p class="page-head__lead reveal" data-reveal>
+          Eine Auswahl aktueller Projekte aus Gestaltung und Entwicklung.
+          Platzhalter-Inhalte — einfach gegen echte Arbeiten austauschbar.
         </p>
       </div>
-      <a class="scroll-hint" href="#auswahl" aria-label="Nach unten scrollen">
-        <span>Scroll</span>
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
-      </a>
     </section>
 
-    <!-- ===================== AUSWAHL DER ARBEITEN ===================== -->
-    <section class="work section" id="auswahl" aria-labelledby="work-title">
+    <section class="work" aria-label="Projekte">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title reveal" data-reveal id="work-title">Ausgewählte Arbeiten</h2>
-          <a class="section__link reveal" data-reveal href="arbeiten.html">Alle Projekte ansehen →</a>
+        <div class="filters reveal" data-reveal role="tablist" aria-label="Projekte filtern">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+          <button class="filter" type="button" data-filter="webdesign" aria-pressed="false">Webdesign</button>
+          <button class="filter" type="button" data-filter="branding" aria-pressed="false">Branding</button>
+          <button class="filter" type="button" data-filter="ecommerce" aria-pressed="false">E-Commerce</button>
+          <button class="filter" type="button" data-filter="ux" aria-pressed="false">UX / UI</button>
+          <button class="filter" type="button" data-filter="development" aria-pressed="false">Development</button>
         </div>
 
-        <ul class="project-grid project-grid--featured">
-          <li class="project reveal" data-reveal>
-            <a class="project__link" href="arbeiten.html">
+        <ul class="project-grid" id="projectGrid">
+          <li class="project reveal" data-reveal data-cat="branding webdesign">
+            <a class="project__link" href="kontakt.html">
               <span class="project__cover" data-shade="1" aria-hidden="true"><span class="project__num">01</span></span>
               <span class="project__body">
                 <span class="project__meta"><span class="project__cat">Branding · Webdesign</span><span class="project__year">2025</span></span>
@@ -116,8 +87,8 @@
               </span>
             </a>
           </li>
-          <li class="project reveal" data-reveal>
-            <a class="project__link" href="arbeiten.html">
+          <li class="project reveal" data-reveal data-cat="ecommerce development">
+            <a class="project__link" href="kontakt.html">
               <span class="project__cover" data-shade="2" aria-hidden="true"><span class="project__num">02</span></span>
               <span class="project__body">
                 <span class="project__meta"><span class="project__cat">E-Commerce</span><span class="project__year">2024</span></span>
@@ -126,8 +97,8 @@
               </span>
             </a>
           </li>
-          <li class="project reveal" data-reveal>
-            <a class="project__link" href="arbeiten.html">
+          <li class="project reveal" data-reveal data-cat="webdesign ux">
+            <a class="project__link" href="kontakt.html">
               <span class="project__cover" data-shade="3" aria-hidden="true"><span class="project__num">03</span></span>
               <span class="project__body">
                 <span class="project__meta"><span class="project__cat">Webdesign</span><span class="project__year">2024</span></span>
@@ -136,58 +107,53 @@
               </span>
             </a>
           </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===================== LEISTUNGEN TEASER ===================== -->
-    <section class="services section" id="leistungen-teaser" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title reveal" data-reveal id="services-title">Leistungen</h2>
-          <a class="section__link reveal" data-reveal href="leistungen.html">Alle Leistungen →</a>
-        </div>
-        <ul class="service-list">
-          <li class="service reveal" data-reveal>
-            <span class="service__idx">01</span>
-            <h3 class="service__title">Webdesign</h3>
-            <p class="service__desc">Redaktionelle, moderne Gestaltung mit klarer Typografie — vom Konzept bis zum fertigen Layout.</p>
+          <li class="project reveal" data-reveal data-cat="ux branding">
+            <a class="project__link" href="kontakt.html">
+              <span class="project__cover" data-shade="4" aria-hidden="true"><span class="project__num">04</span></span>
+              <span class="project__body">
+                <span class="project__meta"><span class="project__cat">UX / UI</span><span class="project__year">2023</span></span>
+                <span class="project__title">Atelier Weser</span>
+                <span class="project__desc">App-Konzept und Interface für eine Galerie am Fluss.</span>
+              </span>
+            </a>
           </li>
-          <li class="service reveal" data-reveal>
-            <span class="service__idx">02</span>
-            <h3 class="service__title">Frontend-Entwicklung</h3>
-            <p class="service__desc">Sauberer, performanter Code. Semantisches HTML, moderne CSS-Technik und schlankes JavaScript.</p>
+          <li class="project reveal" data-reveal data-cat="development webdesign">
+            <a class="project__link" href="kontakt.html">
+              <span class="project__cover" data-shade="5" aria-hidden="true"><span class="project__num">05</span></span>
+              <span class="project__body">
+                <span class="project__meta"><span class="project__cat">Development</span><span class="project__year">2025</span></span>
+                <span class="project__title">Rundfunk BHV</span>
+                <span class="project__desc">Performantes Frontend für ein regionales Medienportal.</span>
+              </span>
+            </a>
           </li>
-          <li class="service reveal" data-reveal>
-            <span class="service__idx">03</span>
-            <h3 class="service__title">UX &amp; UI Design</h3>
-            <p class="service__desc">Nutzerführung, Prototyping und Interface-Design, die Komplexität reduzieren.</p>
-          </li>
-          <li class="service reveal" data-reveal>
-            <span class="service__idx">04</span>
-            <h3 class="service__title">Branding</h3>
-            <p class="service__desc">Visuelle Identitäten mit Charakter — Logo, Farbwelt, Typografie und ein konsistentes System.</p>
+          <li class="project reveal" data-reveal data-cat="branding">
+            <a class="project__link" href="kontakt.html">
+              <span class="project__cover" data-shade="6" aria-hidden="true"><span class="project__num">06</span></span>
+              <span class="project__body">
+                <span class="project__meta"><span class="project__cat">Branding</span><span class="project__year">2023</span></span>
+                <span class="project__title">Marschland</span>
+                <span class="project__desc">Visuelle Identität für ein regionales Food-Kollektiv.</span>
+              </span>
+            </a>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-band__inner">
-          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Lass uns zusammenarbeiten.</h2>
-          <p class="cta-band__text reveal" data-reveal>Hast du ein Projekt im Kopf? Ich melde mich meist innerhalb von 24&nbsp;Stunden.</p>
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Dein Projekt könnte das nächste sein.</h2>
+          <p class="cta-band__text reveal" data-reveal>Erzähl mir davon — unverbindlich und in Ruhe.</p>
           <div class="cta-band__actions reveal" data-reveal>
             <a class="btn btn--primary" href="kontakt.html">Projekt anfragen</a>
-            <a class="btn btn--ghost" href="ueber.html">Mehr über mich</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container footer__grid">
       <div class="footer__brand-col">
