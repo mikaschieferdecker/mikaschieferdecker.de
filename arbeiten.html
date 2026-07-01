@@ -17,7 +17,7 @@
       document.documentElement.classList.add('js');
       try {
         var t = localStorage.getItem('theme');
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', t);
       } catch (e) {}
     })();
