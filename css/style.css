@@ -259,8 +259,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding-block: clamp(4rem, 3rem + 8vw, 9rem) clamp(4rem, 3rem + 6vw, 7rem);
-  min-height: min(92vh, 900px);
+  padding-bottom: 100px;
+padding-top: 100px;
   display: flex;
   align-items: center;
 }
