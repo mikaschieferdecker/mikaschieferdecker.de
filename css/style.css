@@ -276,10 +276,10 @@ padding-top: 100px;
   font-family: var(--font-display);
   font-size: var(--step--1);
   color: #fff;
-   baclground: var(--accent);
+   background: var(--accent);
   letter-spacing: 0.02em;
    text-transform: uppercase;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 .hero__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
