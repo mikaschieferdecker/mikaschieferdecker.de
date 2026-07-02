@@ -88,7 +88,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 img { max-width: 100%; display: block; }
@@ -131,7 +131,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: #e9e9ea; /* Helles Grau für Light Mode */
   border-radius: 20px;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
 }
 
 /* Der bewegliche Kreis */
@@ -144,7 +144,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   bottom: 3px;
   background-color: white;
   border-radius: 50%;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
