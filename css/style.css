@@ -132,7 +132,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: #e9e9ea;
   border-radius: 34px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 
 /* Der bewegliche Knopf */
@@ -145,7 +145,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   bottom: 3px;
   background-color: white;
   border-radius: 50%;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   z-index: 2;
 }
@@ -156,7 +156,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   top: 50%;
   transform: translateY(-50%);
   font-size: 12px;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 .sun { left: 7px; opacity: 1; }
