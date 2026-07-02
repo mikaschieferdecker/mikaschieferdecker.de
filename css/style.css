@@ -281,12 +281,13 @@ padding-top: 100px;
    background: var(--accent);
   letter-spacing: 0.02em;
    text-transform: uppercase;
-  padding: 10px 20px 10px 20px;
+  padding: 5px 10px 5px 10px;
 }
 .hero__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
 .hero__title {
   font-size: 80px;
+   margin-top: 10px;
   margin-bottom: var(--space-4);
 }
 .hero__title .line { display: block; text-align: center;}
