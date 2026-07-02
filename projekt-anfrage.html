@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projekt anfragen - Mika Schieferdecker</title>
+  <meta name="description" content="Starte deine Shopify-Projektanfrage in fünf kurzen Schritten. Unkompliziert, direkt bei mir, Antwort innerhalb von 24 Stunden." />
+  <meta name="author" content="Mika Schieferdecker" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#010101" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projekt anfragen - Mika Schieferdecker" />
+  <meta property="og:description" content="Starte deine Shopify-Projektanfrage in fünf kurzen Schritten." />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <!--#include header-->
+
+  <main id="main">
+    <!-- ===================== PAGE HEAD ===================== -->
+    <section class="page-head">
+      <div class="container">
+        <p class="page-head__kicker">
+          <span class="dot" aria-hidden="true"></span>
+          Projekt anfragen
+        </p>
+        <h1 class="page-head__title">Erzähl mir kurz von deinem Projekt.</h1>
+        <p class="page-head__lead">Fünf kurze Fragen, keine Verpflichtung. Ich melde mich danach innerhalb von 24&nbsp;Stunden mit einer ersten Einschätzung.</p>
+      </div>
+    </section>
+
+    <!-- ===================== FORMULAR ===================== -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <form class="wizard" id="qualifyForm" novalidate>
+          <div class="wizard__progress">
+            <div class="wizard__progress-bar" id="progressBar"></div>
+          </div>
+
+          <input type="text" name="website" class="wizard__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- Schritt 1: Projektart -->
+          <fieldset class="wizard__step is-active" data-step="1">
+            <div class="wizard__head">
+              <legend class="wizard__question">Was für ein <mark>Projekt</mark> ist es?</legend>
+              <span class="wizard__count">1/5</span>
+            </div>
+            <div class="choice-grid choice-grid--3">
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Neuer Shop" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Neuer Shop</span>
+                <span class="choice-card__desc">Von der Idee bis zum fertigen, launch-bereiten Store.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Redesign">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Redesign</span>
+                <span class="choice-card__desc">Dein bestehender Shop bekommt frisches Design und mehr Performance.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Wartung / Weiterentwicklung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Wartung</span>
+                <span class="choice-card__desc">Laufende Betreuung, Updates und Weiterentwicklung deines Shops.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 2: Produktanzahl -->
+          <fieldset class="wizard__step" data-step="2">
+            <div class="wizard__head">
+              <legend class="wizard__question">Wie <mark>groß</mark> ist dein Sortiment?</legend>
+              <span class="wizard__count">2/5</span>
+            </div>
+            <div class="choice-grid choice-grid--4">
+              <label class="choice-card choice-card--stat">
+                <input type="radio" name="produktanzahl" value="1–20 Produkte" required>
+                <span class="choice-card__title choice-card__title--big">1–20</span>
+                <span class="choice-card__desc">Produkte</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card choice-card--stat">
+                <input type="radio" name="produktanzahl" value="20–100 Produkte">
+                <span class="choice-card__title choice-card__title--big">20–100</span>
+                <span class="choice-card__desc">Produkte</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card choice-card--stat">
+                <input type="radio" name="produktanzahl" value="100–500 Produkte">
+                <span class="choice-card__title choice-card__title--big">100–500</span>
+                <span class="choice-card__desc">Produkte</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card choice-card--stat">
+                <input type="radio" name="produktanzahl" value="500+ Produkte">
+                <span class="choice-card__title choice-card__title--big">500+</span>
+                <span class="choice-card__desc">Produkte</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 3: Branche -->
+          <fieldset class="wizard__step" data-step="3">
+            <div class="wizard__head">
+              <legend class="wizard__question">In welcher <mark>Branche</mark> bist du unterwegs?</legend>
+              <span class="wizard__count">3/5</span>
+            </div>
+            <div class="field">
+              <label for="wizBranche">Branche</label>
+              <input type="text" id="wizBranche" name="branche" placeholder="z. B. Mode, Kosmetik, Möbel, Food …" required>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 4: Shopify-Status -->
+          <fieldset class="wizard__step" data-step="4">
+            <div class="wizard__head">
+              <legend class="wizard__question">Nutzt du schon <mark>Shopify</mark>?</legend>
+              <span class="wizard__count">4/5</span>
+            </div>
+            <div class="choice-grid choice-grid--3">
+              <label class="choice-card">
+                <input type="radio" name="shopify_status" value="Ja, bereits bei Shopify" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Ja, bereits</span>
+                <span class="choice-card__desc">Dein Shop läuft schon auf Shopify.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="shopify_status" value="Nein, noch nicht">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Noch nicht</span>
+                <span class="choice-card__desc">Du startest komplett neu mit Shopify.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="shopify_status" value="Wechsel von anderer Plattform geplant">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 7h13l-3-3M20 17H7l3 3"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Wechsel geplant</span>
+                <span class="choice-card__desc">Umzug von einer anderen Plattform zu Shopify.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 5: Kontaktdaten -->
+          <fieldset class="wizard__step" data-step="5">
+            <div class="wizard__head">
+              <legend class="wizard__question">Wie erreiche ich <mark>dich</mark>?</legend>
+              <span class="wizard__count">5/5</span>
+            </div>
+            <div class="field">
+              <label for="wizName">Name</label>
+              <input type="text" id="wizName" name="name" required>
+            </div>
+            <div class="field">
+              <label for="wizEmail">E-Mail</label>
+              <input type="email" id="wizEmail" name="email" required>
+            </div>
+            <div class="field">
+              <label for="wizMessage">Nachricht (optional)</label>
+              <textarea id="wizMessage" name="message" rows="4"></textarea>
+            </div>
+            <p class="form-hint">
+              Mit dem Absenden stimmst du der Verarbeitung deiner Daten zur Bearbeitung deiner Anfrage zu. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+          </fieldset>
+
+          <div class="wizard__nav">
+            <button type="button" class="btn btn--ghost" id="wizBack" hidden>Zurück</button>
+            <button type="button" class="btn btn--primary" id="wizNext" hidden>Weiter</button>
+            <button type="submit" class="btn btn--primary" id="wizSubmit" hidden>Anfrage senden</button>
+          </div>
+
+          <p class="wizard__status" id="wizStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!--#include footer-->
+
+  <script src="js/main.js" defer></script>
+  <script src="js/wizard.js" defer></script>
+</body>
+</html>
