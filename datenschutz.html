@@ -43,14 +43,22 @@
         </ul>
       </nav>
       <div class="header__actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/></svg>
-        </button>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navList">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <label class="theme-switch" title="Dark Mode umschalten">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider">
+      <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </span>
+  </label>
+  
+  <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</div>
     </div>
   </header>
 
@@ -153,5 +161,30 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    // Theme beim Laden wiederherstellen
+    if (localStorage.getItem('theme') === 'dark') {
+      root.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    // Toggle-Logik
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        root.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
