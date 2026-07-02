@@ -32,3 +32,25 @@
 </div>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    // Theme beim Laden wiederherstellen
+    if (localStorage.getItem('theme') === 'dark') {
+      root.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    // Toggle-Logik
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        root.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+</script>
