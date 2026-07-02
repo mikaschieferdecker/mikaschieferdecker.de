@@ -752,9 +752,10 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .footer__brand-col { grid-column: 1 / -1; }
    .hero__title {
-  font-size: 35px!important;
-  margin-bottom: 40px;
-      margin-top: 20px;
+  font-size: 40px!important;
+   line-height: 45px;
+  margin-bottom: 30px;
+      margin-top: 40px;
 }
    .hero {
       padding-top: 25px;
