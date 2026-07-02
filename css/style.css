@@ -756,7 +756,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    line-height: 45px;
   margin-bottom: 30px;
       margin-top: 40px;
-      text-align: start;
+      text-align: start!important;
 }
    .hero {
       padding-top: 25px;
