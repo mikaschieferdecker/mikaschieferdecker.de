@@ -170,10 +170,6 @@ input:checked + .slider:before {
   transform: translateX(24px); 
 }
 
-/* 3. Icons ausblenden, wenn sie vom weißen Kreis verdeckt werden */
-/* Wenn Schalter aus (Light): Mond ausblenden, Sonne sichtbar */
-/* Wenn Schalter an (Dark): Sonne ausblenden, Mond sichtbar */
-input:checked + .slider .sun { opacity: 0; }
 
 .middlecontainer {
    text-align: center;
