@@ -221,5 +221,31 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+
+<body>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // 1. Beim Laden: Prüfen, was der User zuletzt gewählt hat
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+    }
+
+    // 2. Klick-Event
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      // Zustand speichern
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+  
 </body>
 </html>
