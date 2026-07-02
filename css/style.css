@@ -155,7 +155,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   gap: 0.5rem;
   min-height: 48px;
   padding: 10px 15px 10px 15px;
-  border-radius: 999px;
+  border-radius: 5px;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--step-0);
@@ -199,7 +199,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   place-items: center;
   width: 34px;
   height: 34px;
-  border-radius: 9px;
+  border-radius: 5px;
   background: var(--fg);
   color: var(--bg);
   font-size: 0.85rem;
@@ -275,10 +275,11 @@ padding-top: 100px;
   gap: 0.6rem;
   font-family: var(--font-display);
   font-size: var(--step--1);
-  color: var(--muted);
+  color: #fff;
+   baclground: var(--accent);
   letter-spacing: 0.02em;
    text-transform: uppercase;
-  margin-bottom: var(--space-3);
+  margin-bottom: 25px;
 }
 .hero__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
