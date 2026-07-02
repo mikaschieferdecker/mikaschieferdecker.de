@@ -774,7 +774,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .middlecontainer {
    text-align: start;
-   margin-top: 50px;
+   margin-top: 25px;
    max-width: 1200px;
    margin-inline: auto;
    padding-inline: clamp(1.25rem, 5vw, 3rem);
