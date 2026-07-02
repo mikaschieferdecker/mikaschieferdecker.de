@@ -224,30 +224,31 @@
 
   <script src="js/main.js" defer></script>
 
-<body>
-  <script>
+<script>
+  // Wir warten, bis die Seite komplett geladen ist
+  document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    const root = document.documentElement;
 
-    // 1. Beim Laden: Prüfen, was der User zuletzt gewählt hat
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
+    // 1. Theme beim Laden wiederherstellen
+    if (localStorage.getItem('theme') === 'dark') {
+      root.classList.add('dark-mode');
+      themeToggle.checked = true;
     }
 
-    // 2. Klick-Event
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      
-      // Zustand speichern
-      if (body.classList.contains('dark-mode')) {
+    // 2. Event-Listener für den Schalter
+    themeToggle.addEventListener('change', () => {
+      if (themeToggle.checked) {
+        root.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark');
       } else {
+        root.classList.remove('dark-mode');
         localStorage.setItem('theme', 'light');
       }
     });
-  </script>
-</body>
+  });
+</script>
+
   
 </body>
 </html>
