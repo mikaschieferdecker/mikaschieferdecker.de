@@ -911,3 +911,100 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wizard__status { margin-top: var(--space-2); font-size: var(--step--1); color: var(--muted); }
 .wizard__status.is-error { color: #c2593f; }
 .wizard__status.is-success { color: var(--accent); }
+
+
+/* ---------- Bold Hero (IGNITE-Style) ---------- */
+.bold-hero {
+  padding-block: var(--space-3) var(--space-6);
+}
+
+.bold-hero__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-3) var(--space-5);
+}
+
+.bold-hero__logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.bold-hero__logo span { font-size: 0.9rem; vertical-align: super; }
+
+.bold-hero__topbar-actions { display: flex; align-items: center; gap: var(--space-3); }
+
+.bold-hero__cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step--1);
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+.bold-hero__cta-pill:hover { background: var(--fg); transform: translateY(-2px); }
+.bold-hero__cta-pill svg { width: 16px; height: 16px; }
+
+.bold-hero__menu {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--step-0);
+  letter-spacing: 0.02em;
+  color: var(--fg);
+}
+
+.bold-hero__kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  letter-spacing: 0.01em;
+  color: var(--fg-soft);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+.bold-hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.bold-hero__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--step-hero);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.bold-hero__title mark {
+  background: none;
+  color: var(--fg);
+  position: relative;
+}
+.bold-hero__title mark::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0.06em;
+  height: 0.14em;
+  background: var(--accent);
+  z-index: -1;
+  opacity: 0.35;
+}
+
+@media (max-width: 680px) {
+  .bold-hero__topbar-actions .bold-hero__menu { display: none; }
+  .bold-hero__title { letter-spacing: -0.02em; }
+}
