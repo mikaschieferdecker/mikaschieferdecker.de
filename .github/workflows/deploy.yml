@@ -1,10 +1,8 @@
 name: Deploy Website to All-Inkl
-
 on:
   push:
     branches:
       - claude/install-ui-ux-pro-max-skill-q1oja4
-
 jobs:
   web-deploy:
     name: 🎉 Deploy HTML Files
@@ -12,6 +10,14 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
+
+    - name: 🧩 Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: 🛠️ Build (Header/Footer einfügen)
+      run: node build.js
 
     - name: 🚀 Upload via LFTP (All-Inkl kompatibel)
       env:
@@ -28,8 +34,6 @@ jobs:
           set ftp:passive-mode true;
           open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; 
           mirror -R --delete --reverse --no-perms \
-            -x '^.git/' \
-            -x '^.github/' \
-            ./ ./; 
+            ./dist/ ./; 
           quit
         "
