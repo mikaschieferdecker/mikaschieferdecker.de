@@ -147,32 +147,25 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   background-color: white;
   border-radius: 50%;
   transition: 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  z-index: 2; /* Kreis liegt über den Icons */
+  z-index: 2;
 }
 
-/* --- ICONS POSITIONIEREN --- */
+/* Icons absolut positionieren */
 .icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  z-index: 1; /* Icons liegen unter dem weißen Kreis */
+  z-index: 1; /* Icons liegen HINTER dem Kreis */
   transition: opacity 0.3s ease;
 }
 
-.sun { left: 6px; stroke: #333; opacity: 1; }
-.moon { right: 6px; stroke: #999; opacity: 1; }
+/* Sonne links, Mond rechts */
+.sun { left: 6px; } 
+.moon { right: 6px; }
 
-/* --- LOGIK --- */
-
-/* 1. Hintergrund grün bei Aktivierung */
-input:checked + .slider { 
-  background-color: #34c759; 
-}
-
-/* 2. Kreis nach rechts schieben */
+/* Wenn der Kreis nach rechts wandert (Dark Mode) */
 input:checked + .slider:before { 
   transform: translateX(24px); 
 }
