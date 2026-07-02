@@ -148,7 +148,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 2;
 }
 
-/* Icons Grundzustand */
+/* --- ICONS ANPASSUNG --- */
 .icon {
   position: absolute;
   top: 50%;
@@ -157,17 +157,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   height: 14px;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  z-index: 3;
+  z-index: 3; /* Sorgt dafür, dass sie über dem Kreis liegen */
 }
 
 .sun { left: 6px; opacity: 1; stroke: #333; }
 .moon { right: 6px; opacity: 0; stroke: #fff; }
 
-/* Aktiv-Zustand (Dark Mode) */
-#themeToggle:checked + .slider { background-color: #34c759; }
-#themeToggle:checked + .slider:before { transform: translateX(24px); }
+/* Logik: Wenn gecheckt, Sonne aus, Mond an */
 #themeToggle:checked + .slider .sun { opacity: 0; }
 #themeToggle:checked + .slider .moon { opacity: 1; }
+
 
 .middlecontainer {
    text-align: center;
