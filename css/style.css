@@ -150,29 +150,40 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 2;
 }
 
-/* Icons im Slider */
+/* Grundzustand der Icons */
 .icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 14px;  /* Größe der Icons */
+  width: 14px;
   height: 14px;
-  stroke: #333; /* Farbe der Icons im Light-Mode */
   transition: opacity 0.3s ease;
 }
 
-.sun { left: 6px; opacity: 1; }
-.moon { right: 6px; opacity: 0; stroke: #fff; } /* Mond ist weiß, wenn er aktiv ist */
+/* Sonne: Sichtbar im Light Mode */
+.sun { 
+  left: 6px; 
+  opacity: 1; 
+  stroke: #333; /* Dunkel im Light Mode */
+}
 
-/* Aktiv-Zustand: Icons umschalten */
-input:checked + .slider .sun { opacity: 0; }
-input:checked + .slider .moon { opacity: 1; }
+/* Mond: Unsichtbar im Light Mode */
+.moon { 
+  right: 6px; 
+  opacity: 0; 
+  stroke: #fff; /* Weiß im Dark Mode */
+}
 
-/* Aktiv-Zustand */
-input:checked + .slider { background-color: #34c759; }
-input:checked + .slider:before { transform: translateX(24px); }
-input:checked + .slider .sun { opacity: 0; }
-input:checked + .slider .moon { opacity: 1; }
+/* --- LOGIK FÜR DEN WECHSEL --- */
+
+/* Wenn Checkbox angehakt (Dark Mode) */
+input:checked + .slider .sun { 
+  opacity: 0; /* Sonne ausblenden */
+}
+
+input:checked + .slider .moon { 
+  opacity: 1; /* Mond einblenden */
+}
 
 .middlecontainer {
    text-align: center;
