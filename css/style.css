@@ -278,7 +278,6 @@ padding-top: 100px;
 
 .hero__title {
   font-size: 80px;
-  max-width: 18ch;
   margin-bottom: var(--space-4);
 }
 .hero__title .line { display: block; text-align: center;}
@@ -680,7 +679,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .footer__brand-col { grid-column: 1 / -1; }
    .hero__title {
   font-size: 44px!important;
-  max-width: 18ch;
   margin-bottom: var(--space-4);
 }
 }
