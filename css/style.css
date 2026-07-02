@@ -115,7 +115,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
-/* Container */
+/* Grundgerüst */
 .theme-switch {
   position: relative;
   display: inline-block;
@@ -126,7 +126,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 .theme-switch input { display: none; }
 
-/* Die Bahn */
 .slider {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -135,7 +134,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   transition: 0.3s ease;
 }
 
-/* Der bewegliche Knopf */
 .slider:before {
   position: absolute;
   content: "";
@@ -150,19 +148,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 2;
 }
 
-/* --- LOGIK FÜR DEN WECHSEL --- */
-
-/* 1. Hintergrund wird grün */
-input:checked + .slider { 
-  background-color: #34c759; 
-}
-
-/* 2. Kreis schiebt nach rechts */
-input:checked + .slider:before { 
-  transform: translateX(24px); 
-}
-
-/* --- ICONS --- */
+/* Icons Grundzustand */
 .icon {
   position: absolute;
   top: 50%;
@@ -170,24 +156,18 @@ input:checked + .slider:before {
   width: 14px;
   height: 14px;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* Wichtig: Klicks gehen durch das Icon zum Input */
+  pointer-events: none;
+  z-index: 3;
 }
 
-.sun { 
-  left: 6px; 
-  opacity: 1; 
-  stroke: #333; 
-}
+.sun { left: 6px; opacity: 1; stroke: #333; }
+.moon { right: 6px; opacity: 0; stroke: #fff; }
 
-.moon { 
-  right: 6px; 
-  opacity: 0; 
-  stroke: #fff; 
-}
-
-/* Icons beim Umschalten ausblenden/einblenden */
-input:checked + .slider .sun { opacity: 0; }
-input:checked + .slider .moon { opacity: 1; }
+/* Aktiv-Zustand (Dark Mode) */
+#themeToggle:checked + .slider { background-color: #34c759; }
+#themeToggle:checked + .slider:before { transform: translateX(24px); }
+#themeToggle:checked + .slider .sun { opacity: 0; }
+#themeToggle:checked + .slider .moon { opacity: 1; }
 
 .middlecontainer {
    text-align: center;
