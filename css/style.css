@@ -770,7 +770,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    .hero__lead {
       text-align: start;
       margin-bottom: -5px;
-      margin-top: 3px;
+      margin-top: 5px;
    }
 
    .middlecontainer {
