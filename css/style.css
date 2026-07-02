@@ -115,6 +115,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
+.middlecontainer {
+   text-align: center;
+}
+
 .section { padding-block: var(--section-y); }
 
 .section__head {
@@ -265,6 +269,7 @@ padding-top: 100px;
   align-items: center;
 }
 .hero__kicker {
+   display: inline;
   text-align: center;
   align-items: center;
   gap: 0.6rem;
