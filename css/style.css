@@ -756,7 +756,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    .hero__title {
   font-size: 40px!important;
    line-height: 45px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
       margin-top: 20px;
       
 }
@@ -769,7 +769,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .hero__lead {
       text-align: start;
-      margin-bottom: -20px;
+      margin-bottom: -10px;
    }
 
    .middlecontainer {
