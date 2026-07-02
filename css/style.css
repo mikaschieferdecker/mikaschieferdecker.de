@@ -767,6 +767,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .hero__lead {
       text-align: start;
+      padding-top: 25px;
    }
 
    .middlecontainer {
