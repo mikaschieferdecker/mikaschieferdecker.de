@@ -38,8 +38,8 @@
 /* Light theme (default) */
 :root,
 [data-theme='light'] {
-  --bg: #faf9f7;
-  --surface: #ffffff;
+  --bg: #ffffff;
+  --surface: #FAF9F7;
   --fg: #1a1a1a;
   --fg-soft: #45443f;
   --muted: #6d6c65;
@@ -53,7 +53,7 @@
 
 /* Dark theme */
 [data-theme='dark'] {
-  --bg: #282928;
+  --bg: #010101;
   --surface: #1a1a18;
   --fg: #fff;
   --fg-soft: #cbc9c2;
