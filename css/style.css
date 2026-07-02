@@ -678,6 +678,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .contact__grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .footer__brand-col { grid-column: 1 / -1; }
+   .hero__title {
+  font-size: 44px!important;
+  max-width: 18ch;
+  margin-bottom: var(--space-4);
+}
 }
 
 @media (max-width: 680px) {
