@@ -115,40 +115,46 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+/* Der Container für den Schalter */
+.theme-switch {
   position: relative;
-  transition: transform 0.4s ease; /* Die Drehung */
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
 }
 
-/* Icons grundlegend ausblenden oder einblenden */
-.icon-sun, .icon-moon {
-  transition: opacity 0.3s ease, transform 0.4s ease;
+.theme-switch input { display: none; }
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e9e9ea; /* Helles Grau für Light Mode */
+  border-radius: 20px;
+  transition: 0.3s ease;
 }
 
-/* Wenn Darkmode aktiv ist */
-.dark-mode .icon-sun {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.5);
+/* Der bewegliche Kreis */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.dark-mode .icon-moon {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
+/* Aktiv-Zustand (Dark Mode) */
+input:checked + .slider {
+  background-color: #34c759; /* Apple-Grün */
 }
 
-/* Wenn Lightmode aktiv ist */
-.icon-sun {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-.icon-moon {
-  opacity: 0;
-  transform: rotate(90deg) scale(0.5);
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
 .middlecontainer {
