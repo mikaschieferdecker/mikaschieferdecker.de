@@ -150,17 +150,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 2;
 }
 
-/* Icons */
+/* Icons im Slider */
 .icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
-  transition: opacity 0.3s;
+  width: 14px;  /* Größe der Icons */
+  height: 14px;
+  stroke: #333; /* Farbe der Icons im Light-Mode */
+  transition: opacity 0.3s ease;
 }
 
-.sun { left: 7px; opacity: 1; }
-.moon { right: 7px; opacity: 0; }
+.sun { left: 6px; opacity: 1; }
+.moon { right: 6px; opacity: 0; stroke: #fff; } /* Mond ist weiß, wenn er aktiv ist */
+
+/* Aktiv-Zustand: Icons umschalten */
+input:checked + .slider .sun { opacity: 0; }
+input:checked + .slider .moon { opacity: 1; }
 
 /* Aktiv-Zustand */
 input:checked + .slider { background-color: #34c759; }
