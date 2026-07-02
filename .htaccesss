@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# 1. Erzwingt HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Entfernt index.html aus der URL
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 3. WICHTIG: Wenn eine passende HTML-Datei existiert, nimm diese (löst den Projekte-Ordner-Konflikt)
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^/]+)/?$ /$1.html [L]
+
+# 4. Erlaubt allgemein den Aufruf von Seiten ohne .html Endung
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 5. Weiterleitung von seite.html auf /seite (Clean URLs)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/ [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
