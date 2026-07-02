@@ -752,6 +752,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .footer__brand-col { grid-column: 1 / -1; }
    .hero__title .line { display: block; text-align: start;}
+   .hero__cta { justify-content: start;}
    .hero__title {
   font-size: 40px!important;
    line-height: 45px;
