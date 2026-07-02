@@ -40,7 +40,7 @@
 [data-theme='light'] {
   --bg: #faf9f7;
   --surface: #ffffff;
-  --fg: #1a1a18;
+  --fg: #3f9973;
   --fg-soft: #45443f;
   --muted: #6d6c65;
   --border: #e6e4dd;
@@ -55,7 +55,7 @@
 [data-theme='dark'] {
   --bg: #030406;
   --surface: #1a1a18;
-  --fg: #f3f1ec;
+  --fg: #3f9973;
   --fg-soft: #cbc9c2;
   --muted: #9a988f;
   --border: #2a2a26;
