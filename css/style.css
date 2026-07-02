@@ -760,6 +760,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
       margin-top: 20px;
       
 }
+
+.hero__kicker {
+  padding-top: 25px;
+  }
+
    .hero {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -767,7 +772,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .hero__lead {
       text-align: start;
-      padding-top: 25px;
+      
    }
 
    .middlecontainer {
