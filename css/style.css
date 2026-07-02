@@ -800,3 +800,114 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* ---------- Multi-Step Formular (Wizard) ---------- */
+.wizard { max-width: 46rem; }
+
+.wizard__honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.wizard__progress {
+  height: 3px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+.wizard__progress-bar {
+  height: 100%;
+  width: 20%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.4s var(--ease);
+}
+
+.wizard__step { display: none; border: none; padding: 0; }
+.wizard__step.is-active { display: block; }
+
+.wizard__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.wizard__question {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  padding: 0;
+}
+.wizard__question mark {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0 0.25em;
+  border-radius: 5px;
+}
+.wizard__count {
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+@media (min-width: 720px) {
+  .choice-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .choice-grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 480px) {
+  .choice-grid { grid-template-columns: 1fr; }
+}
+
+.choice-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--bg);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.choice-card:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow); }
+.choice-card input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-card:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+
+.choice-card__icon { display: grid; place-items: center; width: 36px; height: 36px; color: var(--fg); }
+.choice-card__icon svg { width: 24px; height: 24px; }
+.choice-card:has(input:checked) .choice-card__icon { color: var(--accent); }
+
+.choice-card__title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-0); }
+.choice-card__title--big { font-size: var(--step-1); }
+.choice-card__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.5; flex-grow: 1; }
+
+.choice-card__select {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 0.2rem;
+}
+.choice-card .txt-checked { display: none; }
+.choice-card:has(input:checked) .txt-default { display: none; }
+.choice-card:has(input:checked) .txt-checked { display: inline; }
+
+.wizard__nav { display: flex; justify-content: space-between; gap: 0.75rem; margin-top: var(--space-3); }
+.wizard__nav .btn--primary { margin-left: auto; }
+
+.wizard__status { margin-top: var(--space-2); font-size: var(--step--1); color: var(--muted); }
+.wizard__status.is-error { color: #c2593f; }
+.wizard__status.is-success { color: var(--accent); }
