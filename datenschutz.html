@@ -27,40 +27,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <span id="top"></span>
 
-  <header class="site-header" id="siteHeader">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
-        <span class="brand__mark" aria-hidden="true">MS</span>
-        <span class="brand__name">Mika&nbsp;Schieferdecker</span>
-      </a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <ul class="nav__list" id="navList">
-          <li><a href="arbeiten.html">Arbeiten</a></li>
-          <li><a href="ueber.html">Über mich</a></li>
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="header__actions">
-  <label class="theme-switch" title="Dark Mode umschalten">
-    <input type="checkbox" id="themeToggle">
-    <span class="slider">
-      <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-    </span>
-  </label>
-  
-  <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-</div>
-    </div>
-  </header>
-
   <main class="legal" id="main">
     <div class="container legal__inner">
       <h1>Datenschutz&shy;erklärung</h1>
@@ -109,68 +75,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer__grid">
-      <div class="footer__brand-col">
-        <a class="brand" href="index.html" aria-label="Startseite">
-          <span class="brand__mark" aria-hidden="true">MS</span>
-          <span class="brand__name">Mika&nbsp;Schieferdecker</span>
-        </a>
-        <p class="footer__tag">Webdesign &amp; Frontend aus Bremen. Klar, schnell, charaktervoll.</p>
-      </div>
-      <nav class="footer__col" aria-label="Seiten">
-        <h3>Seiten</h3>
-        <a href="arbeiten.html">Arbeiten</a>
-        <a href="ueber.html">Über mich</a>
-        <a href="leistungen.html">Leistungen</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-      <nav class="footer__col" aria-label="Rechtliches">
-        <h3>Rechtliches</h3>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-      <div class="footer__col">
-        <h3>Kontakt</h3>
-        <a href="mailto:mika@mikaschieferdecker.de">mika@mikaschieferdecker.de</a>
-        <div class="footer__socials">
-          <a href="#" rel="noopener">LinkedIn</a>
-          <a href="#" rel="noopener">Instagram</a>
-          <a href="#" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <p>© <span id="year">2026</span> Mika Schieferdecker — gebaut in Bremen.</p>
-      <a class="footer__top" href="#top">Nach oben ↑</a>
-    </div>
-  </footer>
-
   <script src="js/main.js" defer></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-
-    // Theme beim Laden wiederherstellen
-    if (localStorage.getItem('theme') === 'dark') {
-      root.classList.add('dark-mode');
-      toggle.checked = true;
-    }
-
-    // Toggle-Logik
-    toggle.addEventListener('change', () => {
-      if (toggle.checked) {
-        root.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        root.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  });
-</script>
   
 </body>
 </html>
