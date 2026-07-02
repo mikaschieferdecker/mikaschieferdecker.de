@@ -690,7 +690,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .footer__brand-col { grid-column: 1 / -1; }
    .hero__title {
   font-size: 44px!important;
-  margin-bottom: var(--space-4);
+  margin-bottom: 20px;
+      margin-top: 20px;
 }
    .hero {
       padding-top: 25px;
