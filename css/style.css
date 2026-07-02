@@ -270,7 +270,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .brand__name { font-size: var(--step-0); letter-spacing: -0.01em; }
 
-.nav__list { display: flex; gap: var(--space-3); list-style: none; padding: 0; }
+.nav__list { display: flex; gap: 40px; list-style: none; padding-top: 5px; }
 .nav__list a {
   position: relative;
   font-size: 18px;
@@ -756,6 +756,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    line-height: 45px;
   margin-bottom: 30px;
       margin-top: 40px;
+      text-align: start;
 }
    .hero {
       padding-top: 25px;
