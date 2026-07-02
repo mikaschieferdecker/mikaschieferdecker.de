@@ -115,53 +115,65 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
-/* --- Der Schalter-Container --- */
+/* 1. Die Hülle (Container) */
 .theme-switch {
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 55px; /* Etwas breiter für mehr Platz */
   height: 26px;
   cursor: pointer;
 }
 
-.theme-switch input { display: none; }
+/* Checkbox verstecken */
+.theme-switch input { 
+  display: none; 
+}
 
-/* Der Slider-Container (die Bahn) */
+/* 2. Die Bahn (Slider) als Flexbox für die Icons */
 .slider {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: #e9e9ea;
   border-radius: 34px;
   transition: 0.3s ease;
-  overflow: hidden; /* Verhindert, dass Symbole außerhalb der Bahn stehen */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  overflow: hidden;
 }
 
-/* Icons absolut positionieren */
-.icon {
+/* 3. Der bewegliche Kreis */
+.slider:before {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 2; /* Kreis liegt über den Icons */
+}
+
+/* 4. Icon-Design */
+.icon {
   width: 14px;
   height: 14px;
-  transition: opacity 0.3s ease;
+  z-index: 1; /* Icons liegen hinter dem Kreis */
+  stroke: #333;
   pointer-events: none;
 }
 
-/* Positionen der Icons */
-.sun { left: 8px; opacity: 1; stroke: #333; }
-.moon { right: 8px; opacity: 1; stroke: #333; }
-
-/* --- LOGIK --- */
-/* Wenn Darkmode an: Sonne ist links, Mond rechts verschwindet unter dem Kreis */
-/* Wir blenden das Icon aus, das vom weißen Kreis überfahren wird */
-
-#themeToggle:checked + .slider .sun {
-  opacity: 1; /* Sonne bleibt sichtbar, wenn sie links ist */
+/* 5. Logik für den Dark Mode */
+#themeToggle:checked + .slider { 
+  background-color: #34c759; 
 }
 
-/* Wenn der Kreis nach rechts wandert (Darkmode), verstecke Mond, weil der Kreis drüber ist */
-#themeToggle:checked + .slider .moon {
-  opacity: 0; 
+#themeToggle:checked + .slider:before { 
+  transform: translateX(29px); /* Kreis schiebt sich nach rechts */
 }
 
 .middlecontainer {
