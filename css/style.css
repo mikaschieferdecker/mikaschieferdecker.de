@@ -115,7 +115,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
-/* Grundgerüst */
+/* --- Der Schalter-Container --- */
 .theme-switch {
   position: relative;
   display: inline-block;
@@ -126,14 +126,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 .theme-switch input { display: none; }
 
+/* Die Bahn (Slider) */
 .slider {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: #e9e9ea;
   border-radius: 34px;
   transition: 0.3s ease;
+  overflow: hidden; /* Wichtig: Verhindert, dass Icons über den Rand hinausragen */
 }
 
+/* Der bewegliche weiße Kreis */
 .slider:before {
   position: absolute;
   content: "";
@@ -145,28 +148,39 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   border-radius: 50%;
   transition: 0.3s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  z-index: 2;
+  z-index: 2; /* Kreis liegt über den Icons */
 }
 
-/* --- ICONS ANPASSUNG --- */
+/* --- ICONS POSITIONIEREN --- */
 .icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
+  z-index: 1; /* Icons liegen unter dem weißen Kreis */
   transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 3; /* Sorgt dafür, dass sie über dem Kreis liegen */
 }
 
-.sun { left: 6px; opacity: 1; stroke: #333; }
-.moon { right: 6px; opacity: 0; stroke: #fff; }
+.sun { left: 6px; stroke: #333; opacity: 1; }
+.moon { right: 6px; stroke: #999; opacity: 1; }
 
-/* Logik: Wenn gecheckt, Sonne aus, Mond an */
-#themeToggle:checked + .slider .sun { opacity: 0; }
-#themeToggle:checked + .slider .moon { opacity: 1; }
+/* --- LOGIK --- */
 
+/* 1. Hintergrund grün bei Aktivierung */
+input:checked + .slider { 
+  background-color: #34c759; 
+}
+
+/* 2. Kreis nach rechts schieben */
+input:checked + .slider:before { 
+  transform: translateX(24px); 
+}
+
+/* 3. Icons ausblenden, wenn sie vom weißen Kreis verdeckt werden */
+/* Wenn Schalter aus (Light): Mond ausblenden, Sonne sichtbar */
+/* Wenn Schalter an (Dark): Sonne ausblenden, Mond sichtbar */
+input:checked + .slider .sun { opacity: 0; }
 
 .middlecontainer {
    text-align: center;
