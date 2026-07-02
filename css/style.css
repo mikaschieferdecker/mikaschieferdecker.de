@@ -762,7 +762,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 
 .hero__kicker {
-  padding-top: 25px;
+  margin-top: 25px;
   }
 
    .hero {
