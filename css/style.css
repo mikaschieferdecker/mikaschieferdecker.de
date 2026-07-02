@@ -115,11 +115,19 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
-.middlecontainer {
+@media (min-width: 860px) {
+   .middlecontainer {
    text-align: center;
    max-width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
+   margin-inline: auto;
+   padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+}
+
+.middlecontainer {
+   text-align: center;
+   max-width: 1200px;
+   margin-inline: auto;
    padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
