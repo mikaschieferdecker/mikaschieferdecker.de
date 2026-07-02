@@ -302,7 +302,7 @@ padding-top: 100px;
   max-width: 100%;
 }
 .hero__lead { color: var(--fg-soft); font-size: var(--step-1); max-width: 100%; text-align: center; padding-bottom: 45px;}
-.hero__cta { display: flex; gap: 5px; justify-content: center;}
+.hero__cta { display: flex; gap: 15px; justify-content: center;}
 
 .hero__status {
   margin-top: var(--space-4);
