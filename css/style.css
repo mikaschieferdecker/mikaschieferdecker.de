@@ -115,6 +115,42 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  transition: transform 0.4s ease; /* Die Drehung */
+}
+
+/* Icons grundlegend ausblenden oder einblenden */
+.icon-sun, .icon-moon {
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+/* Wenn Darkmode aktiv ist */
+.dark-mode .icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.dark-mode .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Wenn Lightmode aktiv ist */
+.icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
 .middlecontainer {
    text-align: center;
    max-width: 1000px;
