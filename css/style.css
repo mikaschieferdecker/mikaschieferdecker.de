@@ -150,7 +150,19 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 2;
 }
 
-/* Grundzustand der Icons */
+/* --- LOGIK FÜR DEN WECHSEL --- */
+
+/* 1. Hintergrund wird grün */
+input:checked + .slider { 
+  background-color: #34c759; 
+}
+
+/* 2. Kreis schiebt nach rechts */
+input:checked + .slider:before { 
+  transform: translateX(24px); 
+}
+
+/* --- ICONS --- */
 .icon {
   position: absolute;
   top: 50%;
@@ -158,32 +170,24 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   width: 14px;
   height: 14px;
   transition: opacity 0.3s ease;
+  pointer-events: none; /* Wichtig: Klicks gehen durch das Icon zum Input */
 }
 
-/* Sonne: Sichtbar im Light Mode */
 .sun { 
   left: 6px; 
   opacity: 1; 
-  stroke: #333; /* Dunkel im Light Mode */
+  stroke: #333; 
 }
 
-/* Mond: Unsichtbar im Light Mode */
 .moon { 
   right: 6px; 
   opacity: 0; 
-  stroke: #fff; /* Weiß im Dark Mode */
+  stroke: #fff; 
 }
 
-/* --- LOGIK FÜR DEN WECHSEL --- */
-
-/* Wenn Checkbox angehakt (Dark Mode) */
-input:checked + .slider .sun { 
-  opacity: 0; /* Sonne ausblenden */
-}
-
-input:checked + .slider .moon { 
-  opacity: 1; /* Mond einblenden */
-}
+/* Icons beim Umschalten ausblenden/einblenden */
+input:checked + .slider .sun { opacity: 0; }
+input:checked + .slider .moon { opacity: 1; }
 
 .middlecontainer {
    text-align: center;
