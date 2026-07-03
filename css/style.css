@@ -121,12 +121,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .theme-switch {
   position: relative;
   display: inline-block;
-  width: 55px; /* Etwas breiter für mehr Platz */
+  width: 55px;
   height: 26px;
   cursor: pointer;
 }
 
-/* Checkbox verstecken */
 .theme-switch input { 
   display: none; 
 }
@@ -157,14 +156,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   border-radius: 50%;
   transition: 0.3s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  z-index: 2; /* Kreis liegt über den Icons */
+  z-index: 2;
 }
 
 /* 4. Icon-Design */
 .icon {
   width: 14px;
   height: 14px;
-  z-index: 1; /* Icons liegen hinter dem Kreis */
+  z-index: 1;
   stroke: #333;
   pointer-events: none;
 }
@@ -175,7 +174,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 
 #themeToggle:checked + .slider:before { 
-  transform: translateX(29px); /* Kreis schiebt sich nach rechts */
+  transform: translateX(29px);
 }
 
 .middlecontainer {
@@ -252,7 +251,15 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* Header Button Optimierung */
 .header__actions .btn {
-  margin-left: 0.5rem; /* Abstand zum Switcher */
+  margin-left: 0.5rem;
+}
+
+/* NEU: kompakte Desktop-Größe für den Header-CTA */
+.header__cta {
+  padding: 6px 16px;
+  min-height: 38px;
+  font-size: 0.85rem;
+  margin-left: 8px;
 }
 
 .header__inner {
@@ -299,6 +306,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .nav__list a:hover::after { transform: scaleX(1); }
 .nav__list a[aria-current='page'] { color: var(--fg); }
 .nav__list a[aria-current='page']::after { transform: scaleX(1); }
+
+/* NEU: CTA innerhalb des mobilen Menüs, standardmäßig ausgeblendet */
+.nav__cta { display: none; }
 
 .header__actions { display: flex; align-items: center; gap: 0.35rem; }
 
@@ -470,7 +480,6 @@ padding-top: 100px;
   transition: transform 0.6s var(--ease);
   z-index: 1;
 }
-/* Duotone placeholder covers */
 .project__cover[data-shade='1'] { background: linear-gradient(135deg, #c9a98c, #8a6d54); }
 .project__cover[data-shade='2'] { background: linear-gradient(135deg, #a7b6ad, #5f7a72); }
 .project__cover[data-shade='3'] { background: linear-gradient(135deg, #b9b2c9, #6b6480); }
@@ -791,13 +800,19 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     opacity: 1; 
     transform: none; 
     pointer-events: auto; 
-    z-index: 900; /* Unter dem Header aber über dem Content */
+    z-index: 900;
   }
 
   .nav__list { flex-direction: column; gap: 0; padding: var(--space-1) clamp(1.25rem, 5vw, 3rem) var(--space-3); }
   .nav__list li { border-bottom: 1px solid var(--border); }
   .nav__list a { display: block; padding: 1rem 0; font-size: var(--step-1); }
   .nav__list a::after { display: none; }
+
+  /* NEU: CTA-Button am Ende des aufgeklappten Menüs anzeigen */
+  .nav__cta {
+    display: block;
+    padding: var(--space-2) clamp(1.25rem, 5vw, 3rem) var(--space-3);
+  }
   
   /* Menü-Toggle absolut im Vordergrund */
   .menu-toggle { 
@@ -936,4 +951,3 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wizard__status { margin-top: var(--space-2); font-size: var(--step--1); color: var(--muted); }
 .wizard__status.is-error { color: #c2593f; }
 .wizard__status.is-success { color: var(--accent); }
-
