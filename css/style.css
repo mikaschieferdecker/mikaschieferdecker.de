@@ -781,31 +781,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .middlecontainer { text-align: start; margin-top: 25px; max-width: 1200px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
 .header__inner {
     grid-template-columns: 1fr auto; /* Links füllt den Platz, Rechts nimmt nur was nötig ist */
-    padding-inline: clamp(1.25rem, 5vw, 3rem);
+    padding-inline: clamp(1.25rem, 5vw, 3rem)!important;
   }
 .header__col--left { justify-self: start; }
-   
-   .header__col--center { 
-    display: none !important; 
-  }
 
-   .header__col--right { 
-    justify-self: end; 
-    gap: 1rem; /* Mehr Abstand zwischen Switcher und Menü-Icon */
-  }
-
-  /* Hier wird es durch das Skript sichtbar gemacht */
-  .header__col--center.is-open {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-  /* Button hier ausblenden */
-  .header__actions .btn { display: none !important; }
-}
-
-@media (max-width: 680px) {
-  .nav { 
+   .nav { 
     position: fixed; 
     inset: 68px 0 auto 0; 
     background: var(--bg); 
@@ -841,6 +821,28 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     z-index: 1000; 
     position: relative;
   }
+   
+   .header__col--center { 
+    display: block !important; 
+  }
+
+   .header__col--right { 
+    justify-self: end; 
+    gap: 1rem; /* Mehr Abstand zwischen Switcher und Menü-Icon */
+  }
+
+  /* Hier wird es durch das Skript sichtbar gemacht */
+  .header__col--center.is-open {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  /* Button hier ausblenden */
+  .header__actions .btn { display: none !important; }
+}
+
+@media (max-width: 680px) {
+  
   
   .brand__name { display: none; }
   .project-grid, .project-grid--featured { grid-template-columns: 1fr; }
