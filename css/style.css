@@ -268,6 +268,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   align-items: center;
   gap: var(--space-2);
   height: 68px;
+   padding-inline: 0px!important;
 }
 
 .header__col--left { justify-self: start; }
