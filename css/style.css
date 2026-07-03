@@ -350,7 +350,7 @@ padding-top: 100px;
 
 .hero__title {
   font-size: 60px;
-   margin-top: 30px;
+   margin-top: 15px;
   margin-bottom: var(--space-4);
 }
 .hero__title .line { display: block; text-align: center;}
