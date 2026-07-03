@@ -828,7 +828,10 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 
 @media (max-width: 680px) {
-  
+  .site-header.menu-open {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
   
   .brand__name { display: none; }
   .project-grid, .project-grid--featured { grid-template-columns: 1fr; }
