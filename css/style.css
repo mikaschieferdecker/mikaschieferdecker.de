@@ -803,7 +803,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     z-index: 900;
   }
 
-  .nav__list { flex-direction: column; gap: 0; padding: var(--space-1) clamp(1.25rem, 5vw, 3rem) var(--space-3); }
+  .nav__list { 
+    flex-direction: column;
+    align-items: center; /* Alles zentriert im Overlay */
+    padding: 0;
+  }
   .nav__list li { border-bottom: 1px solid var(--border); }
   .nav__list a { display: block; padding: 1rem 0; font-size: var(--step-1); }
   .nav__list a::after { display: none; }
@@ -823,7 +827,16 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   }
    
    .header__col--center { 
-    display: block !important; 
+    position: fixed;
+    inset: 68px 0 0 0; /* Geht vom Header bis zum unteren Bildschirmrand */
+    background: var(--bg);
+    display: block !important;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
+    z-index: 800; /* Unter dem Header, aber über dem Inhalt */
+    padding-top: 2rem; 
   }
 
    .header__col--right { 
