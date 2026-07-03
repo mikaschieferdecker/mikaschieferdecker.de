@@ -31,13 +31,14 @@
         </span>
       </label>
 
-      <!-- Neuer Call-to-Action Button -->
+      <!-- Call-to-Action Button -->
       <a href="projekt-anfrage.html" class="btn btn--primary" style="padding: 6px 16px; min-height: 38px; font-size: 0.85rem; margin-left: 8px;">Projekt anfragen</a>
 
       <!-- Menu Toggle (Mobile) -->
       <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
+      
     </div>
   </div>
 </header>
@@ -65,7 +66,8 @@
 
     if (menuToggle && nav) {
       menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Verhindert Klick-Konflikte
+        e.stopPropagation(); // Verhindert, dass der Klick verloren geht
+        
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         
         // Status umschalten
