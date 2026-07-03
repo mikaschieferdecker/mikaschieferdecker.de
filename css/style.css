@@ -269,6 +269,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   gap: var(--space-2);
   height: 68px;
    padding-inline: 0px!important;
+   padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
 .header__col--left { justify-self: start; }
@@ -792,9 +793,12 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .header__inner {
     grid-template-columns: auto 1fr; /* Nur Logo und Actions auf Mobile */
-  }
-  .header__col--center { display: none; } /* Nav in Mitte ausblenden */
+   padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+    .header__col--center { display: none; } /* Nav in Mitte ausblenden */
   .header__col--right .header__cta { display: none; }
+  }
+ 
 
   .nav { 
     position: fixed; 
