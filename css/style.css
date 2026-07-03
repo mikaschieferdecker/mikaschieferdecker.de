@@ -344,7 +344,7 @@ padding-top: 100px;
    background: var(--accent);
   letter-spacing: 0.02em;
    text-transform: uppercase;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 3px;
 }
 .hero__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
