@@ -773,84 +773,57 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .contact__grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .footer__brand-col { grid-column: 1 / -1; }
-  .hero__title .line { display: block; text-align: start;}
-  .hero__cta { justify-content: start;}
+  .hero__title .line { display: block; text-align: start; }
+  .hero__cta { justify-content: start; }
   .hero__title { font-size: 40px!important; line-height: 45px; margin-bottom: 30px; margin-top: 20px; }
   .hero { padding-top: 25px; padding-bottom: 25px; }
   .hero__lead { text-align: start; margin-bottom: -5px; margin-top: 5px; }
   .middlecontainer { text-align: start; margin-top: 25px; max-width: 1200px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
-.header__inner {
-    grid-template-columns: 1fr auto; /* Links füllt den Platz, Rechts nimmt nur was nötig ist */
+  .header__actions .btn { display: none !important; }
+}
+
+@media (max-width: 680px) {
+  /* Header Grid Anpassung */
+  .header__inner {
+    grid-template-columns: 1fr auto; 
     padding-inline: clamp(1.25rem, 5vw, 3rem)!important;
   }
-.header__col--left { justify-self: start; }
 
-   .nav { 
-    position: fixed; 
-    inset: 68px 0 auto 0; 
-    background: var(--bg); 
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-8px); 
-    opacity: 0; 
-    pointer-events: none; 
-    transition: opacity 0.28s var(--ease), transform 0.28s var(--ease); 
-  }
-  
-  .nav.is-open { 
-    opacity: 1; 
-    transform: none; 
-    pointer-events: auto; 
-    z-index: 900;
-  }
-
-  .nav__list { 
-    flex-direction: column;
-    align-items: center; /* Alles zentriert im Overlay */
-    padding: 0;
-  }
-  .nav__list li { border-bottom: 1px solid var(--border); }
-  .nav__list a { display: block; padding: 1rem 0; font-size: var(--step-1); }
-  .nav__list a::after { display: none; }
-
-  /* NEU: CTA-Button am Ende des aufgeklappten Menüs anzeigen */
-  .nav__cta {
-    display: block;
-    padding: var(--space-2) clamp(1.25rem, 5vw, 3rem) var(--space-3);
-    margin-top: -15px;
-  }
-  
-  /* Menü-Toggle absolut im Vordergrund */
-  .menu-toggle { 
-    display: block!important; 
-    z-index: 1000; 
-    position: relative;
-  }
-   
-   .header__col--center { 
+  /* Overlay Menü Logik */
+  .header__col--center { 
     position: fixed;
-    inset: 68px 0 0 0; /* Geht vom Header bis zum unteren Bildschirmrand */
+    inset: 68px 0 0 0;
     background: var(--bg);
     display: block !important;
     transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
-    z-index: 800; /* Unter dem Header, aber über dem Inhalt */
-    padding-top: 2rem; 
+    z-index: 800;
+    padding: 2rem;
+    overflow-y: auto;
   }
 
-   .header__col--right { 
-    justify-self: end; 
-    gap: 1rem; /* Mehr Abstand zwischen Switcher und Menü-Icon */
-  }
-
-  /* Hier wird es durch das Skript sichtbar gemacht */
   .header__col--center.is-open {
     opacity: 1;
     transform: none;
     pointer-events: auto;
   }
-  /* Button hier ausblenden */
+
+  /* Navigation innerhalb des Overlays */
+  .nav__list { 
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+  }
+  .nav__list li { border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
+  .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); }
+  .nav__cta { display: block; padding-top: 2rem; text-align: center; }
+  
+  /* Buttons & Toggle */
+  .menu-toggle { display: block!important; z-index: 1000; position: relative; }
+  .header__col--right { justify-self: end; gap: 1rem; }
   .header__actions .btn { display: none !important; }
 }
 
