@@ -1,11 +1,9 @@
 <header class="site-header" id="siteHeader">
   <div class="container header__inner">
-    <!-- Brand -->
     <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
       <span class="brand__mark" aria-hidden="true">MS</span>
     </a>
-    
-    <!-- Main Navigation -->
+
     <nav class="nav" aria-label="Hauptnavigation">
       <ul class="nav__list" id="navList">
         <li><a href="arbeiten.html">Projekte</a></li>
@@ -13,17 +11,16 @@
         <li><a href="leistungen.html">Service</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
+      <div class="nav__cta">
+        <a href="projekt-anfrage.html" class="btn btn--primary btn--block">Projekt anfragen</a>
+      </div>
     </nav>
-    
-    <!-- Actions Container -->
+
     <div class="header__actions">
-      
-      <!-- 1. Menü Toggle (Ganz nach vorne geschoben für bessere Klickbarkeit) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- 2. Theme Switcher -->
       <label class="theme-switch" title="Dark Mode umschalten">
         <input type="checkbox" id="themeToggle">
         <span class="slider">
@@ -36,8 +33,7 @@
         </span>
       </label>
 
-      <!-- 3. Projekt anfragen Button -->
-      <a href="projekt-anfrage.html" class="btn btn--primary" style="padding: 6px 16px; min-height: 38px; font-size: 0.85rem; margin-left: 8px;">Projekt anfragen</a>
+      <a href="projekt-anfrage.html" class="btn btn--primary header__cta">Projekt anfragen</a>
     </div>
   </div>
 </header>
