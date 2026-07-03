@@ -1,40 +1,47 @@
 <header class="site-header" id="siteHeader">
   <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
-      <span class="brand__mark" aria-hidden="true">MS</span>
-    </a>
+    
+    <!-- 1. Bereich: Links (Logo) -->
+    <div class="header__col header__col--left">
+      <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
+        <span class="brand__mark" aria-hidden="true">MS</span>
+      </a>
+    </div>
 
-    <nav class="nav" aria-label="Hauptnavigation">
+    <!-- 2. Bereich: Mitte (Navigation) -->
+    <nav class="nav header__col header__col--center" aria-label="Hauptnavigation">
       <ul class="nav__list" id="navList">
         <li><a href="arbeiten.html">Projekte</a></li>
         <li><a href="ueber.html">Über Mich</a></li>
         <li><a href="leistungen.html">Leistungen</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
+      <!-- Mobiles CTA im Menü -->
       <div class="nav__cta">
         <a href="projekt-anfrage.html" class="btn btn--primary btn--block">Projekt anfragen</a>
       </div>
     </nav>
 
-    <div class="header__actions">
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
+    <!-- 3. Bereich: Rechts (Actions) -->
+    <div class="header__col header__col--right header__actions">
+      <!-- Dark Mode Switcher -->
       <label class="theme-switch" title="Dark Mode umschalten">
         <input type="checkbox" id="themeToggle">
         <span class="slider">
-          <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-          <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
+          <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </span>
       </label>
 
+      <!-- CTA Button -->
       <a href="projekt-anfrage.html" class="btn btn--primary header__cta">Projekt anfragen</a>
+
+      <!-- Menu Toggle -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    
   </div>
 </header>
 
