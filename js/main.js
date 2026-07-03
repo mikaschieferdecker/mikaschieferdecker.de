@@ -11,17 +11,6 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Theme toggle ---------- */
-  var themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme') || 'light';
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-  }
-
   /* ---------- Mobile menu ---------- */
   var menuToggle = document.getElementById('menuToggle');
   var nav = document.querySelector('.nav');
@@ -52,7 +41,6 @@
     var onScroll = function () {
       var y = window.scrollY;
       header.classList.toggle('is-scrolled', y > 8);
-      // Hide when scrolling down past hero, show when scrolling up
       if (y > 400 && y > lastY + 4) {
         header.classList.add('is-hidden');
       } else if (y < lastY - 4) {
