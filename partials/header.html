@@ -15,10 +15,15 @@
       </ul>
     </nav>
     
-    <!-- Actions: Theme Toggle, CTA Button & Menu Toggle -->
+    <!-- Actions Container -->
     <div class="header__actions">
       
-      <!-- Theme Switcher -->
+      <!-- 1. Menü Toggle (Ganz nach vorne geschoben für bessere Klickbarkeit) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- 2. Theme Switcher -->
       <label class="theme-switch" title="Dark Mode umschalten">
         <input type="checkbox" id="themeToggle">
         <span class="slider">
@@ -31,14 +36,8 @@
         </span>
       </label>
 
-      <!-- Call-to-Action Button -->
+      <!-- 3. Projekt anfragen Button -->
       <a href="projekt-anfrage.html" class="btn btn--primary" style="padding: 6px 16px; min-height: 38px; font-size: 0.85rem; margin-left: 8px;">Projekt anfragen</a>
-
-      <!-- Menu Toggle (Mobile) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      
     </div>
   </div>
 </header>
@@ -60,21 +59,19 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // 2. Menü-Toggle Logik (optimiert)
+    // 2. Menü-Toggle Logik
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.querySelector('.nav');
 
     if (menuToggle && nav) {
       menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Verhindert, dass der Klick verloren geht
+        e.stopPropagation(); // Klick isolieren
         
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        
-        // Status umschalten
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         nav.classList.toggle('is-open');
         
-        console.log('Menü-Status geändert auf:', !isExpanded);
+        console.log('Menü-Status:', nav.classList.contains('is-open'));
       });
     }
   });
