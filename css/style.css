@@ -793,7 +793,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
    .header__inner {
     grid-template-columns: auto 1fr; /* Nur Logo und Actions auf Mobile */
-   padding-inline: clamp(1.25rem, 5vw, 3rem);
+   padding-inline: clamp(1.25rem, 5vw, 3rem)!important;
 }
     .header__col--center { display: none; } /* Nav in Mitte ausblenden */
   .header__col--right .header__cta { display: none; }
