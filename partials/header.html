@@ -1,9 +1,11 @@
 <header class="site-header" id="siteHeader">
   <div class="container header__inner">
+    <!-- Brand -->
     <a class="brand" href="index.html" aria-label="Startseite — Mika Schieferdecker">
       <span class="brand__mark" aria-hidden="true">MS</span>
     </a>
     
+    <!-- Main Navigation -->
     <nav class="nav" aria-label="Hauptnavigation">
       <ul class="nav__list" id="navList">
         <li><a href="arbeiten.html">Projekte</a></li>
@@ -13,7 +15,9 @@
       </ul>
     </nav>
     
+    <!-- Actions: Theme Toggle, CTA Button & Menu Toggle -->
     <div class="header__actions">
+      
       <!-- Theme Switcher -->
       <label class="theme-switch" title="Dark Mode umschalten">
         <input type="checkbox" id="themeToggle">
@@ -27,10 +31,10 @@
         </span>
       </label>
 
-      <!-- Neuer Button -->
-      <a href="projekt-anfrage.html" class="btn-cta">Projekt anfragen</a>
+      <!-- Neuer Call-to-Action Button -->
+      <a href="kontakt.html" class="btn btn--primary" style="padding: 6px 16px; min-height: 38px; font-size: 0.85rem; margin-left: 8px;">Projekt anfragen</a>
 
-      <!-- Menu Toggle -->
+      <!-- Menu Toggle (Mobile) -->
       <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -42,20 +46,33 @@
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
+    
     // Theme beim Laden wiederherstellen
     if (localStorage.getItem('theme') === 'dark') {
-      root.classList.add('dark-mode');
+      root.setAttribute('data-theme', 'dark');
       toggle.checked = true;
     }
+    
     // Toggle-Logik
     toggle.addEventListener('change', () => {
       if (toggle.checked) {
-        root.classList.add('dark-mode');
+        root.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       } else {
-        root.classList.remove('dark-mode');
+        root.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
       }
     });
+
+    // Menü Toggle Logik (falls noch nicht vorhanden)
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('.nav');
+    if (menuToggle && nav) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('is-open');
+      });
+    }
   });
 </script>
