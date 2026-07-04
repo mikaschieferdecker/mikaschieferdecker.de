@@ -1071,7 +1071,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   z-index: 1001;
   left: 50%;
   bottom: clamp(1rem, 4vw, 2.5rem);
-  width: min(calc(100% - 2rem), 460px);
+  width: min(calc(100% - 2rem), 800px);
   background: var(--surface);
   color: var(--fg);
   border: 1px solid var(--border);
