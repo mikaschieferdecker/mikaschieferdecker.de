@@ -1360,7 +1360,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wsteps li.is-active span { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .wsteps li.is-done span { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-.wstep__title { font-size: var(--step-2); margin-bottom: 25px; }
+.wstep__title { font-size: var(--step-2); margin-bottom: 25px; text-align: center;}
 .wstep__lead { color: var(--fg-soft); max-width: 100%; margin-bottom: var(--space-3); text-align: center;}
 .wstep__lead strong { color: var(--fg); }
 
@@ -1393,8 +1393,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .speed-tech .metrics { margin-top: var(--space-2); }
 
 /* recap chips */
-.recap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: var(--space-3); }
-.recap__chip { display: inline-flex; align-items: center; padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); font-size: var(--step--1); }
+.recap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: var(--space-3); justify-content: center;}
+.recap__chip { display: inline; align-items: center; padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); font-size: var(--step--1); }
 .recap__chip--accent { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
 .recap__chip strong { font-family: var(--font-display); }
 
