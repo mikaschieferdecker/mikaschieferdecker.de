@@ -715,7 +715,6 @@ padding-top: 100px;
 .page-head__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 .page-head__title {
   font-size: clamp(2.4rem, 1.5rem + 4vw, 5rem);
-  max-width: 16ch;
   margin-bottom: var(--space-3);
 }
 .page-head__lead { font-size: var(--step-1); color: var(--fg-soft); max-width: 52ch; }
