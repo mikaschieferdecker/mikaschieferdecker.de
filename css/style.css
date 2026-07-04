@@ -337,6 +337,7 @@ padding-top: 100px;
 .hero__title {
   font-size: 70px;
    margin-top: 20px;
+   font-weight: 800;
   margin-bottom: var(--space-4);
 }
 .hero__title .line { display: block; text-align: center;}
@@ -348,7 +349,7 @@ padding-top: 100px;
   max-width: 100%;
 }
 .hero__lead { color: var(--fg-soft); font-size: var(--step-1); max-width: 100%; text-align: center; padding-bottom: 45px;}
-.hero__cta { display: flex; flex-wrap: wrap; gap: 15px; justify-content: start;}
+.hero__cta { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;}
 
 .hero__status {
   margin-top: var(--space-4);
