@@ -203,6 +203,24 @@
       settingsBtn.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
     }
 
-    if (!window.cookieConsent) showBanner();
+    // Defer the banner until the first user interaction (scroll / click /
+    // touch / key) so the initial page load stays light and fast. A timeout
+    // fallback makes sure it still appears for users who just read.
+    if (!window.cookieConsent) {
+      var deferEvents = ['scroll', 'pointerdown', 'keydown', 'touchstart', 'wheel'];
+      var fired = false;
+      var fallbackTimer;
+      var triggerBanner = function () {
+        if (fired) return;
+        fired = true;
+        deferEvents.forEach(function (ev) { window.removeEventListener(ev, triggerBanner); });
+        window.clearTimeout(fallbackTimer);
+        showBanner();
+      };
+      deferEvents.forEach(function (ev) {
+        window.addEventListener(ev, triggerBanner, { passive: true });
+      });
+      fallbackTimer = window.setTimeout(triggerBanner, 4000);
+    }
   }
 })();
