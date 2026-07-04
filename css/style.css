@@ -456,8 +456,20 @@ padding-top: 100px;
 .project__cover[data-shade='5'] { background: linear-gradient(135deg, #9fa7b3, #565f6e); }
 .project__cover[data-shade='6'] { background: linear-gradient(135deg, #c6b28f, #7d6a4c); }
 
+/* Real preview image inside a tile (falls back to gradient if missing) */
+.project__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.project__cover.has-img .project__num { display: none; }
+
 .project__link:hover .project__cover::after { opacity: 1; }
 .project__link:hover .project__num { transform: scale(1.08) translateY(-4px); }
+.project__link:hover .project__img { transform: scale(1.05); }
 
 .project__body { display: block; padding-top: var(--space-2); }
 .project__meta {
