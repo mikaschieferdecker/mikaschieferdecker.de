@@ -12,7 +12,7 @@
   // Kostenlosen Google-API-Key hier eintragen (console.cloud.google.com →
   // "PageSpeed Insights API" aktivieren → API-Key erstellen). Ohne Key
   // funktioniert der Test oft trotzdem, ist aber stärker limitiert.
-  var PSI_API_KEY = '';
+  var PSI_API_KEY = 'AIzaSyAUsA622upsm9xLu_RPLIwrL_VWcLNKqyY';
 
   (function speedCheck() {
     var form = document.getElementById('speedForm');
