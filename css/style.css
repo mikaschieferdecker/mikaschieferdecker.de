@@ -1405,3 +1405,35 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .speed-plain { max-width: none; }
   .speed-tech .metrics { text-align: left; }
 }
+
+/* small block label above choice cards */
+.wform__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-0);
+  margin-bottom: var(--space-2);
+}
+
+/* =========================================================================
+   Shop-Check: centered funnel layout
+   ========================================================================= */
+#shopCheck { max-width: 48rem; margin-inline: auto; }
+#shopCheck .wstep__lead { margin-inline: auto; text-align: center; }
+#shopCheck .wizard__head { justify-content: center; text-align: center; }
+#shopCheck .wform { justify-content: center; margin-inline: auto; }
+#shopCheck .wform .field { text-align: left; }
+#shopCheck .wform__label { text-align: center; }
+#shopCheck .recap { justify-content: center; }
+#shopCheck .tool__disclaimer { text-align: center; max-width: 52ch; margin-inline: auto; }
+#shopCheck .wizard__nav { justify-content: center; }
+#shopCheck .wizard__nav .btn--primary { margin-left: 0; }
+#shopCheck .wizard__nav .wback { margin-right: 0; }
+
+/* centered card content for the funnel look */
+#shopCheck .choice-card { align-items: center; text-align: center; }
+#shopCheck .choice-card__icon { margin-inline: auto; }
+
+/* keep the email field + submit centered & readable */
+#shopCheck #leadForm .field,
+#shopCheck #leadSubmit { margin-inline: auto; }
+#shopCheck #leadForm > .wizard__status { text-align: center; }

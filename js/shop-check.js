@@ -12,7 +12,7 @@
   // in der Google Console auf die Domain + PSI-API beschränken.
   var PSI_API_KEY = 'AIzaSyAUsA622upsm9xLu_RPLIwrL_VWcLNKqyY';
 
-  var wrap = document.querySelector('.wizard-tool');
+  var wrap = document.getElementById('shopCheck');
   if (!wrap) return;
 
   var state = { url: '', score: null, grade: '', lcp: null, revenue: 10000, yearly: 0 };
@@ -22,19 +22,14 @@
   function secStr(s) { return s.toFixed(1).replace('.', ',') + ' s'; }
 
   /* ---------- Step navigation ---------- */
-  var steps = wrap.querySelectorAll('.wstep');
-  var progress = wrap.querySelectorAll('#wsteps li');
+  var steps = wrap.querySelectorAll('.wizard__step');
+  var progressBar = document.getElementById('progressBar');
+  var TOTAL = steps.length || 3;
   function goTo(n) {
     steps.forEach(function (s) {
-      var active = s.getAttribute('data-step') === String(n);
-      s.hidden = !active;
-      s.classList.toggle('is-active', active);
+      s.classList.toggle('is-active', s.getAttribute('data-step') === String(n));
     });
-    progress.forEach(function (li) {
-      var i = parseInt(li.getAttribute('data-for'), 10);
-      li.classList.toggle('is-active', i === n);
-      li.classList.toggle('is-done', i < n);
-    });
+    if (progressBar) progressBar.style.width = Math.round((n / TOTAL) * 100) + '%';
     var top = wrap.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top: top, behavior: 'smooth' });
   }
@@ -129,6 +124,8 @@
         result.hidden = false;
         animateScore(score);
         status.textContent = '';
+        var next = document.getElementById('toStep2');
+        if (next) next.disabled = false;
       })
       .catch(function () {
         status.className = 'form-hint is-error';
