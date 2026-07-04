@@ -91,8 +91,7 @@
             Deine gemessene Ladezeit: <strong id="lcpEcho">–</strong>.
             Sag mir noch deinen ungefähren Umsatz — dann rechne ich dir das Potenzial aus.
           </p>
-          <p class="tool__disclaimer">Schätzung auf Basis gängiger E-Commerce-Studien (ca. 7&nbsp;% weniger Conversions je zusätzlicher Sekunde über ~2&nbsp;s). Ersetzt keine echte Messung.</p>
-
+        
           <div class="roi">
             <div class="roi__controls">
               <div class="roi__control">
@@ -117,12 +116,9 @@
         <!-- ===== SCHRITT 3: LÖSUNG / LEAD ===== -->
         <div class="wstep" data-step="3" hidden>
           <h2 class="wstep__title">Dein Ergebnis — und der einfachste nächste Schritt</h2>
-
-          <div class="recap" id="recap"></div>
-
           <p class="wstep__lead">
             Ich schaue mir deinen Shop persönlich an und schicke dir ein
-            kurzes Video mit den wichtigsten Hebeln — kostenlos, in 24&nbsp;Stunden.
+            kurzes Video-Analyse — kostenlos, in 24&nbsp;Stunden.
           </p>
 
           <form class="wform wform--lead" id="leadForm" action="/analyse-handler.php" method="post" novalidate>
@@ -136,7 +132,7 @@
               <input type="email" id="lf-email" name="email" autocomplete="email" placeholder=" " required />
             </div>
             <div class="field">
-              <label for="lf-interesse">Was interessiert dich am meisten?</label>
+              <label for="lf-interesse">Wobei brauchst du Hilfe?</label>
               <select id="lf-interesse" name="interesse" required>
                 <option value="" disabled selected>Bitte auswählen …</option>
                 <option value="Bezahlte Werbeanzeigen">Bezahlte Werbeanzeigen</option>
@@ -144,16 +140,12 @@
                 <option value="Alles Zusammen">Alles Zusammen</option>
               </select>
             </div>
-            <button class="btn btn--primary btn--block" type="submit" id="leadSubmit">Kostenlose Analyse mit Video anfordern</button>
+            <button class="shopcheckbtn btn btn--primary btn--block" type="submit" id="leadSubmit">Kostenlose Analyse mit Video anfordern</button>
             <p class="form-hint" id="leadStatus" role="status" aria-live="polite">
               Deine Daten nutze ich ausschließlich für die Analyse. Mehr in der
               <a href="/datenschutz.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px;">Datenschutzerklärung</a>.
             </p>
           </form>
-
-          <div class="wnav">
-            <button class="btn btn--ghost wback" data-back="2" type="button">← Zurück</button>
-          </div>
         </div>
 
       </div>
