@@ -1,7 +1,7 @@
 /* =========================================================================
    Mika Schieferdecker — Portfolio
    Minimal editorial · plain CSS · light/dark · scroll-reveal motion
-   ========================================================================= */
+   ========================================================================= */x
 
 /* ---------- Design tokens ---------- */
 :root {
@@ -258,7 +258,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* Header Button Optimierung */
 .header__actions .btn {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 /* NEU: kompakte Desktop-Größe für den Header-CTA */
@@ -266,7 +266,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding: 6px 16px;
   min-height: 38px;
   font-size: 18px;
-  margin-left: 8px;
 }
 
 .header__inner {
@@ -352,6 +351,33 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .menu-toggle[aria-expanded='true'] span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
 .menu-toggle[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded='true'] span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+.theme-fab {
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  color: var(--fg-soft);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.theme-fab:hover { background: var(--accent-soft); color: var(--accent); transform: translateY(-2px); }
+.theme-fab svg {
+  width: 20px; height: 20px;
+  position: absolute;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.theme-fab .icon-sun { opacity: 1; transform: scale(1) rotate(0deg); }
+.theme-fab .icon-moon { opacity: 0; transform: scale(0.6) rotate(-30deg); }
+[data-theme='dark'] .theme-fab .icon-sun { opacity: 0; transform: scale(0.6) rotate(30deg); }
+[data-theme='dark'] .theme-fab .icon-moon { opacity: 1; transform: scale(1) rotate(0deg); }
 
 /* ---------- Hero ---------- */
 .hero {
