@@ -348,7 +348,7 @@ padding-top: 100px;
   max-width: 100%;
 }
 .hero__lead { color: var(--fg-soft); font-size: var(--step-1); max-width: 100%; text-align: start; padding-bottom: 45px;}
-.hero__cta { display: flex; gap: 15px; justify-content: start;}
+.hero__cta { display: flex; flex-wrap: wrap; gap: 15px; justify-content: start;}
 
 .hero__status {
   margin-top: var(--space-4);
