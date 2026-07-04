@@ -297,7 +297,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .brand__name { font-size: var(--step-0); letter-spacing: -0.01em; }
 
-.nav__list { display: flex; gap: 40px; list-style: none; padding-top: 5px; }
+.nav__list { display: flex; gap: 40px; list-style: none; }
 .nav__list a {
   position: relative;
   font-size: 18px;
