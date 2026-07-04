@@ -976,3 +976,76 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wizard__status { margin-top: var(--space-2); font-size: var(--step--1); color: var(--muted); }
 .wizard__status.is-error { color: #c2593f; }
 .wizard__status.is-success { color: var(--accent); }
+
+/* =========================================================================
+   Case study (Projekt-Detailseiten)
+   ========================================================================= */
+.case-media { padding-bottom: var(--section-y); }
+.case-media img,
+.case-media__ph {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.case-media__ph {
+  display: grid;
+  place-items: center;
+}
+.case-media__ph span {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  color: var(--cover-fg);
+  mix-blend-mode: soft-light;
+}
+
+.case-body { padding-block: 0 var(--section-y); }
+.case-body__grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.case-facts {
+  display: grid;
+  gap: 0;
+  position: sticky;
+  top: 100px;
+}
+.case-fact {
+  display: grid;
+  gap: 0.15rem;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border);
+}
+.case-fact:last-child { border-bottom: 1px solid var(--border); }
+.case-fact dt { font-size: var(--step--1); color: var(--muted); }
+.case-fact dd { font-family: var(--font-display); font-weight: 500; }
+.case-fact a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; word-break: break-word; }
+
+.case-content h2 { font-size: var(--step-2); margin-bottom: 0.6rem; }
+.case-content h2:not(:first-child) { margin-top: var(--space-4); }
+.case-content p { color: var(--fg-soft); max-width: 66ch; }
+.case-content p + p { margin-top: var(--space-2); }
+.case-content ul { margin: var(--space-1) 0 0; padding-left: 1.2rem; color: var(--fg-soft); max-width: 66ch; }
+.case-content li { margin-bottom: 0.4rem; }
+.case-back {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  color: var(--fg-soft);
+  margin-bottom: var(--space-3);
+  transition: color 0.25s var(--ease);
+}
+.case-back:hover { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .case-body__grid { grid-template-columns: 1fr; gap: var(--space-3); }
+  .case-facts { position: static; }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Chilli — Shopify-Projekt | Mika Schieferdecker</title>
+  <meta name="description" content="Ein Shopify-Shop für hochwirksame Reinigungsmittel aus Osterholz-Scharmbeck — der die Produktstärke zeigt und Vertrauen schafft." />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <!--#include header-->
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container">
+        <a class="case-back reveal" data-reveal href="arbeiten.html">← Alle Projekte</a>
+        <p class="page-head__kicker reveal" data-reveal>Store Setup · Shopify</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Pink Chilli</h1>
+        <p class="page-head__lead reveal" data-reveal>Ein Shopify-Shop für hochwirksame Reinigungsmittel aus Osterholz-Scharmbeck — der die Produktstärke zeigt und Vertrauen schafft.</p>
+      </div>
+    </section>
+
+    <section class="case-media reveal" data-reveal aria-label="Vorschau">
+      <div class="container">
+        <img src="images/pinkchilli.webp" alt="Vorschau des Pink Chilli Shopify-Shops" width="1200" height="675" loading="eager" />
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <dl class="case-facts reveal" data-reveal>
+          <div class="case-fact"><dt>Kunde</dt><dd>Pink Chilli</dd></div>
+          <div class="case-fact"><dt>Branche</dt><dd>Reinigungsmittel &amp; Haushalt</dd></div>
+          <div class="case-fact"><dt>Standort</dt><dd>Osterholz-Scharmbeck</dd></div>
+          <div class="case-fact"><dt>Leistung</dt><dd>Shopify Store Setup, Theme</dd></div>
+          <div class="case-fact"><dt>Jahr</dt><dd>2024</dd></div>
+          <div class="case-fact"><dt>Website</dt><dd><a href="https://pinkchilli.de/" target="_blank" rel="noopener">pinkchilli.de ↗</a></dd></div>
+        </dl>
+        <div class="case-content reveal" data-reveal>
+          <h2>Ausgangslage</h2>
+          <p>Pink Chilli stellt hochwirksame Reinigungskonzentrate für Haushalt, Bad und Außenbereich her — vom Grünbelagentferner bis zur „Schimmelbestie". Gesucht war ein Online-Shop, der die Wirkkraft der Produkte klar kommuniziert, Vertrauen aufbaut und sich auf dem Smartphone genauso gut verkauft wie am Desktop.</p>
+
+          <h2>Umsetzung</h2>
+          <ul>
+            <li>Kompletter Aufbau des Shopify-Stores inkl. Produktkatalog, Kategorien und Varianten</li>
+            <li>Klare Nutzerführung von der Startseite über die Produktseiten bis zum Checkout</li>
+            <li>Einbindung von Trusted-Shops-Bewertungen als sichtbarer sozialer Beweis</li>
+            <li>Mobile-first umgesetzt und auf schnelle Ladezeiten optimiert</li>
+          </ul>
+
+          <h2>Ergebnis</h2>
+          <p>Ein aufgeräumter, verkaufsstarker Shop, der die Produktwelt von Pink Chilli in Szene setzt — mit über 6.000 zufriedenen Kund:innen und kostenlosem Versand als Vertrauensanker. <span class="placeholder">[Platzhalter: konkrete Kennzahlen ergänzen, z.&nbsp;B. Conversion-Rate, Umsatz, Ladezeit.]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band__inner">
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Ein ähnliches Projekt im Kopf?</h2>
+          <p class="cta-band__text reveal" data-reveal>Erzähl mir davon — unverbindlich und in Ruhe.</p>
+          <div class="cta-band__actions reveal" data-reveal>
+            <a class="btn btn--primary" href="projekt-anfrage.html">Projekt anfragen</a>
+            <a class="btn btn--ghost" href="arbeiten.html">Weitere Projekte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--#include footer-->
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

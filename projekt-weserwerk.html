@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weserwerk — Shopify-Projekt | Mika Schieferdecker</title>
+  <meta name="description" content="Checkout- und Performance-Optimierung für einen Möbel-Shop." />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <!--#include header-->
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container">
+        <a class="case-back reveal" data-reveal href="arbeiten.html">← Alle Projekte</a>
+        <p class="page-head__kicker reveal" data-reveal>Conversion</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Weserwerk</h1>
+        <p class="page-head__lead reveal" data-reveal>Checkout- und Performance-Optimierung für einen Möbel-Shop.</p>
+      </div>
+    </section>
+
+    <section class="case-media reveal" data-reveal aria-label="Vorschau">
+      <div class="container">
+        <div class="case-media__ph" style="background:linear-gradient(135deg, #9fa7b3, #565f6e)"><span>05</span></div>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <dl class="case-facts reveal" data-reveal>
+          <div class="case-fact"><dt>Kunde</dt><dd>Weserwerk</dd></div>
+          <div class="case-fact"><dt>Branche</dt><dd>Möbel &amp; Interior</dd></div>
+          <div class="case-fact"><dt>Standort</dt><dd><span class="placeholder">[Platzhalter]</span></dd></div>
+          <div class="case-fact"><dt>Leistung</dt><dd>Conversion &amp; Performance</dd></div>
+          <div class="case-fact"><dt>Jahr</dt><dd>2024</dd></div>
+        </dl>
+        <div class="case-content reveal" data-reveal>
+          <h2>Ausgangslage</h2>
+          <p><span class="placeholder">[Platzhalter]</span> Beschreibe hier kurz die Ausgangslage und das Ziel des Kunden — welches Problem sollte der Shop lösen?</p>
+
+          <h2>Umsetzung</h2>
+          <ul>
+            <li><span class="placeholder">[Platzhalter]</span> Wichtigster Umsetzungsschritt</li>
+            <li><span class="placeholder">[Platzhalter]</span> Weiterer Schritt</li>
+            <li><span class="placeholder">[Platzhalter]</span> Weiterer Schritt</li>
+          </ul>
+
+          <h2>Ergebnis</h2>
+          <p><span class="placeholder">[Platzhalter]</span> Ergebnis und Wirkung — idealerweise mit konkreten Zahlen (Conversion, Umsatz, Ladezeit).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band__inner">
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Ein ähnliches Projekt im Kopf?</h2>
+          <p class="cta-band__text reveal" data-reveal>Erzähl mir davon — unverbindlich und in Ruhe.</p>
+          <div class="cta-band__actions reveal" data-reveal>
+            <a class="btn btn--primary" href="projekt-anfrage.html">Projekt anfragen</a>
+            <a class="btn btn--ghost" href="arbeiten.html">Weitere Projekte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--#include footer-->
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
