@@ -170,8 +170,9 @@
         banner.classList.add('is-visible');
         scrim.classList.add('is-visible');
       });
-      var accept = banner.querySelector('[data-consent="all"]');
-      if (accept) accept.focus();
+      // Move focus into the dialog itself (not a button) so no button shows
+      // a focus ring on open; keyboard users can still Tab to the actions.
+      banner.focus();
       document.addEventListener('keydown', onKey);
     };
 

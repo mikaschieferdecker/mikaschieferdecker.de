@@ -1086,6 +1086,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+/* The dialog receives focus on open (a11y) but must not show a focus ring */
+.cookie-banner:focus { outline: none; }
 .cookie-banner__title {
   font-family: var(--font-display);
   font-size: var(--step-1);
