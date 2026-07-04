@@ -154,7 +154,7 @@
     window.cookieConsent = readConsent();
 
     var onKey = function (e) {
-      if (e.key === 'Escape') { setConsent('necessary'); return; }
+      // Banner is intentionally not dismissible via Escape — a choice is required.
       if (e.key !== 'Tab') return;
       var f = banner.querySelectorAll('a[href], button');
       if (!f.length) return;
@@ -196,7 +196,8 @@
       var btn = e.target.closest('[data-consent]');
       if (btn) setConsent(btn.getAttribute('data-consent'));
     });
-    scrim.addEventListener('click', function () { setConsent('necessary'); });
+    // The scrim intentionally has no click handler: clicking outside must NOT
+    // dismiss the banner — the user has to pick one of the two buttons.
     if (settingsBtn) {
       settingsBtn.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
     }
