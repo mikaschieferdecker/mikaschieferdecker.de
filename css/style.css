@@ -175,7 +175,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   letter-spacing: -0.01em;
   transition: transform 0.25s var(--ease), background 0.25s var(--ease),
     color 0.25s var(--ease), border-color 0.25s var(--ease);
-  will-change: transform;
 }
 .btn:active { transform: scale(0.97); }
 .btn--primary { background: var(--fg); color: var(--bg); }
@@ -189,11 +188,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: saturate(140%) blur(12px);
-  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  /* Opaque background instead of a live backdrop-filter blur: a sticky
+     blurred header has to re-blur everything behind it on every scroll
+     frame, which caused desktop scroll jank. */
+  background: var(--bg);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.4s var(--ease);
+  transition: border-color 0.3s var(--ease), transform 0.4s var(--ease);
 }
 .site-header.is-scrolled { border-bottom-color: var(--border); }
 .site-header.is-hidden { transform: translateY(-100%); }
