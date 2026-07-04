@@ -889,6 +889,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 /* ---------- Multi-Step Formular (Wizard) ---------- */
 .wizard { max-width: 100%; }
 
+[hidden] {
+  display: none !important;
+}
+
+
 .wizard__honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
 .wizard__progress {
