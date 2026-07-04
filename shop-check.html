@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kostenloser Shop-Check — Mika Schieferdecker</title>
+  <meta name="description" content="Teste deinen Shopify-Shop live: echter Speed-Check, Umsatz-Rechner für Ladezeit und ein schneller Shop-Selbsttest — kostenlos und sofort." />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <!--#include header-->
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-head__kicker reveal" data-reveal><span class="dot" aria-hidden="true"></span>Kostenlos &amp; sofort</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Kostenloser Shop-Check</h1>
+        <p class="page-head__lead reveal" data-reveal>
+          Drei Tools, ein Ziel: In zwei Minuten weißt du, wo dein Shopify-Shop
+          steht — und was mehr Umsatz bringt.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 1. LIVE SPEED-CHECK ===== -->
+    <section class="tool" id="speed" aria-labelledby="speed-title" style="border-top:1px solid var(--border)">
+      <div class="container">
+        <div class="tool__head reveal" data-reveal>
+          <span class="tool__num">01</span>
+          <div>
+            <h2 class="tool__title" id="speed-title">Wie schnell ist dein Shop?</h2>
+            <p class="tool__lead">Echter Performance-Score in Echtzeit — gemessen mit Google&nbsp;PageSpeed (mobil).</p>
+          </div>
+        </div>
+
+        <form class="speedcheck__form reveal" data-reveal id="speedForm" novalidate>
+          <div class="field">
+            <label for="speedUrl">Deine Shop-URL</label>
+            <input type="url" id="speedUrl" name="url" inputmode="url" placeholder="https://deinshop.de" required />
+          </div>
+          <button class="btn btn--primary" type="submit" id="speedSubmit">Jetzt testen</button>
+        </form>
+        <p class="form-hint" id="speedStatus" role="status" aria-live="polite"></p>
+
+        <div class="speedcheck__result reveal" id="speedResult" hidden>
+          <div class="gauge-wrap">
+            <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge__track" cx="60" cy="60" r="52" />
+              <circle class="gauge__ring" id="gaugeRing" cx="60" cy="60" r="52" />
+            </svg>
+            <div class="gauge__label"><span id="speedScoreNum">–</span><small>/ 100</small></div>
+          </div>
+          <div class="speedcheck__detail">
+            <p class="speedcheck__verdict" id="speedVerdict"></p>
+            <ul class="metrics" id="speedMetrics"></ul>
+            <a class="btn btn--primary" href="/shop-analyse.html">Vollständige Analyse mit Video anfordern →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. ROI / LADEZEIT-RECHNER ===== -->
+    <section class="tool" id="roi" aria-labelledby="roi-title" style="border-top:1px solid var(--border)">
+      <div class="container">
+        <div class="tool__head reveal" data-reveal>
+          <span class="tool__num">02</span>
+          <div>
+            <h2 class="tool__title" id="roi-title">Was kostet dich langsame Ladezeit?</h2>
+            <p class="tool__lead">Jede Sekunde Ladezeit kostet Conversions. Sieh, wie viel Umsatz dir entgeht.</p>
+          </div>
+        </div>
+
+        <div class="roi reveal" data-reveal>
+          <div class="roi__controls">
+            <div class="roi__control">
+              <label for="roiRevenue">Monatlicher Shop-Umsatz: <output id="roiRevenueOut">10.000 €</output></label>
+              <input type="range" id="roiRevenue" min="1000" max="100000" step="1000" value="10000" />
+            </div>
+            <div class="roi__control">
+              <label for="roiLoad">Aktuelle Ladezeit: <output id="roiLoadOut">4,0 s</output></label>
+              <input type="range" id="roiLoad" min="1" max="8" step="0.1" value="4" />
+            </div>
+          </div>
+          <div class="roi__result">
+            <span class="roi__label">Ungenutztes Potenzial pro Jahr</span>
+            <span class="roi__amount" id="roiAmount">0 €</span>
+            <span class="roi__note" id="roiNote"></span>
+          </div>
+        </div>
+        <p class="tool__disclaimer">Schätzung auf Basis gängiger E-Commerce-Studien (ca. 7&nbsp;% weniger Conversions je zusätzlicher Sekunde, Ziel&nbsp;2&nbsp;s). Ersetzt keine echte Messung.</p>
+      </div>
+    </section>
+
+    <!-- ===== 3. SHOP-SELBSTTEST (QUIZ) ===== -->
+    <section class="tool" id="quiz" aria-labelledby="quiz-title" style="border-top:1px solid var(--border)">
+      <div class="container">
+        <div class="tool__head reveal" data-reveal>
+          <span class="tool__num">03</span>
+          <div>
+            <h2 class="tool__title" id="quiz-title">Shop-Selbsttest</h2>
+            <p class="tool__lead">7 kurze Fragen — am Ende bekommst du einen Score und deine wichtigsten Baustellen.</p>
+          </div>
+        </div>
+
+        <form class="quiz reveal" data-reveal id="quizForm">
+          <ol class="quiz__list" id="quizList"></ol>
+          <button class="btn btn--primary" type="submit" id="quizSubmit">Auswerten</button>
+        </form>
+
+        <div class="quiz__result" id="quizResult" hidden>
+          <div class="quiz__score">
+            <span class="quiz__scorenum" id="quizScoreNum">0</span><small>/ 100</small>
+          </div>
+          <div class="quiz__summary">
+            <p class="quiz__verdict" id="quizVerdict"></p>
+            <div id="quizTips"></div>
+            <a class="btn btn--primary" href="/shop-analyse.html">Deine kostenlose Analyse holen →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band__inner">
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Bereit, das Potenzial zu heben?</h2>
+          <p class="cta-band__text reveal" data-reveal>Ich schaue mir deinen Shop persönlich an — kostenlos und unverbindlich.</p>
+          <div class="cta-band__actions reveal" data-reveal>
+            <a class="btn btn--primary" href="/shop-analyse.html">Kostenlose Shop-Analyse</a>
+            <a class="btn btn--ghost" href="/projekt-anfrage.html">Projekt anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--#include footer-->
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/shop-check.js" defer></script>
+</body>
+</html>

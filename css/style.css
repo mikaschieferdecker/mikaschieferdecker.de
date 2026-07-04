@@ -1257,3 +1257,91 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   line-height: 1.7;
 }
 .faq-item__answer a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================================
+   Shop-Check tools (Speed-Check, ROI, Quiz)
+   ========================================================================= */
+.tool { padding-block: var(--section-y); }
+.tool__head { display: flex; align-items: flex-start; gap: var(--space-3); margin-bottom: var(--space-4); }
+.tool__num { font-family: var(--font-display); font-size: var(--step-2); font-weight: 600; color: var(--accent); line-height: 1; }
+.tool__title { font-size: var(--step-2); }
+.tool__lead { color: var(--fg-soft); margin-top: 0.4rem; max-width: 52ch; }
+.tool__disclaimer { margin-top: var(--space-2); font-size: var(--step--1); color: var(--muted); max-width: 60ch; }
+
+/* --- Speed-Check --- */
+.speedcheck__form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-2); max-width: 40rem; }
+.speedcheck__form .field { flex: 1 1 16rem; }
+.speedcheck__result {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.gauge-wrap { position: relative; width: 150px; height: 150px; }
+.gauge { width: 150px; height: 150px; transform: rotate(-90deg); }
+.gauge__track { fill: none; stroke: var(--border); stroke-width: 9; }
+.gauge__ring { fill: none; stroke: var(--accent); stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 1s var(--ease), stroke 0.4s var(--ease); }
+.gauge__label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-display); }
+.gauge__label span { font-size: 2.4rem; font-weight: 600; line-height: 1; }
+.gauge__label small { color: var(--muted); font-size: var(--step--1); }
+.speedcheck__verdict { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.metrics { list-style: none; padding: 0; margin: 0 0 var(--space-3); display: grid; gap: 0.35rem; }
+.metric { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: var(--step--1); }
+.metric__label { color: var(--fg-soft); }
+.metric__value { font-family: var(--font-display); font-weight: 500; }
+
+/* --- ROI calculator --- */
+.roi { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.roi__controls { display: grid; gap: var(--space-3); }
+.roi__control label { display: block; font-family: var(--font-display); font-size: var(--step--1); color: var(--fg-soft); margin-bottom: 0.6rem; }
+.roi__control output { color: var(--fg); font-weight: 600; }
+.roi input[type="range"] { width: 100%; accent-color: var(--accent); height: 6px; cursor: pointer; }
+.roi__result {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  padding: var(--space-3); border-radius: var(--radius);
+  background: var(--accent-soft); border: 1px solid var(--border);
+  text-align: center;
+}
+.roi__label { font-size: var(--step--1); color: var(--fg-soft); }
+.roi__amount { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 1.4rem + 3vw, 3.2rem); color: var(--accent); letter-spacing: -0.02em; }
+.roi__note { font-size: var(--step--1); color: var(--fg-soft); }
+
+/* --- Quiz --- */
+.quiz__list { list-style: none; padding: 0; margin: 0 0 var(--space-3); display: grid; gap: 0; }
+.quiz__q { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-2) 0; border-bottom: 1px solid var(--border); }
+.quiz__qtext { flex: 1 1 20rem; }
+.quiz__opts { display: inline-flex; gap: 0.5rem; }
+.quiz__opt { position: relative; }
+.quiz__opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.quiz__opt span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 64px; min-height: 40px; padding: 0 1rem;
+  border: 1px solid var(--border-strong); border-radius: 999px;
+  font-family: var(--font-display); font-size: var(--step--1);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.quiz__opt input:checked + span { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.quiz__opt input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.quiz__result {
+  display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center; margin-top: var(--space-4); padding: var(--space-3);
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+}
+.quiz__score { display: flex; flex-direction: column; align-items: center; font-family: var(--font-display); }
+.quiz__scorenum { font-size: 3rem; font-weight: 700; line-height: 1; }
+.quiz__score small { color: var(--muted); font-size: var(--step--1); }
+.quiz__verdict { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.quiz__tipshead { font-family: var(--font-display); font-weight: 500; margin-bottom: 0.4rem; }
+.quiz__tips { margin: 0 0 var(--space-3); padding-left: 1.2rem; color: var(--fg-soft); }
+.quiz__tips li { margin-bottom: 0.3rem; }
+
+@media (max-width: 720px) {
+  .speedcheck__result, .quiz__result { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .roi { grid-template-columns: 1fr; }
+  .metrics { text-align: left; width: 100%; }
+}
