@@ -797,29 +797,33 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     padding-inline: clamp(1.25rem, 5vw, 3rem)!important;
   }
 
-  /* Overlay Menü Logik */
+  /* Overlay Menü Logik — jetzt als rechter Drawer */
   .header__col--center { 
     position: fixed;
-    inset: 68px 0 0 0;
+    top: 68px;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(82vw, 320px);
     background: var(--bg);
+    border-left: 1px solid var(--border);
+    box-shadow: var(--shadow);
     display: block !important;
-    transform: translateY(-8px);
-    opacity: 0;
+    transform: translateX(100%);
+    opacity: 1;
     pointer-events: none;
-    transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
-    z-index: 800;
-    padding: 2rem;
+    transition: transform 0.35s var(--ease);
+    z-index: 900;
+    padding: 2rem 0 2rem;
     overflow-y: auto;
-    width: 100%;
   }
 
   .header__col--center.is-open {
-    opacity: 1;
-    transform: none;
+    transform: translateX(0);
     pointer-events: auto;
   }
 
-  /* Navigation innerhalb des Overlays */
+  /* Navigation innerhalb des Drawers */
   .nav__list { 
     flex-direction: column;
     align-items: center;
@@ -828,13 +832,30 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   }
   .nav__list li { border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
   .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); }
-  .nav__cta { display: block; padding-top: 2rem; text-align: center; }
-  
+  .nav__cta { display: block; padding: 2rem clamp(1.25rem, 5vw, 2rem) 0; text-align: center; }
+
+  /* Abgedunkelter Hintergrund hinter dem Drawer */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+    z-index: 850;
+  }
+  .nav-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   /* Buttons & Toggle */
   .menu-toggle { display: block!important; z-index: 1000; position: relative; }
   .header__col--right { justify-self: end; gap: 1rem; }
   .header__actions .btn { display: none !important; }
 }
+
 
 @media (max-width: 680px) {
   .site-header.menu-open {
