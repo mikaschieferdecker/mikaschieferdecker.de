@@ -854,7 +854,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
   /* Buttons & Toggle */
   .menu-toggle { display: block!important; z-index: 1000; position: relative; }
-  .header__col--right { justify-self: end; gap: 10px; }
+  .header__col--right { justify-self: end; gap: 5px; }
   .header__actions .btn { display: none !important; }
 }
 
