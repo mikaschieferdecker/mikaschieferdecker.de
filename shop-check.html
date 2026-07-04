@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kostenloser Shop-Check — Mika Schieferdecker</title>
-  <meta name="description" content="Teste deinen Shopify-Shop live: echter Speed-Check, Umsatz-Rechner für Ladezeit und ein schneller Shop-Selbsttest — kostenlos und sofort." />
+  <meta name="description" content="Teste in 3 Schritten, wie schnell dein Shopify-Shop ist, was dich Ladezeit an Umsatz kostet — und wie du es fixst. Kostenlos und sofort." />
   <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,121 +31,141 @@
   <main id="main">
     <section class="page-head" aria-labelledby="page-title">
       <div class="container">
-        <p class="page-head__kicker reveal" data-reveal><span class="dot" aria-hidden="true"></span>Kostenlos &amp; sofort</p>
-        <h1 class="page-head__title reveal" data-reveal id="page-title">Kostenloser Shop-Check</h1>
+        <p class="page-head__kicker reveal" data-reveal><span class="dot" aria-hidden="true"></span>Kostenlos &amp; in 2 Minuten</p>
+        <h1 class="page-head__title reveal" data-reveal id="page-title">Wie fit ist dein Shop?</h1>
         <p class="page-head__lead reveal" data-reveal>
-          Drei Tools, ein Ziel: In zwei Minuten weißt du, wo dein Shopify-Shop
-          steht — und was mehr Umsatz bringt.
+          In drei Schritten siehst du, wie schnell dein Shop ist, was dich das
+          an Umsatz kostet — und wie du es löst.
         </p>
       </div>
     </section>
 
-    <!-- ===== 1. LIVE SPEED-CHECK ===== -->
-    <section class="tool" id="speed" aria-labelledby="speed-title" style="border-top:1px solid var(--border)">
+    <section class="wizard-tool" aria-label="Shop-Check" style="border-top:1px solid var(--border)">
       <div class="container">
-        <div class="tool__head reveal" data-reveal>
-          <span class="tool__num">01</span>
-          <div>
-            <h2 class="tool__title" id="speed-title">Wie schnell ist dein Shop?</h2>
-            <p class="tool__lead">Echter Performance-Score in Echtzeit — gemessen mit Google&nbsp;PageSpeed (mobil).</p>
-          </div>
-        </div>
 
-        <form class="speedcheck__form reveal" data-reveal id="speedForm" novalidate>
-          <div class="field">
-            <label for="speedUrl">Deine Shop-URL</label>
-            <input type="url" id="speedUrl" name="url" inputmode="url" placeholder="https://deinshop.de" required />
-          </div>
-          <button class="btn btn--primary" type="submit" id="speedSubmit">Jetzt testen</button>
-        </form>
-        <p class="form-hint" id="speedStatus" role="status" aria-live="polite"></p>
+        <!-- Fortschritt -->
+        <ol class="wsteps" id="wsteps" aria-hidden="true">
+          <li class="is-active" data-for="1"><span>1</span>Speed-Test</li>
+          <li data-for="2"><span>2</span>Dein Potenzial</li>
+          <li data-for="3"><span>3</span>Lösung</li>
+        </ol>
 
-        <div class="speedcheck__result reveal" id="speedResult" hidden>
-          <div class="gauge-wrap">
-            <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
-              <circle class="gauge__track" cx="60" cy="60" r="52" />
-              <circle class="gauge__ring" id="gaugeRing" cx="60" cy="60" r="52" />
-            </svg>
-            <div class="gauge__label"><span id="speedScoreNum">–</span><small>/ 100</small></div>
-          </div>
-          <div class="speedcheck__detail">
-            <p class="speedcheck__verdict" id="speedVerdict"></p>
-            <ul class="metrics" id="speedMetrics"></ul>
-            <a class="btn btn--primary" href="/shop-analyse.html">Vollständige Analyse mit Video anfordern →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- ===== SCHRITT 1: SPEED ===== -->
+        <div class="wstep is-active" data-step="1">
+          <h2 class="wstep__title">Wie schnell ist dein Shop?</h2>
+          <p class="wstep__lead">Gib deine Shop-URL ein — der Test dauert nur wenige Sekunden.</p>
 
-    <!-- ===== 2. ROI / LADEZEIT-RECHNER ===== -->
-    <section class="tool" id="roi" aria-labelledby="roi-title" style="border-top:1px solid var(--border)">
-      <div class="container">
-        <div class="tool__head reveal" data-reveal>
-          <span class="tool__num">02</span>
-          <div>
-            <h2 class="tool__title" id="roi-title">Was kostet dich langsame Ladezeit?</h2>
-            <p class="tool__lead">Jede Sekunde Ladezeit kostet Conversions. Sieh, wie viel Umsatz dir entgeht.</p>
-          </div>
-        </div>
-
-        <div class="roi reveal" data-reveal>
-          <div class="roi__controls">
-            <div class="roi__control">
-              <label for="roiRevenue">Monatlicher Shop-Umsatz: <output id="roiRevenueOut">10.000 €</output></label>
-              <input type="range" id="roiRevenue" min="1000" max="100000" step="1000" value="10000" />
+          <form class="wform" id="speedForm" novalidate>
+            <div class="field">
+              <label for="speedUrl">Deine Shop-URL</label>
+              <input type="url" id="speedUrl" name="url" inputmode="url" placeholder="https://deinshop.de" required />
             </div>
-            <div class="roi__control">
-              <label for="roiLoad">Aktuelle Ladezeit: <output id="roiLoadOut">4,0 s</output></label>
-              <input type="range" id="roiLoad" min="1" max="8" step="0.1" value="4" />
+            <button class="btn btn--primary" type="submit" id="speedSubmit">Jetzt kostenlos testen</button>
+          </form>
+          <p class="form-hint" id="speedStatus" role="status" aria-live="polite"></p>
+
+          <div class="speed-result" id="speedResult" hidden>
+            <div class="gauge-wrap">
+              <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="gauge__track" cx="60" cy="60" r="52" />
+                <circle class="gauge__ring" id="gaugeRing" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="gauge__label"><span id="speedScoreNum">–</span><small>/ 100</small></div>
+            </div>
+            <div class="speed-detail">
+              <p class="speed-grade" id="speedGrade"></p>
+              <p class="speed-plain" id="speedPlain"></p>
+              <details class="speed-tech">
+                <summary>Technische Details</summary>
+                <ul class="metrics" id="speedMetrics"></ul>
+              </details>
+              <button class="btn btn--primary wnext" id="toStep2" type="button">Weiter: Was kostet dich das? →</button>
             </div>
           </div>
-          <div class="roi__result">
-            <span class="roi__label">Ungenutztes Potenzial pro Jahr</span>
-            <span class="roi__amount" id="roiAmount">0 €</span>
-            <span class="roi__note" id="roiNote"></span>
-          </div>
-        </div>
-        <p class="tool__disclaimer">Schätzung auf Basis gängiger E-Commerce-Studien (ca. 7&nbsp;% weniger Conversions je zusätzlicher Sekunde, Ziel&nbsp;2&nbsp;s). Ersetzt keine echte Messung.</p>
-      </div>
-    </section>
-
-    <!-- ===== 3. SHOP-SELBSTTEST (QUIZ) ===== -->
-    <section class="tool" id="quiz" aria-labelledby="quiz-title" style="border-top:1px solid var(--border)">
-      <div class="container">
-        <div class="tool__head reveal" data-reveal>
-          <span class="tool__num">03</span>
-          <div>
-            <h2 class="tool__title" id="quiz-title">Shop-Selbsttest</h2>
-            <p class="tool__lead">7 kurze Fragen — am Ende bekommst du einen Score und deine wichtigsten Baustellen.</p>
-          </div>
         </div>
 
-        <form class="quiz reveal" data-reveal id="quizForm">
-          <ol class="quiz__list" id="quizList"></ol>
-          <button class="btn btn--primary" type="submit" id="quizSubmit">Auswerten</button>
-        </form>
+        <!-- ===== SCHRITT 2: POTENZIAL ===== -->
+        <div class="wstep" data-step="2" hidden>
+          <h2 class="wstep__title">Was kostet dich langsame Ladezeit?</h2>
+          <p class="wstep__lead">
+            Deine gemessene Ladezeit: <strong id="lcpEcho">–</strong>.
+            Sag mir noch deinen ungefähren Umsatz — dann rechne ich dir das Potenzial aus.
+          </p>
 
-        <div class="quiz__result" id="quizResult" hidden>
-          <div class="quiz__score">
-            <span class="quiz__scorenum" id="quizScoreNum">0</span><small>/ 100</small>
+          <div class="roi">
+            <div class="roi__controls">
+              <div class="roi__control">
+                <label for="roiRevenue">Monatlicher Shop-Umsatz: <output id="roiRevenueOut">10.000 €</output></label>
+                <input type="range" id="roiRevenue" min="1000" max="100000" step="1000" value="10000" />
+              </div>
+            </div>
+            <div class="roi__result">
+              <span class="roi__label">Ungenutztes Potenzial pro Jahr</span>
+              <span class="roi__amount" id="roiAmount">0 €</span>
+              <span class="roi__note" id="roiNote"></span>
+            </div>
           </div>
-          <div class="quiz__summary">
-            <p class="quiz__verdict" id="quizVerdict"></p>
-            <div id="quizTips"></div>
-            <a class="btn btn--primary" href="/shop-analyse.html">Deine kostenlose Analyse holen →</a>
+          <p class="tool__disclaimer">Schätzung auf Basis gängiger E-Commerce-Studien (ca. 7&nbsp;% weniger Conversions je zusätzlicher Sekunde über ~2&nbsp;s). Ersetzt keine echte Messung.</p>
+
+          <div class="wnav">
+            <button class="btn btn--ghost wback" data-back="1" type="button">← Zurück</button>
+            <button class="btn btn--primary wnext" id="toStep3" type="button">Weiter →</button>
           </div>
         </div>
+
+        <!-- ===== SCHRITT 3: LÖSUNG / LEAD ===== -->
+        <div class="wstep" data-step="3" hidden>
+          <h2 class="wstep__title">Dein Ergebnis — und der einfachste nächste Schritt</h2>
+
+          <div class="recap" id="recap"></div>
+
+          <p class="wstep__lead">
+            Ich schaue mir deinen Shop persönlich an und schicke dir ein
+            kurzes Video mit den wichtigsten Hebeln — kostenlos, in 24&nbsp;Stunden.
+          </p>
+
+          <form class="wform wform--lead" id="leadForm" action="/analyse-handler.php" method="post" novalidate>
+            <div class="field" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+              <label for="lf-website">Website (bitte leer lassen)</label>
+              <input type="text" id="lf-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <input type="hidden" name="shop_url" id="lf-shop" />
+            <div class="field">
+              <label for="lf-email">Deine E-Mail-Adresse</label>
+              <input type="email" id="lf-email" name="email" autocomplete="email" placeholder=" " required />
+            </div>
+            <div class="field">
+              <label for="lf-interesse">Was interessiert dich am meisten?</label>
+              <select id="lf-interesse" name="interesse" required>
+                <option value="" disabled selected>Bitte auswählen …</option>
+                <option value="Bezahlte Werbeanzeigen">Bezahlte Werbeanzeigen</option>
+                <option value="Shop-Optimierung">Shop-Optimierung</option>
+                <option value="Alles Zusammen">Alles Zusammen</option>
+              </select>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit" id="leadSubmit">Kostenlose Analyse mit Video anfordern</button>
+            <p class="form-hint" id="leadStatus" role="status" aria-live="polite">
+              Deine Daten nutze ich ausschließlich für die Analyse. Mehr in der
+              <a href="/datenschutz.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px;">Datenschutzerklärung</a>.
+            </p>
+          </form>
+
+          <div class="wnav">
+            <button class="btn btn--ghost wback" data-back="2" type="button">← Zurück</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-band__inner">
-          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Bereit, das Potenzial zu heben?</h2>
-          <p class="cta-band__text reveal" data-reveal>Ich schaue mir deinen Shop persönlich an — kostenlos und unverbindlich.</p>
+          <h2 class="cta-band__title reveal" data-reveal id="cta-title">Lieber direkt sprechen?</h2>
+          <p class="cta-band__text reveal" data-reveal>Erzähl mir von deinem Shop — unverbindlich und in Ruhe.</p>
           <div class="cta-band__actions reveal" data-reveal>
-            <a class="btn btn--primary" href="/shop-analyse.html">Kostenlose Shop-Analyse</a>
-            <a class="btn btn--ghost" href="/projekt-anfrage.html">Projekt anfragen</a>
+            <a class="btn btn--primary" href="/projekt-anfrage.html">Projekt anfragen</a>
+            <a class="btn btn--ghost" href="/kontakt.html">Kontakt</a>
           </div>
         </div>
       </div>
