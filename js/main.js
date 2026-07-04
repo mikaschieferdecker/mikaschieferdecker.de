@@ -140,4 +140,67 @@
       if (hint) hint.textContent = 'Dein E-Mail-Programm sollte sich geöffnet haben. Danke!';
     });
   }
+
+  /* ---------- Cookie consent ---------- */
+  var banner = document.getElementById('cookieBanner');
+  var scrim = document.getElementById('cookieScrim');
+  var settingsBtn = document.getElementById('cookieSettings');
+  if (banner && scrim) {
+    var CONSENT_KEY = 'cookie-consent';
+
+    var readConsent = function () {
+      try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+    };
+    window.cookieConsent = readConsent();
+
+    var onKey = function (e) {
+      if (e.key === 'Escape') { setConsent('necessary'); return; }
+      if (e.key !== 'Tab') return;
+      var f = banner.querySelectorAll('a[href], button');
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+
+    var showBanner = function () {
+      banner.hidden = false;
+      scrim.hidden = false;
+      window.requestAnimationFrame(function () {
+        banner.classList.add('is-visible');
+        scrim.classList.add('is-visible');
+      });
+      var accept = banner.querySelector('[data-consent="all"]');
+      if (accept) accept.focus();
+      document.addEventListener('keydown', onKey);
+    };
+
+    var hideBanner = function () {
+      banner.classList.remove('is-visible');
+      scrim.classList.remove('is-visible');
+      document.removeEventListener('keydown', onKey);
+      window.setTimeout(function () {
+        banner.hidden = true;
+        scrim.hidden = true;
+      }, reduceMotion ? 0 : 320);
+    };
+
+    var setConsent = function (value) {
+      try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+      window.cookieConsent = value;
+      hideBanner();
+      if (settingsBtn) settingsBtn.focus();
+    };
+
+    banner.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-consent]');
+      if (btn) setConsent(btn.getAttribute('data-consent'));
+    });
+    scrim.addEventListener('click', function () { setConsent('necessary'); });
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
+    }
+
+    if (!window.cookieConsent) showBanner();
+  }
 })();

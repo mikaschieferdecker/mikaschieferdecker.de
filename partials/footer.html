@@ -19,6 +19,7 @@
         <h3>Rechtliches</h3>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
+        <button type="button" class="footer__cookie" id="cookieSettings">Cookie-Einstellungen</button>
       </nav>
       <div class="footer__col">
         <h3>Kontakt</h3>
@@ -30,3 +31,19 @@
       <a class="footer__top" href="#top">Nach oben ↑</a>
     </div>
   </footer>
+
+  <!-- ===================== COOKIE-BANNER ===================== -->
+  <div class="cookie-scrim" id="cookieScrim" hidden></div>
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 class="cookie-banner__title" id="cookieTitle">Cookies &amp; Datenschutz</h2>
+    <p class="cookie-banner__text" id="cookieText">
+      Diese Website nutzt nur technisch notwendige Speicherung — etwa für deine
+      Theme-Einstellung. Optionale Cookies (z.&nbsp;B. für Statistik) setze ich
+      erst nach deiner Zustimmung. Mehr dazu in der
+      <a href="/datenschutz.html">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--ghost" type="button" data-consent="necessary">Nur notwendige</button>
+      <button class="btn btn--primary" type="button" data-consent="all">Alle akzeptieren</button>
+    </div>
+  </div>

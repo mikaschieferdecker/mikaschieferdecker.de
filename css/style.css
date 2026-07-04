@@ -1049,3 +1049,77 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .case-body__grid { grid-template-columns: 1fr; gap: var(--space-3); }
   .case-facts { position: static; }
 }
+
+/* =========================================================================
+   Cookie-Banner (Consent-Popup)
+   ========================================================================= */
+.cookie-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.cookie-scrim.is-visible { opacity: 1; }
+
+.cookie-banner {
+  position: fixed;
+  z-index: 1001;
+  left: 50%;
+  bottom: clamp(1rem, 4vw, 2.5rem);
+  width: min(calc(100% - 2rem), 460px);
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.cookie-banner__title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  margin-bottom: 0.5rem;
+}
+.cookie-banner__text {
+  color: var(--fg-soft);
+  font-size: var(--step--1);
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+.cookie-banner__text a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.cookie-banner__actions .btn { flex: 1 1 auto; }
+
+/* "Cookie-Einstellungen" trigger in footer — looks like the other footer links */
+.footer__cookie {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  color: var(--fg-soft);
+  text-align: left;
+  padding: 0;
+  transition: color 0.25s var(--ease);
+}
+.footer__cookie:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { transform: translateX(-50%); }
+  .cookie-banner.is-visible { transform: translateX(-50%); }
+}
