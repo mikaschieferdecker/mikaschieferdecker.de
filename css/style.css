@@ -835,14 +835,16 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .nav__cta { display: block; padding: 2rem clamp(1.25rem, 5vw, 2rem) 0; text-align: center; }
 
   /* Abgedunkelter Hintergrund hinter dem Drawer */
-  .nav-backdrop {
+    .nav-backdrop {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.35s var(--ease);
+    transition: opacity 0.35s var(--ease), backdrop-filter 0.35s var(--ease);
     z-index: 850;
   }
   .nav-backdrop.is-open {
