@@ -163,9 +163,22 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     };
 
+    var scrollY = 0;
+    var lockScroll = function () {
+      scrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = -scrollY + 'px';
+      document.body.classList.add('no-scroll');
+    };
+    var unlockScroll = function () {
+      document.body.classList.remove('no-scroll');
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
+    };
+
     var showBanner = function () {
       banner.hidden = false;
       scrim.hidden = false;
+      lockScroll();
       window.requestAnimationFrame(function () {
         banner.classList.add('is-visible');
         scrim.classList.add('is-visible');
@@ -180,6 +193,7 @@
       banner.classList.remove('is-visible');
       scrim.classList.remove('is-visible');
       document.removeEventListener('keydown', onKey);
+      unlockScroll();
       window.setTimeout(function () {
         banner.hidden = true;
         scrim.hidden = true;
@@ -190,7 +204,9 @@
       try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
       window.cookieConsent = value;
       hideBanner();
-      if (settingsBtn) settingsBtn.focus();
+      // preventScroll: the settings link lives in the footer — focusing it
+      // without this would scroll the page down to it.
+      if (settingsBtn) settingsBtn.focus({ preventScroll: true });
     };
 
     banner.addEventListener('click', function (e) {
