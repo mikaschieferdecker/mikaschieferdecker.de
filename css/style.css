@@ -366,7 +366,7 @@ padding-top: 100px;
   text-align: center;
   align-items: center;
    vertical-alignment: middle;
-   border-radius: 3px;
+   border-radius: 5px;
   gap: 0.6rem;
    font-weight: 600;
   font-family: var(--font-display);
