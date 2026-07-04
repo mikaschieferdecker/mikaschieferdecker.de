@@ -125,7 +125,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 
 .middlecontainer {
-   text-align: start;
+   text-align: center;
    width: 100%;
    max-width: 1200px;
   margin-inline: auto;
@@ -314,12 +314,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   padding-bottom: 50px;
 padding-top: 100px;
   display: flex;
-  align-items: start;
+  align-items: center;
 }
 .hero__kicker {
    display: inline;
-  text-align: start;
-  align-items: start;
+  text-align: center;
+  align-items: center;
    vertical-alignment: middle;
    border-radius: 5px;
   gap: 0.6rem;
@@ -339,15 +339,15 @@ padding-top: 100px;
    margin-top: 20px;
   margin-bottom: var(--space-4);
 }
-.hero__title .line { display: block; text-align: start;}
+.hero__title .line { display: block; text-align: center;}
 .hero__title em { font-style: normal; color: var(--accent); }
 
 .hero__meta {
   display: block;
-  align-items: start;
+  align-items: center;
   max-width: 100%;
 }
-.hero__lead { color: var(--fg-soft); font-size: var(--step-1); max-width: 100%; text-align: start; padding-bottom: 45px;}
+.hero__lead { color: var(--fg-soft); font-size: var(--step-1); max-width: 100%; text-align: center; padding-bottom: 45px;}
 .hero__cta { display: flex; flex-wrap: wrap; gap: 15px; justify-content: start;}
 
 .hero__status {
@@ -355,7 +355,7 @@ padding-top: 100px;
   font-size: var(--step--1);
   color: var(--muted);
   display: inline-flex;
-  align-items: start;
+  align-items: center;
   gap: 0.6rem;
 }
 .hero__status strong { color: var(--fg); font-weight: 500; }
