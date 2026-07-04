@@ -39,7 +39,7 @@
 :root,
 [data-theme='light'] {
   --bg: #ffffff;
-  --surface: #FAF9F7;
+  --surface: #F8FAFC;
   --fg: #1a1a1a;
   --bm: #3f9973;
   --fg-soft: #45443f;
@@ -54,8 +54,8 @@
 
 /* Dark theme */
 [data-theme='dark'] {
-  --bg: #080808;
-  --surface: #1a1a18;
+  --bg: #000000;
+  --surface: #0F0F0F;
   --fg: #fff;
   --bm: #3f9973;
   --fg-soft: #cbc9c2;
@@ -1364,7 +1364,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wstep__lead { color: var(--fg-soft); max-width: 100%; margin-bottom: var(--space-3); text-align: center;}
 .wstep__lead strong { color: var(--fg); }
 
-.wform { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-2); max-width: 42rem; }
+.wform { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-2); max-width: 100%; }
 .wform .field { flex: 1 1 16rem; }
 .wform--lead { display: grid; gap: 30px; max-width: 100%; }
 
@@ -1373,6 +1373,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .wformbtn {
     padding: 0.85rem 1rem;
     min-height: 48px;
+   border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
 }
 
 .linklike { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font: inherit; padding: 0; }
