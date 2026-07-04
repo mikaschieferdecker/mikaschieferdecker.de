@@ -258,7 +258,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* Header Button Optimierung */
 .header__actions .btn {
-  margin-left: 0.5rem;
+  margin-left: 5px;
 }
 
 /* NEU: kompakte Desktop-Größe für den Header-CTA */
