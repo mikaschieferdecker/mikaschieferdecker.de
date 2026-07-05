@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontaktaufnehmen - Mika Schieferdecker</title>
+  <title>Kontakt aufnehmen - Mika Schieferdecker</title>
   <meta name="description" content="Starte deine Shopify-Projektanfrage in fünf kurzen Schritten. Unkompliziert, direkt bei mir, Antwort innerhalb von 24 Stunden." />
   <meta name="author" content="Mika Schieferdecker" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
@@ -37,17 +37,20 @@
 
   <main id="main">
     <!-- ===================== PAGE HEAD ===================== -->
-    <section class="page-head">
+    <section class="page-head" aria-labelledby="page-title">
       <div class="container">
-        <h1 class="page-head__title">Kontakt aufnehmen</h1>
-        <p class="page-head__lead">Fünf kurze Fragen, keine Verpflichtung. Ich melde mich danach innerhalb von 24&nbsp;Stunden mit einer ersten Einschätzung.</p>
+         <h1 class="page-head__title reveal" data-reveal id="page-title">Kontakt aufnehmen</h1>
+        <p class="page-head__lead reveal" data-reveal>
+          Hast du ein Projekt im Kopf oder eine Idee, die Form braucht?
+          Schreib mir — ich melde mich innerhalb von 24&nbsp;Stunden.
+        </p>
       </div>
     </section>
 
     <!-- ===================== FORMULAR ===================== -->
-    <section class="section" style="padding-top:0;">
-      <div class="container">
-        <form class="wizard" id="qualifyForm" novalidate>
+    <section class="contact" style="border-top:1px solid var(--border)">
+      <div class="container section">
+        <form class="wizard reveal" data-reveal id="qualifyForm" novalidate>
           <div class="wizard__progress">
             <div class="wizard__progress-bar" id="progressBar"></div>
           </div>
