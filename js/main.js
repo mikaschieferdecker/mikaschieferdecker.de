@@ -216,6 +216,21 @@
     };
     window.cookieConsent = readConsent();
 
+    // Datenschutzfreundliches Analytics (Plausible, cookielos) — lädt erst,
+    // wenn eine Consent-Wahl getroffen wurde. Voraussetzung: ein Plausible-
+    // Konto mit der Domain "mikaschieferdecker.de". Zeile entfernen zum Deaktivieren.
+    var analyticsLoaded = false;
+    var loadAnalytics = function () {
+      if (analyticsLoaded) return;
+      analyticsLoaded = true;
+      var sc = document.createElement('script');
+      sc.defer = true;
+      sc.setAttribute('data-domain', 'mikaschieferdecker.de');
+      sc.src = 'https://plausible.io/js/script.js';
+      document.head.appendChild(sc);
+    };
+    if (window.cookieConsent) loadAnalytics();
+
     var onKey = function (e) {
       // Banner is intentionally not dismissible via Escape — a choice is required.
       if (e.key !== 'Tab') return;
@@ -266,6 +281,7 @@
     var setConsent = function (value) {
       try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
       window.cookieConsent = value;
+      loadAnalytics();
       hideBanner();
       // preventScroll: the settings link lives in the footer — focusing it
       // without this would scroll the page down to it.
