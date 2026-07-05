@@ -203,7 +203,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* Header Button Optimierung */
 .header__actions .btn {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 /* NEU: kompakte Desktop-Größe für den Header-CTA */
@@ -218,7 +218,7 @@ font-weight: 500;
 .header__inner {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 25px;
   height: 80px;
    padding-inline: 0px!important;
 
@@ -243,7 +243,7 @@ font-weight: 500;
 }
 .brand__name { font-size: var(--step-0); letter-spacing: -0.01em; }
 
-.nav__list { display: flex; gap: 40px; list-style: none; }
+.nav__list { display: flex; gap: 30px; list-style: none; }
 .nav__list a {
   position: relative;
   font-size: 18px;
