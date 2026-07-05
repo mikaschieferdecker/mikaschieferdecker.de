@@ -218,7 +218,7 @@
 
     // Google Analytics (GA4) — lädt NUR nach "Alle akzeptieren", weil GA
     // Cookies setzt. Trage unten deine Mess-ID ein (Format G-XXXXXXXXXX).
-    var GA_ID = 'G-XXXXXXXXXX';
+    var GA_ID = 'G-X9YFN6NS35';
     var analyticsLoaded = false;
     var loadAnalytics = function () {
       if (analyticsLoaded || !GA_ID || GA_ID.indexOf('XXXX') !== -1) return;
