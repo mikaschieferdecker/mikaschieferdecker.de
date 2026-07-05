@@ -933,6 +933,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    .page-head__title {font-size: 35px; line-height: 40px; margin-bottom: 30px;}
    .hero__trust {justify-content: flex-start; flex-direction: column; gap: 3px; align-items: flex-start; padding-bottom: 30px;}
    .hero__kicker {display: none;}
+   .footer__col a {font-size:14px!important;}
 }
 
 @media (max-width: 680px) {
@@ -1047,7 +1048,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   
   .brand__name { display: none; }
   .project-grid, .project-grid--featured { grid-template-columns: 1fr; }
-  .footer__grid { grid-template-columns: 1fr; }
   .section__head { flex-direction: column; }
   .service { grid-template-columns: 1fr; gap: 0.5rem; }
   .service__idx, .service__title, .service__desc { grid-column: 1; grid-row: auto; }
