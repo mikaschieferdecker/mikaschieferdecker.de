@@ -935,7 +935,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    .hero__kicker {display: none;}
    .footer__col a {font-size:14px!important;}
    .footer__cookie {font-size:14px!important;}
-   .faq-list {width: 100%;}
+   .faq-list {width: 100%!important;}
 }
 
 @media (max-width: 680px) {
