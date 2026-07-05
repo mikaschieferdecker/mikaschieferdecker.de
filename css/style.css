@@ -407,7 +407,7 @@ padding-top: 75px;
 .hero__title {
   font-size: 70px;
    margin-top: 20px;
-   font-weight: 800;
+   font-weight: 600;
   margin-bottom: var(--space-4);
 }
 .hero__title .line { display: block; text-align: center;}
