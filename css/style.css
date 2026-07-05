@@ -208,9 +208,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* NEU: kompakte Desktop-Größe für den Header-CTA */
 .header__cta {
-  padding: 6px 16px;
-  min-height: 38px;
+  padding: 2px 15px 2px 15px !important;
+  min-height: 10px;
   font-size: 18px;
+font-weight: 600;
 }
 
 .header__inner {
