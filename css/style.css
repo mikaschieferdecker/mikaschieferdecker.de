@@ -228,7 +228,7 @@ font-weight: 600;
 .header__col--center { justify-self: center; }
 .header__col--right { justify-self: end; display: flex; align-items: center; gap: 0.8rem; }
 
-.brand { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 600; }
+.brand { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 600; padding-bottom: 3px;}
 .brand__mark {
   display: grid;
   place-items: center;
