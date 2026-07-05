@@ -60,6 +60,38 @@
   }
 
 
+  /* ---------- Nav dropdown (Leistungen) ---------- */
+  var dropdownItems = document.querySelectorAll('.nav__item--has-dropdown');
+  if (dropdownItems.length) {
+    dropdownItems.forEach(function (item) {
+      var toggle = item.querySelector('.nav__dropdown-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = item.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    });
+    // Klick außerhalb schließt offene Dropdowns (Desktop)
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.nav__item--has-dropdown')) return;
+      dropdownItems.forEach(function (item) {
+        if (!item.classList.contains('is-open')) return;
+        item.classList.remove('is-open');
+        var t = item.querySelector('.nav__dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('is-open');
+        var t = item.querySelector('.nav__dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   /* ---------- Header: shadow + hide-on-scroll-down ---------- */
   var header = document.getElementById('siteHeader');
   if (header) {
