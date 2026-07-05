@@ -216,20 +216,23 @@
     };
     window.cookieConsent = readConsent();
 
-    // Datenschutzfreundliches Analytics (Plausible, cookielos) — lädt erst,
-    // wenn eine Consent-Wahl getroffen wurde. Voraussetzung: ein Plausible-
-    // Konto mit der Domain "mikaschieferdecker.de". Zeile entfernen zum Deaktivieren.
+    // Google Analytics (GA4) — lädt NUR nach "Alle akzeptieren", weil GA
+    // Cookies setzt. Trage unten deine Mess-ID ein (Format G-XXXXXXXXXX).
+    var GA_ID = 'G-XXXXXXXXXX';
     var analyticsLoaded = false;
     var loadAnalytics = function () {
-      if (analyticsLoaded) return;
+      if (analyticsLoaded || !GA_ID || GA_ID.indexOf('XXXX') !== -1) return;
       analyticsLoaded = true;
       var sc = document.createElement('script');
-      sc.defer = true;
-      sc.setAttribute('data-domain', 'mikaschieferdecker.de');
-      sc.src = 'https://plausible.io/js/script.js';
+      sc.async = true;
+      sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
       document.head.appendChild(sc);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID, { anonymize_ip: true });
     };
-    if (window.cookieConsent) loadAnalytics();
+    if (window.cookieConsent === 'all') loadAnalytics();
 
     var onKey = function (e) {
       // Banner is intentionally not dismissible via Escape — a choice is required.
@@ -281,7 +284,7 @@
     var setConsent = function (value) {
       try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
       window.cookieConsent = value;
-      loadAnalytics();
+      if (value === 'all') loadAnalytics();
       hideBanner();
       // preventScroll: the settings link lives in the footer — focusing it
       // without this would scroll the page down to it.
