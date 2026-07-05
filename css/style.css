@@ -265,15 +265,15 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .nav__list a[aria-current='page']::after { transform: scaleX(1); }
 
 /* ---------- Nav-Dropdown (Leistungen) ---------- */
-.nav__item--has-dropdown { position: relative; }
+.nav__item--has-dropdown { position: relative; margin-top: -1px !important;}
 .nav__dropdown-toggle {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
   font-family: inherit;
   font-size: 18px;
+   font-weight: 600;
   color: var(--fg-soft);
-  padding: 0.25rem 0;
   cursor: pointer;
   transition: color 0.25s var(--ease);
 }
@@ -969,7 +969,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     gap: 0;
   }
   .nav__list li { border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
-  .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); }
+  .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); font-weight: 600}
   .nav__cta { display: block; padding: 2rem clamp(1.25rem, 5vw, 2rem) 0; text-align: center; }
 
   /* Dropdown im mobilen Drawer: als Inline-Akkordeon */
