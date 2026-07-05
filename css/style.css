@@ -250,7 +250,7 @@ font-weight: 500;
   color: var(--fg-soft);
   padding: 0.25rem 0;
   transition: color 0.25s var(--ease);
-   font-weight: 600;
+   font-weight: 500;
 }
 .nav__list a::after {
   content: '';
@@ -275,7 +275,7 @@ font-weight: 500;
   gap: 0.3rem;
   font-family: inherit;
   font-size: 18px;
-   font-weight: 600;
+   font-weight: 500;
   color: var(--fg-soft);
   cursor: pointer;
   transition: color 0.25s var(--ease);
@@ -976,7 +976,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     gap: 0;
   }
   .nav__list li { border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
-  .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); font-weight: 600}
+  .nav__list a { display: block; padding: 1.5rem 0; font-size: var(--step-1); font-weight: 500;}
   .nav__cta { display: block; padding: 2rem clamp(1.25rem, 5vw, 2rem) 0; text-align: center; }
 
   /* Dropdown im mobilen Drawer: als Inline-Akkordeon */
