@@ -125,7 +125,7 @@
         animateScore(score);
         status.textContent = '';
         var next = document.getElementById('toStep2');
-        if (next) next.disabled = false;
+        if (next) { next.hidden = false; next.disabled = false; }
       })
       .catch(function () {
         status.className = 'form-hint is-error';
