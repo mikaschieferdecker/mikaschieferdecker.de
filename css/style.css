@@ -247,7 +247,7 @@ font-weight: 500;
 .nav__list a {
   position: relative;
   font-size: 18px;
-  color: var(--fg-soft);
+  color: var(--fg);
   padding: 0.25rem 0;
   transition: color 0.25s var(--ease);
    font-weight: 500;
@@ -262,9 +262,9 @@ font-weight: 500;
   transform-origin: left;
   transition: transform 0.35s var(--ease);
 }
-.nav__list a:hover { color: var(--fg); }
+.nav__list a:hover { color: var(--accent); }
 .nav__list a:hover::after { transform: scaleX(1); }
-.nav__list a[aria-current='page'] { color: var(--fg); }
+.nav__list a[aria-current='page'] { color: var(--accent); }
 .nav__list a[aria-current='page']::after { transform: scaleX(1); }
 
 /* ---------- Nav-Dropdown (Leistungen) ---------- */
@@ -276,11 +276,11 @@ font-weight: 500;
   font-family: inherit;
   font-size: 18px;
    font-weight: 500;
-  color: var(--fg-soft);
+  color: var(--fg);
   cursor: pointer;
   transition: color 0.25s var(--ease);
 }
-.nav__dropdown-toggle:hover { color: var(--fg); }
+.nav__dropdown-toggle:hover { color: var(--accent); }
 .nav__chevron { width: 15px; height: 15px; transition: transform 0.3s var(--ease); }
 
 .nav__dropdown {
@@ -986,7 +986,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     justify-content: center;
     padding: 1.5rem 0;
     font-size: var(--step-1);
-    color: var(--fg-soft);
+    color: var(--fg);
   }
   .nav__dropdown {
     position: static;
