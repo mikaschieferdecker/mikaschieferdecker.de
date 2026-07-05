@@ -1408,7 +1408,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .speed-tech .metrics { margin-top: var(--space-2); }
 
 /* recap chips */
-.recap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: var(--space-3); justify-content: center;}
+.recap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: var(--space-3); }
 .recap__chip { display: inline; align-items: center; padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); font-size: var(--step--1); }
 .recap__chip--accent { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
 .recap__chip strong { font-family: var(--font-display); }
@@ -1428,25 +1428,9 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 
 /* =========================================================================
-   Shop-Check: centered funnel layout
+   Shop-Check: left-aligned layout, wie das Projekt-Anfrage-Formular
    ========================================================================= */
-#shopCheck { max-width: 48rem; margin-inline: auto; }
-#shopCheck .wstep__lead { margin-inline: auto; text-align: center; }
-#shopCheck .wizard__head { justify-content: center; text-align: center; }
-#shopCheck .wform { justify-content: center; margin-inline: auto; }
-#shopCheck .wform .field { text-align: left; }
-#shopCheck .wform__label { text-align: center; }
-#shopCheck .recap { justify-content: center; }
-#shopCheck .tool__disclaimer { text-align: center; max-width: 52ch; margin-inline: auto; }
-#shopCheck .wizard__nav { justify-content: center; }
-#shopCheck .wizard__nav .btn--primary { margin-left: 0; }
-#shopCheck .wizard__nav .wback { margin-right: 0; }
-
-/* centered card content for the funnel look */
-#shopCheck .choice-card { align-items: center; text-align: center; }
-#shopCheck .choice-card__icon { margin-inline: auto; }
-
-/* keep the email field + submit centered & readable */
+#shopCheck .wstep__lead { margin-bottom: var(--space-3); text-align: left; }
+#shopCheck .wform { max-width: 42rem; }
 #shopCheck #leadForm .field,
-#shopCheck #leadSubmit { margin-inline: auto; }
-#shopCheck #leadForm > .wizard__status { text-align: center; }
+#shopCheck #leadSubmit { max-width: 34rem; }
