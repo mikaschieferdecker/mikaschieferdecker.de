@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Eigene 404-Seite
+ErrorDocument 404 /404.html
+
 # 1. Erzwingt HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seite nicht gefunden (404) — Mika Schieferdecker</title>
+  <meta name="description" content="Diese Seite gibt es nicht (mehr). Zurück zur Startseite oder direkt zu den Leistungen." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <span id="top"></span>
+
+  <!--#include header-->
+
+  <main id="main">
+    <section class="section error-page">
+      <div class="container">
+        <p class="error-page__code" aria-hidden="true">404</p>
+        <h1 class="error-page__title">Diese Seite gibt es nicht&nbsp;(mehr).</h1>
+        <p class="error-page__text">
+          Vielleicht hat sich ein Tippfehler eingeschlichen oder die Seite ist
+          umgezogen. Von hier kommst du weiter:
+        </p>
+        <div class="error-page__actions">
+          <a class="btn btn--primary" href="/index.html">Zur Startseite</a>
+          <a class="btn btn--ghost" href="/projekte.html">Projekte ansehen</a>
+          <a class="btn btn--ghost" href="/projekt-anfrage.html">Projekt anfragen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--#include footer-->
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1659,3 +1659,61 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   margin-bottom: var(--space-2);
 }
 .about__ctarow { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-3); }
+
+/* ---------- Ergebnis-Kennzahlen (Case Studies) ---------- */
+.result-metrics { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.result-metric {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.result-metric:hover { border-color: var(--border-strong); transform: translateY(-4px); }
+.result-metric__value { font-family: var(--font-display); font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; color: var(--accent); line-height: 1; }
+.result-metric__label { font-family: var(--font-display); font-weight: 600; }
+.result-metric__note { font-size: var(--step--1); color: var(--muted); }
+@media (max-width: 720px) { .result-metrics { grid-template-columns: 1fr; } }
+
+/* ---------- Hero-Hintergrund (dezent) ---------- */
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(55% 50% at 50% -8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 68%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(72% 62% at 50% 26%, #000 0%, transparent 76%);
+          mask-image: radial-gradient(72% 62% at 50% 26%, #000 0%, transparent 76%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ---------- 404-Seite ---------- */
+.error-page { text-align: center; }
+.error-page__code {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(5rem, 3rem + 14vw, 12rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  opacity: 0.9;
+}
+.error-page__title { font-size: var(--step-3); margin: var(--space-2) 0 var(--space-2); }
+.error-page__text { color: var(--fg-soft); font-size: var(--step-1); max-width: 46ch; margin: 0 auto var(--space-4); }
+.error-page__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
