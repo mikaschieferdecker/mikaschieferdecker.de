@@ -129,6 +129,37 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- Count-up numbers (Zahlen-Band) ---------- */
+  var counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    var setFinal = function (el) {
+      el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+    };
+    var runCount = function (el) {
+      var target = parseFloat(el.getAttribute('data-count')) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      var dur = 1400, start = null;
+      var tick = function (ts) {
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      counters.forEach(setFinal);
+    } else {
+      var cio = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { runCount(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { cio.observe(el); });
+    }
+  }
+
   /* ---------- Project filters ---------- */
   var filters = document.querySelectorAll('.filter');
   var projects = document.querySelectorAll('.project');

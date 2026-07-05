@@ -1587,3 +1587,75 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 #shopCheck .wform { max-width: 42rem; }
 #shopCheck #leadForm .field,
 #shopCheck #leadSubmit { max-width: 34rem; }
+
+/* =========================================================================
+   Startseiten-Feinschliff: Hero-Rating, Zahlen-Band, Über-mich-Teaser
+   ========================================================================= */
+
+/* Hero-Rating-Badge */
+.hero__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-3);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.hero__stars { color: var(--accent); letter-spacing: 2px; }
+@media (max-width: 860px) {
+  .hero__rating { justify-content: flex-start; }
+}
+
+/* Zahlen-Band (kontrastreiches Band) */
+.statband {
+  background: var(--fg);
+  color: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.statband__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+.statband__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-inline: var(--space-2);
+  border-left: 1px solid color-mix(in srgb, var(--bg) 22%, transparent);
+}
+.statband__item:first-child { border-left: none; padding-left: 0; }
+.statband__num {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.6rem + 3vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--accent);
+}
+.statband__label {
+  font-size: var(--step--1);
+  color: var(--bg);
+  opacity: 0.66;
+}
+@media (max-width: 720px) {
+  .statband__grid { grid-template-columns: 1fr 1fr; gap: var(--space-4) var(--space-3); }
+  .statband__item:nth-child(3) { border-left: none; padding-left: 0; }
+}
+
+/* Über-mich-Teaser (getönter Abschnitt) */
+.about--teaser { background: var(--surface); border-top: 1px solid var(--border); }
+.about--teaser .about__grid { align-items: center; }
+.about__kicker {
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+.about__ctarow { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-3); }
