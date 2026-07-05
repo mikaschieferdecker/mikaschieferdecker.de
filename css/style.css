@@ -1296,6 +1296,10 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 .faq-item__answer a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
+.faqtitle {
+    margin: 0 auto;
+}
+
 /* =========================================================================
    Shop-Check tools (Speed-Check, ROI, Quiz)
    ========================================================================= */
