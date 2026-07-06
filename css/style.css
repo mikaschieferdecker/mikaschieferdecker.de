@@ -1765,3 +1765,22 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+/* ---------- Projekt-Platzhalter (Referenzen) ---------- */
+.project--placeholder .project__link { cursor: default; }
+.project--placeholder .project__title,
+.project--placeholder .project__desc { color: var(--muted); }
+.project__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
