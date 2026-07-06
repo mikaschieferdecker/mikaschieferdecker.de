@@ -3,7 +3,12 @@ RewriteEngine On
 # Eigene 404-Seite
 ErrorDocument 404 /404.html
 
-# 1. Erzwingt HTTPS
+# 0. Kanonischer Host: alles außer mikaschieferdecker.de (z. B. www., neu.,
+#    Vorschau-Hosts) per 301 auf die Hauptdomain (direkt via HTTPS).
+RewriteCond %{HTTP_HOST} !^mikaschieferdecker\.de$ [NC]
+RewriteRule ^(.*)$ https://mikaschieferdecker.de/$1 [L,R=301]
+
+# 1. Erzwingt HTTPS (für die Hauptdomain selbst)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
