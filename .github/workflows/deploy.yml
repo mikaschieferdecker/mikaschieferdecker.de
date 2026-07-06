@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - claude/install-ui-ux-pro-max-skill-q1oja4
+  workflow_dispatch:
 jobs:
   web-deploy:
     name: 🎉 Deploy HTML Files
