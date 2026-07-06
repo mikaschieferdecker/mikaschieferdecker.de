@@ -160,26 +160,28 @@
     }
   }
 
-  /* ---------- Project filters ---------- */
-  var filters = document.querySelectorAll('.filter');
-  var projects = document.querySelectorAll('.project');
-  if (filters.length && projects.length) {
-    filters.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var cat = btn.getAttribute('data-filter');
-        filters.forEach(function (b) {
-          var active = b === btn;
-          b.classList.toggle('is-active', active);
-          b.setAttribute('aria-pressed', String(active));
-        });
-        projects.forEach(function (p) {
-          var cats = p.getAttribute('data-cat') || '';
-          var show = cat === 'all' || cats.indexOf(cat) !== -1;
-          p.classList.toggle('is-hidden', !show);
-        });
+  /* ---------- Filter bars (Projekte & Blog) ---------- */
+  document.querySelectorAll('.filters').forEach(function (bar) {
+    var scope = bar.closest('section') || document;
+    var btns = bar.querySelectorAll('.filter');
+    var items = scope.querySelectorAll('[data-cat]');
+    if (!btns.length || !items.length) return;
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter');
+      if (!btn) return;
+      var cat = btn.getAttribute('data-filter');
+      btns.forEach(function (b) {
+        var active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+      items.forEach(function (p) {
+        var cats = (p.getAttribute('data-cat') || '').split(/\s+/);
+        var show = cat === 'all' || cats.indexOf(cat) !== -1;
+        p.classList.toggle('is-hidden', !show);
       });
     });
-  }
+  });
 
   /* ---------- Contact form → mailto ---------- */
   var form = document.getElementById('contactForm');

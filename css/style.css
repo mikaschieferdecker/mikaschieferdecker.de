@@ -1723,6 +1723,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 .post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
 .post-list > li { display: flex; }
+.post-list > li.is-hidden { display: none; }
 @media (max-width: 900px) { .post-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .post-list { grid-template-columns: minmax(0, 1fr); } }
 .post-card {
