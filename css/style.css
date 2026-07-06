@@ -1833,27 +1833,17 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
    Startseite: Pain-Points, Ergebnis-Kacheln, Vorher/Nachher-Slider
    ========================================================================= */
 
-/* Pain-Points ("Erkennst du dich wieder?") */
-.pain-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }
-@media (max-width: 900px) { .pain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .pain-grid { grid-template-columns: 1fr; } }
-.pain { padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
-.pain__icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); color: var(--fg-soft); margin-bottom: var(--space-2); }
-.pain__icon svg { width: 20px; height: 20px; }
-.pain__title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-0); margin-bottom: 0.35rem; }
-.pain__text { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.5; }
-.pain-note { text-align: center; color: var(--fg-soft); margin-top: var(--space-4); }
-
-/* Ergebnis-Kacheln */
-.outcome-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }
-@media (max-width: 900px) { .outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .outcome-grid { grid-template-columns: 1fr; } }
-.outcome { padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); transition: border-color 0.3s var(--ease), transform 0.3s var(--ease); }
-.outcome:hover { border-color: var(--border-strong); transform: translateY(-3px); }
-.outcome__icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); margin-bottom: var(--space-2); }
-.outcome__icon svg { width: 22px; height: 22px; }
-.outcome__title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-0); margin-bottom: 0.35rem; }
-.outcome__text { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.5; }
+/* Haltung (editorial: Aussage + Liste) */
+.stance { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .stance { grid-template-columns: 1fr; gap: var(--space-4); } }
+.stance__kicker { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--step--1); color: var(--accent); margin-bottom: var(--space-2); }
+.stance__lead { color: var(--fg-soft); font-size: var(--step-1); margin-top: var(--space-3); max-width: 46ch; }
+.stance__link { display: inline-block; margin-top: var(--space-3); font-family: var(--font-display); font-weight: 600; color: var(--accent); transition: gap 0.25s var(--ease); }
+.stance__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.stance__list { list-style: none; padding: 0; margin: 0; }
+.stance__list li { padding: var(--space-3) 0; border-bottom: 1px solid var(--border); color: var(--fg-soft); }
+.stance__list li:first-child { border-top: 1px solid var(--border); }
+.stance__list strong { display: block; color: var(--fg); font-family: var(--font-display); font-weight: 600; margin-bottom: 0.25rem; }
 
 /* Vorher/Nachher-Slider */
 .ba-wrap { max-width: 920px; margin-inline: auto; }
@@ -1869,14 +1859,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .ba__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 4; }
 .ba__range:focus-visible + .ba__handle .ba__grip { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-.ba-meta { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin-top: var(--space-3); }
-@media (max-width: 560px) { .ba-meta { grid-template-columns: 1fr; } }
-.ba-box { padding: var(--space-3); border-radius: var(--radius); font-size: var(--step--1); line-height: 1.5; }
-.ba-box strong { display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: var(--step--1); margin-bottom: 0.3rem; }
-.ba-box--problem { background: color-mix(in srgb, #c2593f 12%, transparent); }
-.ba-box--problem strong { color: #c2593f; }
-.ba-box--solution { background: var(--accent-soft); }
-.ba-box--solution strong { color: var(--accent); }
-.ba-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-3); }
-.ba-title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); }
-.ba-title span { display: block; font-size: var(--step--1); font-weight: 400; color: var(--accent); }
+.ba-caption { margin-top: var(--space-3); color: var(--fg-soft); font-size: var(--step-0); max-width: 60ch; }
+.ba-caption a { color: var(--accent); font-family: var(--font-display); font-weight: 600; white-space: nowrap; }
+.ba-caption a:hover { text-decoration: underline; text-underline-offset: 3px; }
