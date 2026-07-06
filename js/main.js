@@ -183,6 +183,20 @@
     });
   });
 
+  /* ---------- Vorher/Nachher-Slider ---------- */
+  document.querySelectorAll('[data-ba]').forEach(function (ba) {
+    var range = ba.querySelector('.ba__range');
+    var before = ba.querySelector('.ba__before');
+    var handle = ba.querySelector('.ba__handle');
+    if (!range || !before || !handle) return;
+    var apply = function (v) {
+      before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+      handle.style.left = v + '%';
+    };
+    range.addEventListener('input', function () { apply(range.value); });
+    apply(range.value || 50);
+  });
+
   /* ---------- Contact form → mailto ---------- */
   var form = document.getElementById('contactForm');
   var hint = document.getElementById('formHint');
