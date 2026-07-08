@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#3f9973"/>
-  <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle"
-        font-family="'Space Grotesk', system-ui, sans-serif" font-size="30"
-        font-weight="600" letter-spacing="-1.5" fill="#faf9f7">MS</text>
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'InterMark';
+        font-weight: 600;
+        src: url(data:font/woff2;base64,d09GMgABAAAAAAPIABAAAAAABwgAAANrAAQAQgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgSIcKgZgP1NUQVRaADwRCAqCKII0ATYCJAMMCwgABCAFhDIHIAwHG/IFKB6D426JEFO0Mhku34z3O57nf79v+9x3RzUh4okk1UzqhMgiEqGaliIaPXTqfB+yy3+zGwgTEkdt5vJlV1YHxeWvxIr5D1s4/9fUi8So523nGLkorAIq+rYoswEfrexGJzSw84GNBjgAnE2dbvMQpAYqUgqGEkaPHX5JQS8googIuq3XzWJTZX07/E7OEbSIPCvINIi8JGJ6RLKAFhEDKRdlgh5OMHuAgBYwqi6dcnxmQadiCgvMEY/TAIAoAw1eQLrNE43rWXLqRvqEnoZa/3LdsKRtdX2KB8FUPnhSDrW1NS3Rusf/xI6dDW24Z7O2jnuTbtD5s2wHgXrE8hVmcBDRqcEoHktwV40jc0k23D2rZIQg55lIS4rBaTcsCEFJDidEyJrSDWgUJSUAAgr6UoLZwgLQ3orScNLCnLRee4YSubnFABZAuzTfcfAIUCvnl622n+c458DY2FiI3bGJiYngrOlguSQ2if0bNwQo7dQHx5lO+7Eh6uW1gB0b9us+FpZY3PkqkJKdymNjHQ4JdmvfvMHEj7GKDosn7p+7E21f77teJO/nrIzcF7r9WubV0K2R+8NXzbguI9vQ9rX7a3JW8fv4g9Xu7o2JxxP2Ri955/blrdeXd9ELE/cknvRq9kJps587wK1N/erw+IV/mk1PLbdaWzW0KdaktnevzKgbLs4trZud3ux+Ou5G0ov7B5dvePxLu//QF93K+9w83nZop3JO++zU4q6cwvomlnRnbVir+76S+dKaTaJlK5781gMQVBt2X/dPHHXO/9/J2wD+3Vm1OaQ98M/4j46etZlEo4DwW+pjtxj6T/Qx+Hs0bcWk2lqEnW3phhA0DrBzgKXwDwn6PNRItQX3SNSYYrNa9HusNla5sV9Jtc06H5V2UxK6QAh6UzjVdC6pVbP5pFfNYRNBLYZD5j5xCeyyEhsZGM0hUFFQYqhUyVJkotopyVA19BgZAdVMYKAmI8FQJcwYJQPBCCqaaogxAsyVJImCiks2E0skYaCTVCno0E+iWnEYs67QFrLqqJQy0JJqJaNgpiUiSJcouW/ePK3aNGiTN44nSKBOb/VpFQM9Cr9pO0HmY02XRSKZeH0t1BVubzmRpYkRoyIhokW1UZlLJkX6ydVgLldq3czLRPR4YPKyJ3z6ff63xQYAAAA=) format('woff2');
+      }
+      text { font-family: 'InterMark', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.5px; fill: #ffffff; }
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="9.4" fill="#3f9973"/>
+  <text x="50%" y="53%" dominant-baseline="central" text-anchor="middle" font-size="25.6">MS</text>
 </svg>
