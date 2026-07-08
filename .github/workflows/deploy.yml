@@ -4,10 +4,20 @@ on:
     branches:
       - claude/install-ui-ux-pro-max-skill-q1oja4
   workflow_dispatch:
+
+# Ein neuer Push bricht einen noch laufenden Deploy automatisch ab,
+# statt Runs aufzustauen.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   web-deploy:
     name: 🎉 Deploy HTML Files
     runs-on: ubuntu-latest
+    # Harte Obergrenze: hängt der FTP-Upload, schlägt der Job nach 10 min
+    # fehl, statt bis zum 6-Stunden-Limit zu laufen.
+    timeout-minutes: 10
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
@@ -29,12 +39,19 @@ jobs:
         # Installiere lftp
         sudo apt-get update && sudo apt-get install -y lftp
         
-        # Übertrage die Dateien mit speziellen All-Inkl Einstellungen
+        # Übertrage die Dateien mit speziellen All-Inkl Einstellungen.
+        # net:timeout + max-retries verhindern, dass ein stehender FTP-Transfer
+        # den Job unbegrenzt blockiert (statt ewig zu warten, bricht er ab).
         lftp -e "
-          set ftp:ssl-allow no; 
+          set ftp:ssl-allow no;
           set ftp:passive-mode true;
-          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; 
+          set net:timeout 15;
+          set net:max-retries 3;
+          set net:reconnect-interval-base 5;
+          set net:persist-retries 0;
+          set mirror:parallel-transfer-count 3;
+          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
           mirror -R --delete --reverse --no-perms \
-            ./dist/ ./; 
+            ./dist/ ./;
           quit
         "
