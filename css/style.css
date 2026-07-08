@@ -848,6 +848,12 @@ a.service:hover .service__arrow { opacity: 1; transform: translateX(0); color: v
 .page-head--center > .container { max-width: 950px; }
 .page-head--center .page-head__lead { max-width: none; margin-inline: auto; }
 
+/* Zentrierter Sektiontitel Titel + Lead mittig*/
+.section__head__center {
+    display: block!important;
+    text-align: center;
+}
+
 /* ---------- Section "view all" link ---------- */
 .section__link {
   font-family: var(--font-display);
