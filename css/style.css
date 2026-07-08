@@ -1395,7 +1395,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 /* =========================================================================
    FAQ (Akkordeon aus nativen <details>)
    ========================================================================= */
-.faq-list { width: 70%; margin: 0 auto; }
+.faq-list { width: 100%; max-width: 950px; margin: 0 auto; }
 .faq-item { border-top: 1px solid var(--border); }
 .faq-item:last-child { border-bottom: 1px solid var(--border); }
 .faq-item summary {
