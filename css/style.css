@@ -858,8 +858,12 @@ a.service:hover .service__arrow { opacity: 1; transform: translateX(0); color: v
 .footer__top:hover { color: var(--accent); }
 
 /* ---------- Sub-page header ---------- */
+/* Unterseiten kompakter halten als die Startseite: kleinere Sektionsabstände.
+   Greift nur auf Seiten mit .page-head (also nicht auf der Startseite). */
+body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
+
 .page-head {
-  padding-top: clamp(7rem, 5rem + 8vw, 11rem);
+  padding-top: clamp(5.5rem, 4rem + 5vw, 8rem);
   padding-bottom: var(--section-y);
 }
 .page-head__kicker {
