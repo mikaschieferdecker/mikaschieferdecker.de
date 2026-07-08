@@ -29,6 +29,24 @@ const FONT_PRELOADS = ['inter-v20-latin-regular', 'inter-v20-latin-500', 'inter-
   .map((f) => `  <link rel="preload" href="/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin />`)
   .join('\n');
 
+// Vollständiges Favicon-Set einbinden. Google zeigt in den Suchergebnissen
+// zuverlässig nur Raster-Favicons (ICO/PNG, quadratisch); die einzelne
+// SVG-Zeile pro Seite wird hier zentral um ICO/PNG/Apple-Touch/Manifest ergänzt.
+const FAVICON_BLOCK = [
+  '  <link rel="icon" href="/favicon.ico" sizes="32x32" />',
+  '  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />',
+  '  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />',
+  '  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />',
+  '  <link rel="manifest" href="/site.webmanifest" />',
+].join('\n');
+
+function injectFavicons(content) {
+  return content.replace(
+    /[ \t]*<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"\s*\/>/,
+    FAVICON_BLOCK
+  );
+}
+
 function injectFontPreloads(content) {
   if (content.indexOf('rel="preload"') !== -1 && /as=["']font["']/.test(content)) return content;
   const fontsLink = /([ \t]*<link[^>]+href=["']\/css\/fonts\.css["'][^>]*>)/;
@@ -76,6 +94,7 @@ function copyRecursive(srcDir, destDir) {
       content = content.replaceAll('<!--#include header-->', header);
       content = content.replaceAll('<!--#include footer-->', footer);
       const urlPath = toUrlPath(destPath);
+      content = injectFavicons(content);
       content = injectFontPreloads(content);
       content = injectMeta(content, urlPath);
       fs.writeFileSync(destPath, content, 'utf8');
