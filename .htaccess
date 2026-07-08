@@ -16,6 +16,9 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^ratgeber(?:\.html)?/?$ /blog [R=301,L]
 RewriteRule ^ratgeber/(.+?)(?:\.html)?/?$ /blog/$1 [R=301,L]
 
+# 1b2. 301-Weiterleitung: /projekt-anfrage → /kontakt (zusammengeführt)
+RewriteRule ^projekt-anfrage(?:\.html)?/?$ /kontakt [R=301,L]
+
 # 1c. 301-Weiterleitungen: alte/entfernte Leistungs-URLs → passende Detailseiten
 RewriteRule ^leistungen/websites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
 RewriteRule ^leistungen/unternehmenswebsites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]

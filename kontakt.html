@@ -4,13 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontakt — Mika Schieferdecker</title>
-  <meta name="description" content="Kontakt aufnehmen für Shopify-Projekte aus Bremen. Antwort meist innerhalb von 24 Stunden." />
-  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Kontakt aufnehmen: Starte deine Projektanfrage in fünf kurzen Schritten — Website, Onlineshop, Webentwicklung oder SEO. Direkt bei mir, Antwort innerhalb von 24 Stunden." />
+  <meta name="author" content="Mika Schieferdecker" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#010101" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kontakt — Mika Schieferdecker" />
+  <meta property="og:description" content="Starte deine Projektanfrage in fünf kurzen Schritten — Website, Onlineshop, Webentwicklung oder SEO." />
+  <meta property="og:locale" content="de_DE" />
+
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/fonts.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  
+
   <script>
     (function () {
       document.documentElement.classList.add('js');
@@ -29,9 +36,10 @@
   <!--#include header-->
 
   <main id="main">
+    <!-- ===================== PAGE HEAD ===================== -->
     <section class="page-head page-head--center" aria-labelledby="page-title">
       <div class="container">
-        <h1 class="page-head__title reveal" data-reveal id="page-title">Kontakt aufnehmen</h1>
+         <h1 class="page-head__title reveal" data-reveal id="page-title">Kontakt aufnehmen</h1>
         <p class="page-head__lead reveal" data-reveal>
           Hast du ein Projekt im Kopf oder eine Idee, die Form braucht?
           Schreib mir — ich melde mich innerhalb von 24&nbsp;Stunden.
@@ -39,30 +47,198 @@
       </div>
     </section>
 
-    <section class="contact" aria-label="Kontaktmöglichkeiten" style="border-top:1px solid var(--border)">
-      <div class="container contact__grid section">
-        <div class="contact__intro">
-          <a class="contact__mail reveal" data-reveal href="mailto:info@mikaschieferdecker.de">info@mikaschieferdecker.de</a>
-          <p class="contact__lead reveal" data-reveal>
-            Lieber direkt? Schreib mir eine E-Mail oder nutz das Formular.
-            Beides landet bei mir persönlich — kein Support-Ticket, kein Bot.
-          </p>
-        </div>
+    <!-- ===================== FORMULAR ===================== -->
+    <section class="contact section" style="border-top:1px solid var(--border)">
+      <div class="container">
+        <form class="wizard reveal" data-reveal id="qualifyForm" novalidate>
+          <div class="wizard__progress">
+            <div class="wizard__progress-bar" id="progressBar"></div>
+          </div>
 
-        <form class="contact__form reveal" data-reveal id="contactForm" novalidate>
-          <div class="field">
-            <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder=" " required />
+          <input type="text" name="website" class="wizard__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- Schritt 1: Projektart -->
+          <fieldset class="wizard__step is-active" data-step="1">
+            <div class="wizard__head">
+              <legend class="wizard__question">Worum geht es?</legend>
+              <span class="wizard__count">1/5</span>
+            </div>
+            <div class="choice-grid choice-grid--4">
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Website / Webdesign" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Website</span>
+                <span class="choice-card__desc">Neue Website oder Web-Auftritt — Design &amp; Umsetzung.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Onlineshop / E-Commerce">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Onlineshop</span>
+                <span class="choice-card__desc">Shop mit Shopify oder individuell — Setup bis Optimierung.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Webentwicklung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/><path d="M13 6l-2 12"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Webentwicklung</span>
+                <span class="choice-card__desc">Individuelle Funktionen, Schnittstellen oder Web-Anwendung.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="SEO / Optimierung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">SEO / Optimierung</span>
+                <span class="choice-card__desc">Besser gefunden werden, schneller &amp; sichtbarer sein.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 2: Projektstatus -->
+          <fieldset class="wizard__step" data-step="2">
+            <div class="wizard__head">
+              <legend class="wizard__question">Ist es neu oder besteht schon etwas?</legend>
+              <span class="wizard__count">2/5</span>
+            </div>
+            <div class="choice-grid choice-grid--3">
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Neu von Grund auf" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v18M3 12h18"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Neu von Grund auf</span>
+                <span class="choice-card__desc">Es gibt noch nichts — wir starten von vorn.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Relaunch / Überarbeitung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Relaunch</span>
+                <span class="choice-card__desc">Etwas besteht schon und soll überarbeitet werden.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Laufende Betreuung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Laufende Betreuung</span>
+                <span class="choice-card__desc">Pflege, Updates und Weiterentwicklung im Bestand.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 3: Branche -->
+          <fieldset class="wizard__step" data-step="3">
+            <div class="wizard__head">
+              <legend class="wizard__question">In welcher Branche bist du unterwegs?</legend>
+              <span class="wizard__count">3/5</span>
+            </div>
+            <div class="field">
+              <label for="wizBranche">Branche</label>
+              <input type="text" id="wizBranche" name="branche" placeholder="z. B. Handwerk, Mode, Dienstleistung, Food …" required>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 4: Zeitrahmen -->
+          <fieldset class="wizard__step" data-step="4">
+            <div class="wizard__head">
+              <legend class="wizard__question">Wie ist dein Zeitrahmen?</legend>
+              <span class="wizard__count">4/5</span>
+            </div>
+            <div class="choice-grid choice-grid--3">
+              <label class="choice-card">
+                <input type="radio" name="zeitrahmen" value="So schnell wie möglich" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">So schnell wie möglich</span>
+                <span class="choice-card__desc">Es eilt — am liebsten gestern.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="zeitrahmen" value="In den nächsten 1–3 Monaten">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">In 1–3 Monaten</span>
+                <span class="choice-card__desc">Ein konkreter Plan für die nähere Zukunft.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="zeitrahmen" value="Zeitlich flexibel">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Zeitlich flexibel</span>
+                <span class="choice-card__desc">Kein fester Termin — Qualität vor Tempo.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Schritt 5: Kontaktdaten -->
+          <fieldset class="wizard__step" data-step="5">
+            <div class="wizard__head">
+              <legend class="wizard__question">Wie erreiche ich dich?</legend>
+              <span class="wizard__count">5/5</span>
+            </div>
+            <div class="field">
+              <label for="wizName">Name</label>
+              <input type="text" id="wizName" name="name" required>
+            </div>
+            <div class="field">
+              <label for="wizEmail">E-Mail</label>
+              <input type="email" id="wizEmail" name="email" required>
+            </div>
+            <div class="field">
+              <label for="wizMessage">Nachricht (optional)</label>
+              <textarea id="wizMessage" name="message" rows="4"></textarea>
+            </div>
+            <p class="form-hint">
+              Mit dem Absenden stimmst du der Verarbeitung deiner Daten zur Bearbeitung deiner Anfrage zu. Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+          </fieldset>
+
+          <div class="wizard__nav">
+            <button type="button" class="btn btn--ghost" id="wizBack" hidden>Zurück</button>
+            <button type="button" class="btn btn--primary" id="wizNext" hidden>Weiter</button>
+            <button type="submit" class="btn btn--primary" id="wizSubmit" hidden>Anfrage senden</button>
           </div>
-          <div class="field">
-            <label for="cf-email">E-Mail</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder=" " required />
-          </div>
-          <div class="field">
-            <label for="cf-message">Nachricht</label>
-            <textarea id="cf-message" name="message" rows="6" placeholder=" " required></textarea>
-          </div>
-          <button class="btn btn--primary btn--block" type="submit">Nachricht senden</button>
+
+          <p class="wizard__status" id="wizStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -71,6 +247,6 @@
   <!--#include footer-->
 
   <script src="/js/main.js" defer></script>
-  
+  <script src="/js/wizard.js" defer></script>
 </body>
 </html>
