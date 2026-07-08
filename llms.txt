@@ -1,12 +1,26 @@
 # Mika Schieferdecker — Webentwickler aus Bremen
 
-> Webentwickler aus Bremen. Webdesign & UX/UI, Online-Shops & E-Commerce (Shopify als Schwerpunkt), Webentwicklung und Suchmaschinenoptimierung — klar, schnell und mit direktem Ansprechpartner.
+> Webentwickler aus Bremen. Webdesign & UX/UI, Online-Shops & E-Commerce (Shopify als Schwerpunkt) und Suchmaschinenoptimierung — klar, schnell und mit direktem Ansprechpartner.
 
 ## Leistungen
-- [Webdesign & UX/UI](https://mikaschieferdecker.de/leistungen/webdesign): Durchdachtes Design und intuitive Nutzerführung — Websites, die gut aussehen und sich mühelos bedienen lassen.
-- [Online-Shops & E-Commerce](https://mikaschieferdecker.de/leistungen/onlineshops): Verkaufsstarke Onlineshops — von Shopify bis individuell, von Setup und Migration bis zur laufenden Optimierung.
-- [Webentwicklung](https://mikaschieferdecker.de/leistungen/webentwicklung): Sauber programmierte Websites und Web-Anwendungen — schnell, wartbar und maßgeschneidert.
-- [Suchmaschinenoptimierung](https://mikaschieferdecker.de/leistungen/seo): Gefunden werden bei Google — technisch sauber, lokal stark und mit Inhalten, die ranken.
+
+### Webdesign & UX/UI
+- [Website erstellen lassen](https://mikaschieferdecker.de/leistungen/website-erstellen-lassen): Neue, conversion-starke Website von Grund auf.
+- [WordPress Freelancer](https://mikaschieferdecker.de/leistungen/wordpress-freelancer): Themes, Technik & individuelle Entwicklung von einem festen Ansprechpartner.
+- [Website Relaunch](https://mikaschieferdecker.de/leistungen/website-relaunch): Bestehende Website modernisieren & optimieren.
+- [UI/UX Design](https://mikaschieferdecker.de/leistungen/ui-ux-design): Interfaces, die Nutzer begeistern & konvertieren.
+
+### Online-Shops & E-Commerce
+- [Online-Shop erstellen lassen](https://mikaschieferdecker.de/leistungen/setup-launch): Neuer Shop von Grund auf — startklar und rechtssicher.
+- [Online-Shop Migration](https://mikaschieferdecker.de/leistungen/migration): Umzug zu Shopify inklusive Daten & SEO, ohne Ranking-Verlust.
+- [Online-Shop Relaunch](https://mikaschieferdecker.de/leistungen/relaunch): Frisches Design & mehr Conversion für bestehende Shops.
+- [Online-Shop optimieren](https://mikaschieferdecker.de/leistungen/optimierung): Speed, UX & Checkout — datenbasiert für mehr Verkäufe.
+
+### Suchmaschinenoptimierung (SEO)
+- [Lokales SEO](https://mikaschieferdecker.de/leistungen/lokales-seo): In deiner Region gefunden werden — Google-Profil, lokale Keywords & Bewertungen.
+- [OnPage-SEO](https://mikaschieferdecker.de/leistungen/onpage-seo): Struktur, Inhalte & Meta-Daten für bessere Rankings.
+- [Ladezeit & Performance](https://mikaschieferdecker.de/leistungen/ladezeit-performance): Schneller laden, besser ranken — Core Web Vitals.
+- [Keyword-Recherche](https://mikaschieferdecker.de/leistungen/keyword-recherche): Wissen, wonach deine Kund:innen suchen.
 
 ## Referenzen
 - [Projekte & Referenzen](https://mikaschieferdecker.de/projekte): Ausgewählte Websites und Shopify-Shops.

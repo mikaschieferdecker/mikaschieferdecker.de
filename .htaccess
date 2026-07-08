@@ -16,11 +16,16 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^ratgeber(?:\.html)?/?$ /blog [R=301,L]
 RewriteRule ^ratgeber/(.+?)(?:\.html)?/?$ /blog/$1 [R=301,L]
 
-# 1c. 301-Weiterleitungen: alte Leistungs-URLs → neue Disziplin-Seiten
-RewriteRule ^leistungen/websites(?:\.html)?/?$ /leistungen/webdesign [R=301,L]
-RewriteRule ^leistungen/unternehmenswebsites(?:\.html)?/?$ /leistungen/webdesign [R=301,L]
-RewriteRule ^leistungen/shopify(?:\.html)?/?$ /leistungen/onlineshops [R=301,L]
-RewriteRule ^leistungen/seo-betreuung(?:\.html)?/?$ /leistungen/seo [R=301,L]
+# 1c. 301-Weiterleitungen: alte/entfernte Leistungs-URLs → passende Detailseiten
+RewriteRule ^leistungen/websites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
+RewriteRule ^leistungen/unternehmenswebsites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
+RewriteRule ^leistungen/shopify(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
+RewriteRule ^leistungen/seo-betreuung(?:\.html)?/?$ /leistungen/lokales-seo [R=301,L]
+# Entfernte Disziplin-Übersichtsseiten → repräsentative Detailseite
+RewriteRule ^leistungen/webdesign(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
+RewriteRule ^leistungen/onlineshops(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
+RewriteRule ^leistungen/seo(?:\.html)?/?$ /leistungen/lokales-seo [R=301,L]
+RewriteRule ^leistungen/webentwicklung(?:\.html)?/?$ / [R=301,L]
 
 # 2. Entfernt index.html aus der URL
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
