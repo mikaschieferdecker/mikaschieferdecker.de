@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontakt aufnehmen - Mika Schieferdecker</title>
-  <meta name="description" content="Starte deine Shopify-Projektanfrage in fünf kurzen Schritten. Unkompliziert, direkt bei mir, Antwort innerhalb von 24 Stunden." />
+  <meta name="description" content="Starte deine Projektanfrage in fünf kurzen Schritten — Website, Onlineshop, Webentwicklung oder SEO. Direkt bei mir, Antwort innerhalb von 24 Stunden." />
   <meta name="author" content="Mika Schieferdecker" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#010101" media="(prefers-color-scheme: dark)" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kontakt aufnehmen - Mika Schieferdecker" />
-  <meta property="og:description" content="Starte deine Shopify-Projektanfrage in fünf kurzen Schritten." />
+  <meta property="og:description" content="Starte deine Projektanfrage in fünf kurzen Schritten — Website, Onlineshop, Webentwicklung oder SEO." />
   <meta property="og:locale" content="de_DE" />
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -60,75 +60,95 @@
           <!-- Schritt 1: Projektart -->
           <fieldset class="wizard__step is-active" data-step="1">
             <div class="wizard__head">
-              <legend class="wizard__question">Was für ein Projekt ist es?</legend>
+              <legend class="wizard__question">Worum geht es?</legend>
               <span class="wizard__count">1/5</span>
             </div>
-            <div class="choice-grid choice-grid--3">
+            <div class="choice-grid choice-grid--4">
               <label class="choice-card">
-                <input type="radio" name="projektart" value="Neuer Shop" required>
+                <input type="radio" name="projektart" value="Website / Webdesign" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Website</span>
+                <span class="choice-card__desc">Neue Website oder Web-Auftritt — Design &amp; Umsetzung.</span>
+                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="projektart" value="Onlineshop / E-Commerce">
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Neuer Shop</span>
-                <span class="choice-card__desc">Von der Idee bis zum fertigen, launch-bereiten Store.</span>
+                <span class="choice-card__title">Onlineshop</span>
+                <span class="choice-card__desc">Shop mit Shopify oder individuell — Setup bis Optimierung.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
               <label class="choice-card">
-                <input type="radio" name="projektart" value="Redesign">
+                <input type="radio" name="projektart" value="Webentwicklung">
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>
+                    <path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/><path d="M13 6l-2 12"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Redesign</span>
-                <span class="choice-card__desc">Dein bestehender Shop bekommt frisches Design und mehr Performance.</span>
+                <span class="choice-card__title">Webentwicklung</span>
+                <span class="choice-card__desc">Individuelle Funktionen, Schnittstellen oder Web-Anwendung.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
               <label class="choice-card">
-                <input type="radio" name="projektart" value="Wartung / Weiterentwicklung">
+                <input type="radio" name="projektart" value="SEO / Optimierung">
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z"/>
+                    <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Wartung</span>
-                <span class="choice-card__desc">Laufende Betreuung, Updates und Weiterentwicklung deines Shops.</span>
+                <span class="choice-card__title">SEO / Optimierung</span>
+                <span class="choice-card__desc">Besser gefunden werden, schneller &amp; sichtbarer sein.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
             </div>
           </fieldset>
 
-          <!-- Schritt 2: Produktanzahl -->
+          <!-- Schritt 2: Projektstatus -->
           <fieldset class="wizard__step" data-step="2">
             <div class="wizard__head">
-              <legend class="wizard__question">Wie groß ist dein Sortiment?</legend>
+              <legend class="wizard__question">Ist es neu oder besteht schon etwas?</legend>
               <span class="wizard__count">2/5</span>
             </div>
-            <div class="choice-grid choice-grid--4">
-              <label class="choice-card choice-card--stat">
-                <input type="radio" name="produktanzahl" value="1–20 Produkte" required>
-                <span class="choice-card__title choice-card__title--big">1–20</span>
-                <span class="choice-card__desc">Produkte</span>
+            <div class="choice-grid choice-grid--3">
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Neu von Grund auf" required>
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v18M3 12h18"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Neu von Grund auf</span>
+                <span class="choice-card__desc">Es gibt noch nichts — wir starten von vorn.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
-              <label class="choice-card choice-card--stat">
-                <input type="radio" name="produktanzahl" value="20–100 Produkte">
-                <span class="choice-card__title choice-card__title--big">20–100</span>
-                <span class="choice-card__desc">Produkte</span>
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Relaunch / Überarbeitung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Relaunch</span>
+                <span class="choice-card__desc">Etwas besteht schon und soll überarbeitet werden.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
-              <label class="choice-card choice-card--stat">
-                <input type="radio" name="produktanzahl" value="100–500 Produkte">
-                <span class="choice-card__title choice-card__title--big">100–500</span>
-                <span class="choice-card__desc">Produkte</span>
-                <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
-              </label>
-              <label class="choice-card choice-card--stat">
-                <input type="radio" name="produktanzahl" value="500+ Produkte">
-                <span class="choice-card__title choice-card__title--big">500+</span>
-                <span class="choice-card__desc">Produkte</span>
+              <label class="choice-card">
+                <input type="radio" name="projektstatus" value="Laufende Betreuung">
+                <span class="choice-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z"/>
+                  </svg>
+                </span>
+                <span class="choice-card__title">Laufende Betreuung</span>
+                <span class="choice-card__desc">Pflege, Updates und Weiterentwicklung im Bestand.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
             </div>
@@ -142,48 +162,48 @@
             </div>
             <div class="field">
               <label for="wizBranche">Branche</label>
-              <input type="text" id="wizBranche" name="branche" placeholder="z. B. Mode, Kosmetik, Möbel, Food …" required>
+              <input type="text" id="wizBranche" name="branche" placeholder="z. B. Handwerk, Mode, Dienstleistung, Food …" required>
             </div>
           </fieldset>
 
-          <!-- Schritt 4: Shopify-Status -->
+          <!-- Schritt 4: Zeitrahmen -->
           <fieldset class="wizard__step" data-step="4">
             <div class="wizard__head">
-              <legend class="wizard__question">Nutzt du schon Shopify?</legend>
+              <legend class="wizard__question">Wie ist dein Zeitrahmen?</legend>
               <span class="wizard__count">4/5</span>
             </div>
             <div class="choice-grid choice-grid--3">
               <label class="choice-card">
-                <input type="radio" name="shopify_status" value="Ja, bereits bei Shopify" required>
+                <input type="radio" name="zeitrahmen" value="So schnell wie möglich" required>
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/>
+                    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Ja, bereits</span>
-                <span class="choice-card__desc">Dein Shop läuft schon auf Shopify.</span>
+                <span class="choice-card__title">So schnell wie möglich</span>
+                <span class="choice-card__desc">Es eilt — am liebsten gestern.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
               <label class="choice-card">
-                <input type="radio" name="shopify_status" value="Nein, noch nicht">
+                <input type="radio" name="zeitrahmen" value="In den nächsten 1–3 Monaten">
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>
+                    <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Noch nicht</span>
-                <span class="choice-card__desc">Du startest komplett neu mit Shopify.</span>
+                <span class="choice-card__title">In 1–3 Monaten</span>
+                <span class="choice-card__desc">Ein konkreter Plan für die nähere Zukunft.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
               <label class="choice-card">
-                <input type="radio" name="shopify_status" value="Wechsel von anderer Plattform geplant">
+                <input type="radio" name="zeitrahmen" value="Zeitlich flexibel">
                 <span class="choice-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 7h13l-3-3M20 17H7l3 3"/>
+                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
                   </svg>
                 </span>
-                <span class="choice-card__title">Wechsel geplant</span>
-                <span class="choice-card__desc">Umzug von einer anderen Plattform zu Shopify.</span>
+                <span class="choice-card__title">Zeitlich flexibel</span>
+                <span class="choice-card__desc">Kein fester Termin — Qualität vor Tempo.</span>
                 <span class="choice-card__select"><span class="txt-default">Auswählen</span><span class="txt-checked">Ausgewählt ✓</span></span>
               </label>
             </div>

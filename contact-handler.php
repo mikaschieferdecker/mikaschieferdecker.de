@@ -15,14 +15,14 @@ function clean($value) {
 }
 
 $projektart      = clean($_POST['projektart'] ?? '');
-$produktanzahl   = clean($_POST['produktanzahl'] ?? '');
+$projektstatus   = clean($_POST['projektstatus'] ?? '');
 $branche         = clean($_POST['branche'] ?? '');
-$shopify_status  = clean($_POST['shopify_status'] ?? '');
+$zeitrahmen      = clean($_POST['zeitrahmen'] ?? '');
 $name            = clean($_POST['name'] ?? '');
 $email           = clean($_POST['email'] ?? '');
 $message         = clean($_POST['message'] ?? '');
 
-if (!$projektart || !$produktanzahl || !$branche || !$shopify_status || !$name || !$email) {
+if (!$projektart || !$projektstatus || !$branche || !$zeitrahmen || !$name || !$email) {
     http_response_code(400);
     exit(json_encode(['error' => 'Fehlende Angaben']));
 }
@@ -37,9 +37,9 @@ $subject = "Neue Projektanfrage: $projektart ($name)";
 
 $body = "Neue qualifizierte Anfrage über die Website:\n\n"
       . "Projektart: $projektart\n"
-      . "Anzahl Produkte: $produktanzahl\n"
+      . "Status: $projektstatus\n"
       . "Branche: $branche\n"
-      . "Shopify-Status: $shopify_status\n\n"
+      . "Zeitrahmen: $zeitrahmen\n\n"
       . "Name: $name\n"
       . "E-Mail: $email\n"
       . "Nachricht:\n$message\n";
