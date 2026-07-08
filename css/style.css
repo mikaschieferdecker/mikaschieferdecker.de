@@ -353,9 +353,8 @@ font-weight: 500;
   margin-bottom: 0.35rem;
   border-bottom: 1px solid var(--border);
 }
-.nav__mega-head:hover { background: transparent; color: var(--accent); }
-.nav__dropdown--mega a:not(.nav__mega-head) { color: var(--fg-soft); }
-.nav__dropdown--mega a:not(.nav__mega-head):hover { color: var(--fg); }
+.nav__dropdown--mega a { color: var(--fg-soft); }
+.nav__dropdown--mega a:hover { color: var(--fg); }
 
 /* Mega-Panel unter dem gesamten Header zentrieren (statt unter dem Toggle),
    damit es auf schmaleren Desktops nicht links aus dem Viewport ragt. */
