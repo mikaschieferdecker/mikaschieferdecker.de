@@ -22,6 +22,22 @@ function toUrlPath(destPath) {
   return '/' + rel;
 }
 
+// Kritische Above-the-fold-Schriften vorladen, damit sie nicht erst nach dem
+// Parsen von fonts.css geladen werden (bricht die kritische Request-Kette auf).
+// 400 = Fließtext, 500 = Navigation/Buttons, 600 = Überschriften.
+const FONT_PRELOADS = ['inter-v20-latin-regular', 'inter-v20-latin-500', 'inter-v20-latin-600']
+  .map((f) => `  <link rel="preload" href="/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin />`)
+  .join('\n');
+
+function injectFontPreloads(content) {
+  if (content.indexOf('rel="preload"') !== -1 && /as=["']font["']/.test(content)) return content;
+  const fontsLink = /([ \t]*<link[^>]+href=["']\/css\/fonts\.css["'][^>]*>)/;
+  if (fontsLink.test(content)) {
+    return content.replace(fontsLink, FONT_PRELOADS + '\n$1');
+  }
+  return content;
+}
+
 // Fehlende SEO-/Social-Meta pro Seite ergänzen (canonical, og:url, og:image, twitter)
 function injectMeta(content, urlPath) {
   if (content.indexOf('</head>') === -1) return content;
@@ -60,6 +76,7 @@ function copyRecursive(srcDir, destDir) {
       content = content.replaceAll('<!--#include header-->', header);
       content = content.replaceAll('<!--#include footer-->', footer);
       const urlPath = toUrlPath(destPath);
+      content = injectFontPreloads(content);
       content = injectMeta(content, urlPath);
       fs.writeFileSync(destPath, content, 'utf8');
       // 404 gehört nicht in die Sitemap
