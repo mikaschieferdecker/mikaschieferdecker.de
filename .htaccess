@@ -16,6 +16,12 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^ratgeber(?:\.html)?/?$ /blog [R=301,L]
 RewriteRule ^ratgeber/(.+?)(?:\.html)?/?$ /blog/$1 [R=301,L]
 
+# 1c. 301-Weiterleitungen: alte Leistungs-URLs → neue Disziplin-Seiten
+RewriteRule ^leistungen/websites(?:\.html)?/?$ /leistungen/webdesign [R=301,L]
+RewriteRule ^leistungen/unternehmenswebsites(?:\.html)?/?$ /leistungen/webdesign [R=301,L]
+RewriteRule ^leistungen/shopify(?:\.html)?/?$ /leistungen/onlineshops [R=301,L]
+RewriteRule ^leistungen/seo-betreuung(?:\.html)?/?$ /leistungen/seo [R=301,L]
+
 # 2. Entfernt index.html aus der URL
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
 RewriteRule ^index\.html$ / [R=301,L]

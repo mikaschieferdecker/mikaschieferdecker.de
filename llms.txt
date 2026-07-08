@@ -1,12 +1,12 @@
 # Mika Schieferdecker — Webentwickler aus Bremen
 
-> Webentwickler aus Bremen. Websites für Handwerk und lokale Betriebe, Unternehmenswebsites sowie Shopify-Onlineshops als Spezialgebiet — klar, schnell und mit direktem Ansprechpartner. Zusätzlich SEO, Performance und laufende Betreuung.
+> Webentwickler aus Bremen. Webdesign & UX/UI, Online-Shops & E-Commerce (Shopify als Schwerpunkt), Webentwicklung und Suchmaschinenoptimierung — klar, schnell und mit direktem Ansprechpartner.
 
 ## Leistungen
-- [Websites für Handwerk & lokale Betriebe](https://mikaschieferdecker.de/leistungen/websites): Professionelle Websites, die seriös präsentieren und Anfragen bringen.
-- [Unternehmenswebsites](https://mikaschieferdecker.de/leistungen/unternehmenswebsites): Mehrseitige, ausbaufähige Auftritte für KMU & Marken, mit CMS.
-- [Shopify Onlineshops](https://mikaschieferdecker.de/leistungen/shopify): Spezialgebiet — Setup, Migration, Relaunch, Optimierung und Schnittstellen.
-- [SEO, Performance & Betreuung](https://mikaschieferdecker.de/leistungen/seo-betreuung): Gefunden werden, schnell bleiben, laufend gepflegt.
+- [Webdesign & UX/UI](https://mikaschieferdecker.de/leistungen/webdesign): Durchdachtes Design und intuitive Nutzerführung — Websites, die gut aussehen und sich mühelos bedienen lassen.
+- [Online-Shops & E-Commerce](https://mikaschieferdecker.de/leistungen/onlineshops): Verkaufsstarke Onlineshops — von Shopify bis individuell, von Setup und Migration bis zur laufenden Optimierung.
+- [Webentwicklung](https://mikaschieferdecker.de/leistungen/webentwicklung): Sauber programmierte Websites und Web-Anwendungen — schnell, wartbar und maßgeschneidert.
+- [Suchmaschinenoptimierung](https://mikaschieferdecker.de/leistungen/seo): Gefunden werden bei Google — technisch sauber, lokal stark und mit Inhalten, die ranken.
 
 ## Referenzen
 - [Projekte & Referenzen](https://mikaschieferdecker.de/projekte): Ausgewählte Websites und Shopify-Shops.
