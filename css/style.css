@@ -891,6 +891,10 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .page-head--center { text-align: center; }
 .page-head--center > .container { max-width: 950px; }
 .page-head--center .page-head__lead { max-width: none; margin-inline: auto; }
+.page-head--center .case-back { margin-inline: auto; }
+
+.page-head__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-3); }
+.page-head--center .page-head__actions { justify-content: center; }
 
 /* Zentrierter Sektiontitel Titel + Lead mittig*/
 .section__head__center {
