@@ -982,13 +982,33 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
   margin: 0;
 }
 .process-step { display: contents; }
-.process-step__text { grid-column: 1; align-self: center; padding-block: var(--space-5); }
-.process-step__visual { grid-column: 3; align-self: center; padding-block: var(--space-5); }
-.process-step:nth-child(even) .process-step__text { grid-column: 3; }
-.process-step:nth-child(even) .process-step__visual { grid-column: 1; }
+.process-step__text, .process-step__visual { align-self: center; padding-block: var(--space-5); }
+
+/*
+  Zeile UND Spalte werden pro Schritt explizit gesetzt (statt Grid
+  Auto-Placement zu überlassen): Bei den geraden Schritten steht das
+  Text-Element im Markup VOR dem Badge, aber in einer höheren Spalte
+  (3 statt 1) — das lässt den Sparse-Placement-Algorithmus in eine neue
+  Zeile springen, sobald ein Geschwister-Item eine "frühere" Spalte
+  braucht. Explizite grid-row schließt dieses Auseinanderrutschen aus.
+*/
+.process-step:nth-child(1) .process-step__text   { grid-row: 1; grid-column: 1; }
+.process-step:nth-child(1) .process-step__badge  { grid-row: 1; grid-column: 2; }
+.process-step:nth-child(1) .process-step__visual { grid-row: 1; grid-column: 3; }
+
+.process-step:nth-child(2) .process-step__visual { grid-row: 2; grid-column: 1; }
+.process-step:nth-child(2) .process-step__badge  { grid-row: 2; grid-column: 2; }
+.process-step:nth-child(2) .process-step__text   { grid-row: 2; grid-column: 3; }
+
+.process-step:nth-child(3) .process-step__text   { grid-row: 3; grid-column: 1; }
+.process-step:nth-child(3) .process-step__badge  { grid-row: 3; grid-column: 2; }
+.process-step:nth-child(3) .process-step__visual { grid-row: 3; grid-column: 3; }
+
+.process-step:nth-child(4) .process-step__visual { grid-row: 4; grid-column: 1; }
+.process-step:nth-child(4) .process-step__badge  { grid-row: 4; grid-column: 2; }
+.process-step:nth-child(4) .process-step__text   { grid-row: 4; grid-column: 3; }
 
 .process-step__badge {
-  grid-column: 2;
   align-self: center;
   justify-self: center;
   position: relative;
@@ -1014,9 +1034,19 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 @media (max-width: 860px) {
   .process-list { grid-template-columns: 40px minmax(0, 1fr); column-gap: var(--space-3); }
   .process-timeline__track, .process-timeline__progress { left: 20px; }
-  .process-step__badge { grid-column: 1; }
-  .process-step__text, .process-step:nth-child(even) .process-step__text { grid-column: 2; }
-  .process-step__visual, .process-step:nth-child(even) .process-step__visual { display: none; }
+  .process-step__visual { display: none; }
+  /* Spalte auf 2 reduziert, Zeile bleibt explizit pro Schritt gesetzt
+     (siehe Desktop-Regeln oben) — DOM-Reihenfolge ist überall text→badge
+     (Spalte 2 vor Spalte 1), das würde Grid Auto-Placement sonst wieder
+     in eine neue Zeile springen lassen. */
+  .process-step:nth-child(1) .process-step__badge { grid-column: 1; }
+  .process-step:nth-child(1) .process-step__text  { grid-column: 2; }
+  .process-step:nth-child(2) .process-step__badge { grid-column: 1; }
+  .process-step:nth-child(2) .process-step__text  { grid-column: 2; }
+  .process-step:nth-child(3) .process-step__badge { grid-column: 1; }
+  .process-step:nth-child(3) .process-step__text  { grid-column: 2; }
+  .process-step:nth-child(4) .process-step__badge { grid-column: 1; }
+  .process-step:nth-child(4) .process-step__text  { grid-column: 2; }
 }
 
 /* Prozess-Illustrationen (abstrakt, kein Foto) */
