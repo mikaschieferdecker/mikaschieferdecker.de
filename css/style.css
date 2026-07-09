@@ -965,7 +965,7 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .reason-card__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.55; }
 
 /* ---------- Prozess-Timeline (Zusammenarbeit) ---------- */
-.process-timeline { position: relative; margin-top: var(--space-4); width: 950px; margin: auto;}
+.process-timeline { position: relative; max-width: 950px; margin: var(--space-4) auto 0; }
 .process-timeline__track,
 .process-timeline__progress {
   position: absolute;
@@ -977,43 +977,32 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .process-timeline__track { background: var(--border); }
 .process-timeline__progress { background: var(--accent); height: 0; transition: height 0.1s linear; }
 
-.process-list {
+.process-list { list-style: none; padding: 0; margin: 0; }
+
+/*
+  Jeder Schritt bekommt sein EIGENES, in sich geschlossenes 3-Spalten-Grid
+  (statt eines über alle <li> geteilten Grids via display:contents).
+  display:contents auf Grid-Kindern ist in manueller Kombination mit
+  Auto-Placement in einigen WebKit/Safari-Versionen unzuverlässig — echte
+  iPhones zeigten dadurch abgeschnittenen/verrutschten Inhalt, den
+  Chromium nicht reproduzierte. Die Reihenfolge (Text/Bild links oder
+  rechts) wird nur noch über "order" gesteuert, das Badge bleibt immer
+  in der Mitte.
+*/
+.process-step__row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
   column-gap: var(--space-4);
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
 }
-.process-step { display: contents; }
-.process-step__text, .process-step__visual { align-self: center; padding-block: var(--space-5); }
-
-/*
-  Zeile UND Spalte werden pro Schritt explizit gesetzt (statt Grid
-  Auto-Placement zu überlassen): Bei den geraden Schritten steht das
-  Text-Element im Markup VOR dem Badge, aber in einer höheren Spalte
-  (3 statt 1) — das lässt den Sparse-Placement-Algorithmus in eine neue
-  Zeile springen, sobald ein Geschwister-Item eine "frühere" Spalte
-  braucht. Explizite grid-row schließt dieses Auseinanderrutschen aus.
-*/
-.process-step:nth-child(1) .process-step__text   { grid-row: 1; grid-column: 1; }
-.process-step:nth-child(1) .process-step__badge  { grid-row: 1; grid-column: 2; }
-.process-step:nth-child(1) .process-step__visual { grid-row: 1; grid-column: 3; }
-
-.process-step:nth-child(2) .process-step__visual { grid-row: 2; grid-column: 1; }
-.process-step:nth-child(2) .process-step__badge  { grid-row: 2; grid-column: 2; }
-.process-step:nth-child(2) .process-step__text   { grid-row: 2; grid-column: 3; }
-
-.process-step:nth-child(3) .process-step__text   { grid-row: 3; grid-column: 1; }
-.process-step:nth-child(3) .process-step__badge  { grid-row: 3; grid-column: 2; }
-.process-step:nth-child(3) .process-step__visual { grid-row: 3; grid-column: 3; }
-
-.process-step:nth-child(4) .process-step__visual { grid-row: 4; grid-column: 1; }
-.process-step:nth-child(4) .process-step__badge  { grid-row: 4; grid-column: 2; }
-.process-step:nth-child(4) .process-step__text   { grid-row: 4; grid-column: 3; }
+.process-step__text, .process-step__visual { padding-block: var(--space-5); min-width: 0; }
+.process-step__text { order: 1; }
+.process-step__badge { order: 2; }
+.process-step__visual { order: 3; }
+.process-step:nth-child(even) .process-step__text { order: 3; }
+.process-step:nth-child(even) .process-step__visual { order: 1; }
 
 .process-step__badge {
-  align-self: center;
   justify-self: center;
   position: relative;
   z-index: 2;
@@ -1033,24 +1022,18 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .process-step__badge.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .process-step__title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); margin-bottom: 0.5rem; }
-.process-step__desc { color: var(--fg-soft); font-size: var(--step--0);}
+.process-step__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.65; }
 
 @media (max-width: 860px) {
-  .process-list { grid-template-columns: 40px minmax(0, 1fr); column-gap: var(--space-3); }
+  .process-step__row { grid-template-columns: 40px minmax(0, 1fr); column-gap: var(--space-3); }
   .process-timeline__track, .process-timeline__progress { left: 20px; }
   .process-step__visual { display: none; }
-  /* Spalte auf 2 reduziert, Zeile bleibt explizit pro Schritt gesetzt
-     (siehe Desktop-Regeln oben) — DOM-Reihenfolge ist überall text→badge
-     (Spalte 2 vor Spalte 1), das würde Grid Auto-Placement sonst wieder
-     in eine neue Zeile springen lassen. */
-  .process-step:nth-child(1) .process-step__badge { grid-column: 1; }
-  .process-step:nth-child(1) .process-step__text  { grid-column: 2; }
-  .process-step:nth-child(2) .process-step__badge { grid-column: 1; }
-  .process-step:nth-child(2) .process-step__text  { grid-column: 2; }
-  .process-step:nth-child(3) .process-step__badge { grid-column: 1; }
-  .process-step:nth-child(3) .process-step__text  { grid-column: 2; }
-  .process-step:nth-child(4) .process-step__badge { grid-column: 1; }
-  .process-step:nth-child(4) .process-step__text  { grid-column: 2; }
+  .process-step__desc { max-width: none; }
+  /* Badge immer links, Text immer rechts — Spezifität muss die
+     nth-child(even)-Regeln oben schlagen bzw. per Quellreihenfolge
+     überstimmen (nth-child-Selektor zur Sicherheit gespiegelt). */
+  .process-step__badge, .process-step:nth-child(even) .process-step__badge { order: 1; }
+  .process-step__text, .process-step:nth-child(even) .process-step__text { order: 2; }
 }
 
 /* Prozess-Illustrationen (abstrakt, kein Foto) */
