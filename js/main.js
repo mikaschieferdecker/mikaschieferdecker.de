@@ -113,6 +113,64 @@
     }, { passive: true });
   }
 
+  /* ---------- Prozess-Timeline (scroll-gefüllte Linie) ---------- */
+  var processWrap = document.querySelector('[data-process]');
+  if (processWrap) {
+    var pTrack = processWrap.querySelector('[data-process-track]');
+    var pProgress = processWrap.querySelector('[data-process-progress]');
+    var pBadges = [].slice.call(processWrap.querySelectorAll('[data-process-badge]'));
+
+    if (pTrack && pProgress && pBadges.length) {
+      var pFirstCenter = 0, pTotalHeight = 0;
+
+      var measureProcess = function () {
+        var wrapRect = processWrap.getBoundingClientRect();
+        var firstRect = pBadges[0].getBoundingClientRect();
+        var lastRect = pBadges[pBadges.length - 1].getBoundingClientRect();
+        pFirstCenter = firstRect.top - wrapRect.top + firstRect.height / 2;
+        var lastCenter = lastRect.top - wrapRect.top + lastRect.height / 2;
+        pTotalHeight = lastCenter - pFirstCenter;
+        pTrack.style.top = pFirstCenter + 'px';
+        pTrack.style.height = pTotalHeight + 'px';
+        pProgress.style.top = pFirstCenter + 'px';
+      };
+
+      var updateProcess = function () {
+        if (reduceMotion) {
+          pProgress.style.height = pTotalHeight + 'px';
+          pBadges.forEach(function (b) { b.classList.add('is-active'); });
+          return;
+        }
+        var triggerY = window.innerHeight * 0.55;
+        var firstRect = pBadges[0].getBoundingClientRect();
+        var lastRect = pBadges[pBadges.length - 1].getBoundingClientRect();
+        var firstY = firstRect.top + firstRect.height / 2;
+        var lastY = lastRect.top + lastRect.height / 2;
+        var raw = lastY === firstY ? 0 : (triggerY - firstY) / (lastY - firstY);
+        var pct = Math.max(0, Math.min(1, raw));
+        pProgress.style.height = (pct * pTotalHeight) + 'px';
+        pBadges.forEach(function (b) {
+          var r = b.getBoundingClientRect();
+          var center = r.top + r.height / 2;
+          b.classList.toggle('is-active', center <= triggerY);
+        });
+      };
+
+      var pTicking = false;
+      var onProcessScroll = function () {
+        if (!pTicking) {
+          window.requestAnimationFrame(function () { updateProcess(); pTicking = false; });
+          pTicking = true;
+        }
+      };
+
+      measureProcess();
+      updateProcess();
+      window.addEventListener('scroll', onProcessScroll, { passive: true });
+      window.addEventListener('resize', function () { measureProcess(); updateProcess(); });
+    }
+  }
+
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll('.reveal');
   if (reduceMotion || !('IntersectionObserver' in window)) {
