@@ -961,7 +961,7 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .reason-card__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.55; }
 
 /* ---------- Prozess-Timeline (Zusammenarbeit) ---------- */
-.process-timeline { position: relative; margin-top: var(--space-4); }
+.process-timeline { position: relative; margin-top: var(--space-4); width: 950px;}
 .process-timeline__track,
 .process-timeline__progress {
   position: absolute;
@@ -1029,7 +1029,7 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .process-step__badge.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .process-step__title { font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); margin-bottom: 0.5rem; }
-.process-step__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.65; max-width: 42ch; }
+.process-step__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.65; }
 
 @media (max-width: 860px) {
   .process-list { grid-template-columns: 40px minmax(0, 1fr); column-gap: var(--space-3); }
@@ -1055,7 +1055,7 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
   border-radius: var(--radius);
   background: var(--surface);
   padding: var(--space-3);
-  max-width: 360px;
+  
 }
 .process-visual__avatar {
   display: grid; place-items: center;
