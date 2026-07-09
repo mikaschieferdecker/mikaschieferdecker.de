@@ -127,9 +127,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .middlecontainer {
    text-align: center;
    width: 100%;
-   max-width: 1200px;
+   max-width: 950px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
 .section { padding-block: var(--section-y); }
