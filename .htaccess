@@ -29,6 +29,8 @@ RewriteRule ^leistungen/webdesign(?:\.html)?/?$ /leistungen/website-erstellen-la
 RewriteRule ^leistungen/onlineshops(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
 RewriteRule ^leistungen/seo(?:\.html)?/?$ /leistungen/lokales-seo [R=301,L]
 RewriteRule ^leistungen/webentwicklung(?:\.html)?/?$ / [R=301,L]
+RewriteRule ^leistungen/schnittstellen(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
+RewriteRule ^shop-check(?:\.html)?/?$ /shop-analyse [R=301,L]
 
 # 2. Entfernt index.html aus der URL
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
