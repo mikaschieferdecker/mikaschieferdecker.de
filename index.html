@@ -195,34 +195,90 @@
 
 
 <!-- ===================== ABLAUF ===================== -->
-    <section class="section" aria-labelledby="process-title" style="border-top:1px solid var(--border)">
+    <section class="section" aria-labelledby="ablauf-title" style="border-top:1px solid var(--border)">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title reveal" data-reveal id="process-title">So läuft die Zusammenarbeit ab</h2>
-          <a class="section__link reveal" data-reveal href="/kontakt">Jetzt anfragen →</a>
+        <div class="section__head section__head__center">
+          <h2 class="section__title reveal" data-reveal id="ablauf-title">So läuft die Zusammenarbeit ab</h2>
         </div>
-        <ol class="steps">
-          <li class="step reveal" data-reveal>
-            <span class="step__num">01</span>
-            <h3 class="step__title">Kennenlernen</h3>
-            <p class="step__desc">Wir sprechen über Ziele, Zielgruppe und Rahmen. Du bekommst eine ehrliche Einschätzung und ein transparentes Angebot.</p>
-          </li>
-          <li class="step reveal" data-reveal>
-            <span class="step__num">02</span>
-            <h3 class="step__title">Konzept</h3>
-            <p class="step__desc">Struktur, Inhalte und erste Gestaltungsrichtung. Wir legen gemeinsam das Fundament, bevor es ins Detail geht.</p>
-          </li>
-          <li class="step reveal" data-reveal>
-            <span class="step__num">03</span>
-            <h3 class="step__title">Design &amp; Bau</h3>
-            <p class="step__desc">Ich gestalte und entwickle in enger Abstimmung — mit Zwischenständen, die du live ansehen und kommentieren kannst.</p>
-          </li>
-          <li class="step reveal" data-reveal>
-            <span class="step__num">04</span>
-            <h3 class="step__title">Livegang</h3>
-            <p class="step__desc">Feinschliff, Tests auf allen Geräten und der Start. Auf Wunsch kümmere ich mich auch danach um Pflege und Weiterentwicklung.</p>
-          </li>
-        </ol>
+
+        <div class="process-timeline" data-process>
+          <div class="process-timeline__track" data-process-track aria-hidden="true"></div>
+          <div class="process-timeline__progress" data-process-progress aria-hidden="true"></div>
+
+          <ol class="process-list">
+            <li class="process-step">
+              <div class="process-step__row">                <div class="process-step__text">
+                  <h3 class="process-step__title">Anfrage &amp; kostenloses Erstgespräch</h3>
+                  <p class="process-step__desc">Du schickst mir kurz dein Vorhaben — per Formular oder E-Mail. Danach klären wir in einem kurzen, unverbindlichen Gespräch, ob und wie ich dir helfen kann.</p>
+                </div>
+                <span class="process-step__badge" data-process-badge>01</span>
+                <div class="process-step__visual" aria-hidden="true">
+                  <div class="process-visual process-visual--intro">
+                    <div class="process-visual__msg">
+                      <span class="process-visual__avatar">MS</span>
+                      <div class="process-visual__lines"><span></span><span></span></div>
+                    </div>
+                    <span class="process-visual__pill">Kostenloses Erstgespräch</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="process-step">
+              <div class="process-step__row">                <div class="process-step__text">
+                  <h3 class="process-step__title">Kennenlernen per Video</h3>
+                  <p class="process-step__desc">In einem kurzen Video-Call besprechen wir deine Ziele, deine Zielgruppe und was deine Website leisten soll. Um den Rest kümmere ich mich.</p>
+                </div>
+                <span class="process-step__badge" data-process-badge>02</span>
+                <div class="process-step__visual" aria-hidden="true">
+                  <div class="process-visual process-visual--call">
+                    <div class="process-visual__screen"><span class="process-visual__avatar process-visual__avatar--lg">MS</span></div>
+                    <div class="process-visual__controls">
+                      <span class="process-visual__ctrl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></span>
+                      <span class="process-visual__ctrl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></span>
+                      <span class="process-visual__ctrl process-visual__ctrl--end"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c7-6 11-6 18 0l-3 4-4-2-4 2-4-2-3-2z"/></svg></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="process-step">
+              <div class="process-step__row">                <div class="process-step__text">
+                  <h3 class="process-step__title">Konzept &amp; Design</h3>
+                  <p class="process-step__desc">Ich erarbeite Struktur und Design deiner Website. Du bekommst Zwischenstände zu sehen und musst nicht raten, wie weit wir sind — dein eigener Aufwand bleibt dabei gering.</p>
+                </div>
+                <span class="process-step__badge" data-process-badge>03</span>
+                <div class="process-step__visual" aria-hidden="true">
+                  <div class="process-visual process-visual--design">
+                    <div class="process-visual__bar"><span></span><span></span></div>
+                    <div class="process-visual__hero"></div>
+                    <div class="process-visual__grid3"><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="process-step">
+              <div class="process-step__row">                <div class="process-step__text">
+                  <h3 class="process-step__title">Umsetzung &amp; Livegang</h3>
+                  <p class="process-step__desc">Sobald das Design steht, setze ich es technisch sauber um, teste alles gründlich und begleite den Livegang. Auf Wunsch bin ich danach weiter für dich da.</p>
+                </div>
+                <span class="process-step__badge" data-process-badge>04</span>
+                <div class="process-step__visual" aria-hidden="true">
+                  <div class="process-visual process-visual--launch">
+                    <ul class="process-visual__checklist">
+                      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Design final</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Getestet</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Live</li>
+                    </ul>
+                    <span class="process-visual__live"><span class="process-visual__dot"></span> Live</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
