@@ -961,7 +961,7 @@ body:has(.page-head) { --section-y: clamp(2.5rem, 1.8rem + 2vw, 4rem); }
 .reason-card__desc { color: var(--fg-soft); font-size: var(--step--1); line-height: 1.55; }
 
 /* ---------- Prozess-Timeline (Zusammenarbeit) ---------- */
-.process-timeline { position: relative; margin-top: var(--space-4); width: 950px;}
+.process-timeline { position: relative; margin-top: var(--space-4); width: 950px; margin: auto;}
 .process-timeline__track,
 .process-timeline__progress {
   position: absolute;
