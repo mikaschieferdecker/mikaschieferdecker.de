@@ -127,7 +127,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .middlecontainer {
    text-align: center;
    width: 100%;
-   max-width: 950px;
+   max-width: 1000px;
   margin-inline: auto;
 }
 
