@@ -1928,7 +1928,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .about__ctarow { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-3); }
 
 /* ---------- Ergebnis-Kennzahlen (Case Studies) ---------- */
-.result-metrics { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.result-metrics { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
 .result-metric {
   padding: var(--space-3);
   border: 1px solid var(--border);
