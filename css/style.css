@@ -1209,7 +1209,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   /* Header Grid Anpassung */
   .header__inner {
     grid-template-columns: 1fr auto; 
-    padding-inline: clamp(1.25rem, 5vw, 3rem)!important;
+    
   }
 
   /* Overlay Menü Logik — jetzt als rechter Drawer */
