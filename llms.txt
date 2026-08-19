@@ -1,34 +1,23 @@
-# Mika Schieferdecker — Webentwickler aus Bremen
+# Mika Schieferdecker — Shopify-Experte aus Bremen
 
-> Webentwickler aus Bremen. Webdesign & UX/UI, Online-Shops & E-Commerce (Shopify als Schwerpunkt) und Suchmaschinenoptimierung — klar, schnell und mit direktem Ansprechpartner.
+> Shopify-Experte aus Bremen. Ich mache bestehende Shopify-Shops jeden Monat umsatzstärker — Migration, Setup und Optimierung sowie ein laufendes Wachstumsprogramm. Klar, schnell und mit direktem Ansprechpartner.
 
-## Leistungen
+## Angebot (zweistufig)
 
-### Webdesign & UX/UI
-- [Website erstellen lassen](https://mikaschieferdecker.de/leistungen/website-erstellen-lassen): Neue, conversion-starke Website von Grund auf.
-- [WordPress Freelancer](https://mikaschieferdecker.de/leistungen/wordpress-freelancer): Themes, Technik & individuelle Entwicklung von einem festen Ansprechpartner.
-- [Website Relaunch](https://mikaschieferdecker.de/leistungen/website-relaunch): Bestehende Website modernisieren & optimieren.
-- [UI/UX Design](https://mikaschieferdecker.de/leistungen/ui-ux-design): Interfaces, die Nutzer begeistern & konvertieren.
+### Stufe 1 — Shop einrichten
+- [Shop einrichten](https://mikaschieferdecker.de/#shop-einrichten): Setup, Migration oder Relaunch — der bestehende Shop sauber auf Shopify, technisch solide und von Anfang an auf Verkauf ausgerichtet. Einmalig, Festpreis.
 
-### Online-Shops & E-Commerce
-- [Online-Shop erstellen lassen](https://mikaschieferdecker.de/leistungen/setup-launch): Neuer Shop von Grund auf — startklar und rechtssicher.
-- [Online-Shop Migration](https://mikaschieferdecker.de/leistungen/migration): Umzug zu Shopify inklusive Daten & SEO, ohne Ranking-Verlust.
-- [Online-Shop Relaunch](https://mikaschieferdecker.de/leistungen/relaunch): Frisches Design & mehr Conversion für bestehende Shops.
-- [Online-Shop optimieren](https://mikaschieferdecker.de/leistungen/optimierung): Speed, UX & Checkout — datenbasiert für mehr Verkäufe.
+### Stufe 2 — Shopify-Wachstumsprogramm
+- [Shopify-Wachstumsprogramm](https://mikaschieferdecker.de/#shopify-wachstum): Monatliche Optimierung auf mehr Umsatz aus dem vorhandenen Traffic — Conversion-Optimierung, Ladezeit & Performance, OnPage- & lokales SEO, laufende Analyse.
 
-### Suchmaschinenoptimierung (SEO)
-- [Lokales SEO](https://mikaschieferdecker.de/leistungen/lokales-seo): In deiner Region gefunden werden — Google-Profil, lokale Keywords & Bewertungen.
-- [OnPage-SEO](https://mikaschieferdecker.de/leistungen/onpage-seo): Struktur, Inhalte & Meta-Daten für bessere Rankings.
-- [Ladezeit & Performance](https://mikaschieferdecker.de/leistungen/ladezeit-performance): Schneller laden, besser ranken — Core Web Vitals.
-- [Keyword-Recherche](https://mikaschieferdecker.de/leistungen/keyword-recherche): Wissen, wonach deine Kund:innen suchen.
+## So läuft es ab
+- [Ablauf](https://mikaschieferdecker.de/#ablauf): Monatlicher Kreislauf aus Analysieren, Optimieren und Berichten — kein Projektende.
 
-## Referenzen
-- [Projekte & Referenzen](https://mikaschieferdecker.de/projekte): Ausgewählte Websites und Shopify-Shops.
-
-## Blog
-- [Blog](https://mikaschieferdecker.de/blog): Praktische Tipps zu Websites, lokaler Sichtbarkeit, SEO und Shopify.
+## Ergebnisse & Referenzen
+- [Ergebnisse](https://mikaschieferdecker.de/#ergebnisse): Climaqx +67 % Monatsumsatz (60.000 € → 100.000 €), Pink Chilli +50 % Monatsumsatz (30.000 € → 45.000 €). Beide Shops werden weiterhin im Wachstumsprogramm betreut.
+- [Projekte](https://mikaschieferdecker.de/#projekte): Zwei Shopify-Shops, zwei Wachstumsgeschichten.
 
 ## Kontakt
-- [Projekt anfragen](https://mikaschieferdecker.de/kontakt)
+- [Kostenloses Erstgespräch](https://mikaschieferdecker.de/#kontakt)
 - E-Mail: info@mikaschieferdecker.de
 - Standort: Bremen, Deutschland

@@ -12,26 +12,30 @@ RewriteRule ^(.*)$ https://mikaschieferdecker.de/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 1b. 301-Weiterleitung: /ratgeber → /blog (umbenannt)
-RewriteRule ^ratgeber(?:\.html)?/?$ /blog [R=301,L]
-RewriteRule ^ratgeber/(.+?)(?:\.html)?/?$ /blog/$1 [R=301,L]
+# 1b. Onepager-Konsolidierung (301): alte Mehrseiten-URLs → Startseite / Anker.
+#     Alle Redirects zeigen direkt auf das finale Ziel (keine 301-Ketten), damit
+#     die SEO-Linkkraft erhalten bleibt. Das Flag NE erhält das '#' im
+#     Location-Header, sodass der Anker-Sprung greift (Apache würde es sonst zu
+#     %23 kodieren). Leistungs-/Blog-URLs → '/' (Anker serverseitig nicht sinnvoll).
 
-# 1b2. 301-Weiterleitung: /projekt-anfrage → /kontakt (zusammengeführt)
-RewriteRule ^projekt-anfrage(?:\.html)?/?$ /kontakt [R=301,L]
+# Projekte: Übersicht + Detailseiten (climaqx, pinkchilli, indira-indorf) → Projekte-Sektion
+RewriteRule ^projekte(/.*)?$ /#projekte [R=301,L,NE]
 
-# 1c. 301-Weiterleitungen: alte/entfernte Leistungs-URLs → passende Detailseiten
-RewriteRule ^leistungen/websites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
-RewriteRule ^leistungen/unternehmenswebsites(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
-RewriteRule ^leistungen/shopify(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
-RewriteRule ^leistungen/seo-betreuung(?:\.html)?/?$ /leistungen/lokales-seo [R=301,L]
-# Entfernte Disziplin-Übersichtsseiten → repräsentative Detailseite
-RewriteRule ^leistungen/webdesign(?:\.html)?/?$ /leistungen/website-erstellen-lassen [R=301,L]
-RewriteRule ^leistungen/onlineshops(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
-RewriteRule ^leistungen/seo(?:\.html)?/?$ /leistungen/lokales-seo [R=301,L]
-RewriteRule ^leistungen/webentwicklung(?:\.html)?/?$ / [R=301,L]
-RewriteRule ^leistungen/schnittstellen(?:\.html)?/?$ /leistungen/setup-launch [R=301,L]
-RewriteRule ^shop-check(?:\.html)?/?$ /kontakt [R=301,L]
-RewriteRule ^shop-analyse(?:\.html)?/?$ /kontakt [R=301,L]
+# Über / Kontakt → jeweilige Sektion
+RewriteRule ^ueber(?:\.html)?/?$ /#ueber [R=301,L,NE]
+RewriteRule ^kontakt(?:\.html)?/?$ /#kontakt [R=301,L,NE]
+RewriteRule ^projekt-anfrage(?:\.html)?/?$ /#kontakt [R=301,L,NE]
+
+# Leistungen (alle 16 alten Unterseiten inkl. alter Slug-Varianten) → Startseite
+RewriteRule ^leistungen(/.*)?$ / [R=301,L]
+
+# Blog / Ratgeber (Übersicht + alle Artikel) → Startseite
+RewriteRule ^blog(/.*)?$ / [R=301,L]
+RewriteRule ^ratgeber(/.*)?$ / [R=301,L]
+
+# Alte Aktions-URLs → Startseite
+RewriteRule ^shop-check(?:\.html)?/?$ / [R=301,L]
+RewriteRule ^shop-analyse(?:\.html)?/?$ / [R=301,L]
 
 # 2. Entfernt index.html aus der URL
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
