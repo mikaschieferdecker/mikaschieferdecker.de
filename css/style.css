@@ -2294,3 +2294,77 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 @media (max-width: 860px) {
   #methode .container { grid-template-columns: 1fr; gap: var(--space-3); }
 }
+
+/* =====================================================================
+   HERO — zweispaltiges Layout (#top): Text links, Bild-Platzhalter rechts.
+   Nutzt bestehende Tokens (--accent, --radius-lg, --space-*, --surface,
+   --border). Grün nur für CTA (global) und das optionale Badge.
+   ===================================================================== */
+.hero__inner {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+/* Linke Spalte linksbündig, klare Hierarchie */
+.hero__col--text { text-align: left; }
+.hero__col--text .hero__title {
+  font-size: clamp(2.5rem, 1.5rem + 2.9vw, 3.7rem);
+  margin-top: var(--space-2);
+}
+.hero__col--text .hero__title .line { text-align: left; }
+.hero__col--text .hero__lead { text-align: left; max-width: 46ch; }
+.hero__col--text .hero__cta { justify-content: flex-start; }
+.hero__col--text .hero__trust { justify-content: flex-start; }
+.hero__col--text .hero__rating { justify-content: flex-start; }
+
+/* Rechte Spalte: sauberer Bild-Container 4:3 (echtes Bild später hier rein) */
+.hero__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.hero__media-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__media-ph {
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-0);
+  letter-spacing: 0.01em;
+}
+
+/* Ergebnis-Badge (optional, unten links) */
+.hero__badge {
+  position: absolute;
+  left: var(--space-3);
+  bottom: var(--space-3);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step--1);
+  box-shadow: 0 12px 26px -14px color-mix(in srgb, var(--accent) 72%, transparent);
+}
+.hero__badge strong { font-size: var(--step-1); font-weight: 700; letter-spacing: -0.01em; }
+
+/* Mobile: stapeln, Text zuerst, Bild darunter */
+@media (max-width: 860px) {
+  .hero__inner { grid-template-columns: 1fr; gap: var(--space-4); align-items: start; }
+  .hero__col--text { order: 1; }
+  .hero__col--media { order: 2; }
+}

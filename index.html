@@ -91,50 +91,68 @@
 
     <!-- ===================== 1 · HERO (#top) ===================== -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="middlecontainer">
-        <p class="hero__kicker reveal" data-reveal>Shopify-Experte · Bremen</p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="line reveal" data-reveal style="--i:1">Ich mache Shopify‑Shops</span>
-          <span class="line reveal" data-reveal style="--i:2">jeden Monat umsatzstärker.</span>
-        </h1>
-        <div class="hero__meta">
-          <p class="hero__lead reveal" data-reveal style="--i:4">
-            Für Shopify-Shops, die schon verkaufen und mehr aus ihrem Traffic herausholen wollen.
+      <div class="hero__inner">
+
+        <!-- Linke Spalte: Text (linksbündig) -->
+        <div class="hero__col hero__col--text">
+          <p class="hero__kicker reveal" data-reveal>Shopify-Experte · Bremen</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line reveal" data-reveal style="--i:1">Ich mache Shopify‑Shops</span>
+            <span class="line reveal" data-reveal style="--i:2">jeden Monat umsatzstärker.</span>
+          </h1>
+          <div class="hero__meta">
+            <p class="hero__lead reveal" data-reveal style="--i:4">
+              Für Shopify-Shops, die schon verkaufen und mehr aus ihrem Traffic herausholen wollen.
+            </p>
+          </div>
+
+          <ul class="hero__trust reveal" data-reveal style="--i:5">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              Festpreis-Garantie
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              Direkter Ansprechpartner
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              Kostenlose Analyse
+            </li>
+          </ul>
+
+          <div class="hero_btns">
+            <div class="hero__cta reveal" data-reveal style="--i:5">
+              <a class="btn btn--primary" href="#kontakt">Kostenloses Erstgespräch</a>
+              <a class="btn btn--ghost" href="#ergebnisse">Ergebnisse ansehen →</a>
+            </div>
+          </div>
+
+          <p class="hero__rating reveal" data-reveal style="--i:6">
+            <span class="hero__stars" aria-hidden="true">★★★★★</span>
+            <span>Von Kund:innen weiterempfohlen</span>
           </p>
         </div>
 
-        <ul class="hero__trust reveal" data-reveal style="--i:5">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 6 9 17l-5-5"/>
-            </svg>
-            Festpreis-Garantie
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 6 9 17l-5-5"/>
-            </svg>
-            Direkter Ansprechpartner
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 6 9 17l-5-5"/>
-            </svg>
-            Kostenlose Analyse
-          </li>
-        </ul>
+        <!-- Rechte Spalte: Bild-Platzhalter (4:3).
+             Echtes Bild später NUR in .hero__media einsetzen (ersetzt den Platzhalter):
+             <img class="hero__media-img" src="/images/hero.webp" alt="…" width="1200" height="900" loading="eager" /> -->
+        <div class="hero__col hero__col--media">
+          <div class="hero__media reveal" data-reveal data-hero-media>
+            <span class="hero__media-ph">Bild folgt</span>
 
-        <div class="hero_btns">
-          <div class="hero__cta reveal" data-reveal style="--i:5">
-            <a class="btn btn--primary" href="#kontakt">Kostenloses Erstgespräch</a>
-            <a class="btn btn--ghost" href="#ergebnisse">Ergebnisse ansehen →</a>
+            <!-- Ergebnis-Badge (optional): zum Aktivieren die nächste Zeile entkommentieren.
+            <span class="hero__badge"><strong>+67&nbsp;%</strong>&nbsp;Umsatz</span>
+            -->
           </div>
         </div>
 
-        <p class="hero__rating reveal" data-reveal style="--i:6">
-          <span class="hero__stars" aria-hidden="true">★★★★★</span>
-          <span>Von Kund:innen weiterempfohlen</span>
-        </p>
       </div>
     </section>
 
