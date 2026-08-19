@@ -2317,7 +2317,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   margin-top: var(--space-2);
 }
 .hero__col--text .hero__title .line { text-align: left; }
-.hero__col--text .hero__lead { text-align: left; max-width: 46ch; }
+.hero__col--text .hero__lead { text-align: left; max-width: 600px; }
 .hero__col--text .hero__cta { justify-content: flex-start; }
 .hero__col--text .hero__trust { justify-content: flex-start; }
 .hero__col--text .hero__rating { justify-content: flex-start; }
