@@ -29,6 +29,7 @@
   --container: 76rem;
   --radius: 14px;
   --radius-sm: 8px;
+  --radius-lg: 22px;   /* weiche Rundung für Karten (Stilprobe Hero/#methode) */
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -80,6 +81,9 @@ html {
   /* Anker-Sprünge um die Höhe des Sticky-Headers versetzen, damit die
      Sektionsüberschrift nicht unter dem Header verschwindet. */
   scroll-padding-top: 90px;
+  /* Fängt den off-canvas Mobile-Drawer (position:fixed) ab, ohne den
+     Sticky-Header zu brechen — clip erzeugt keinen Scroll-Container. */
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -145,7 +149,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   margin-bottom: var(--space-4);
 }
 
-.section__title { font-size: var(--step-3); }
+.section__title { font-size: var(--step-3); overflow-wrap: break-word; hyphens: auto; }
 
 .section__note { color: var(--muted); font-size: var(--step--1); }
 
@@ -179,13 +183,24 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
     color 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 .btn:active { transform: scale(0.97); }
-.btn--primary { background: var(--fg); color: var(--bg); }
-.btn--primary:hover { background: var(--accent); color: #fff; }
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 24px -14px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+  border-color: color-mix(in srgb, var(--accent) 86%, #000);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -14px color-mix(in srgb, var(--accent) 78%, transparent);
+}
 .btn--ghost { border: 1px solid var(--border-strong); }
 .btn--ghost:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
 .btn--block { width: 100%; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-.btn:disabled:hover { background: var(--fg); color: var(--bg); transform: none; }
+.btn:disabled:hover { transform: none; box-shadow: none; }
 .btn--ghost:disabled:hover { background: none; color: inherit; }
 
 /* ---------- Header ---------- */
@@ -2135,5 +2150,147 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* Onepager-Grundgerüst (Schritt 1): Platzhalter-Abstand für die zwei
    Angebots-Stufen. Wird in Schritt 4 durch das finale Stufen-Design ersetzt. */
-.offer-stage { margin-top: var(--space-4); }
-.offer-stage:first-of-type { margin-top: var(--space-5); }
+/* =====================================================================
+   DESIGN-STIL — Onepager (aus der freigegebenen Stilprobe ausgerollt).
+   Grüner CTA ist jetzt global (siehe .btn--primary oben). Karten,
+   Tags und Hover nutzen die bestehenden Tokens (--accent, --radius(-lg),
+   --space-*, --surface, --border).
+   ===================================================================== */
+
+/* Sekundärlink im Hero ruhig halten (kein zweites lautes Element) */
+.hero .btn--ghost:hover { transform: translateY(-2px); }
+
+/* Einheitliche, dezente Hover-Microinteraktion für Karten der Seite */
+.step:hover,
+.result-metric:hover,
+.testimonial:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: 0 2px 4px rgba(20, 20, 18, 0.05), 0 22px 44px -26px rgba(20, 20, 18, 0.28);
+}
+
+/* ---------- #methode: Angebotskarten im Grid ---------- */
+#methode .container {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;   /* Stufe 2 etwas breiter = dominanter */
+  gap: var(--space-4);
+  align-items: start;                   /* jede Karte in ihrer Inhaltshöhe */
+}
+#methode .section__head {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-2);
+}
+#methode .section__head .section__note { max-width: 52ch; margin-inline: auto; }
+
+.offer-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.6rem);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.offer-stage:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: 0 2px 4px rgba(20,20,18,0.05), 0 26px 50px -26px rgba(20,20,18,0.30);
+}
+
+/* Kartentitel: eine Stufe unter der Sektionsüberschrift (klare Hierarchie) */
+#methode .offer-stage .section__title { font-size: var(--step-2); margin: 0; }
+
+/* Label als kleiner Schlagwort-Tag / Pill */
+#methode .offer-stage > .section__note {
+  align-self: flex-start;
+  max-width: none;
+  margin: 0;
+  padding: 0.34rem 0.8rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step--1);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+#methode .offer-stage .about__text {
+  color: var(--fg-soft);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Feature-Liste als ruhige Checkliste mit grünem Haken */
+.offer-stage__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.offer-stage__list li {
+  position: relative;
+  padding-left: 1.85rem;
+  color: var(--fg-soft);
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+.offer-stage__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  -webkit-mask: center / 0.72rem no-repeat;
+          mask: center / 0.72rem no-repeat;
+}
+/* Grüner Haken auf grünem Soft-Kreis */
+.offer-stage__list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--accent);
+  -webkit-mask: center / 0.72rem no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+          mask: center / 0.72rem no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* CTA am Kartenfuß ausrichten */
+#shopify-wachstum .about__ctarow { margin-top: auto; padding-top: var(--space-2); }
+
+/* ---------- Stufe 2 hervorgehoben (der Kern) ---------- */
+#shopify-wachstum {
+  border: 1.5px solid var(--accent);
+  background:
+    linear-gradient(color-mix(in srgb, var(--accent) 6%, var(--bg)),
+                    color-mix(in srgb, var(--accent) 3%, var(--bg)));
+  box-shadow: 0 2px 4px rgba(20,20,18,0.05),
+              0 30px 60px -30px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+#shopify-wachstum:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 4px rgba(20,20,18,0.06),
+              0 34px 66px -28px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+#shopify-wachstum > .section__note {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Mobile zuerst: Karten stapeln ---------- */
+@media (max-width: 860px) {
+  #methode .container { grid-template-columns: 1fr; gap: var(--space-3); }
+}
