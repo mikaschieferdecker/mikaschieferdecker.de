@@ -77,6 +77,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anker-Sprünge um die Höhe des Sticky-Headers versetzen, damit die
+     Sektionsüberschrift nicht unter dem Header verschwindet. */
+  scroll-padding-top: 90px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -2129,3 +2132,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .ba-caption { margin-top: var(--space-3); color: var(--fg-soft); font-size: var(--step-0); max-width: 60ch; }
 .ba-caption a { color: var(--accent); font-family: var(--font-display); font-weight: 600; white-space: nowrap; }
 .ba-caption a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Onepager-Grundgerüst (Schritt 1): Platzhalter-Abstand für die zwei
+   Angebots-Stufen. Wird in Schritt 4 durch das finale Stufen-Design ersetzt. */
+.offer-stage { margin-top: var(--space-4); }
+.offer-stage:first-of-type { margin-top: var(--space-5); }

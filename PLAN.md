@@ -118,9 +118,14 @@ Regeln 3–5) einsortiert, im vorhandenen 301-Block.
 | `/kontakt` | `/#kontakt` | `/` |
 | `/blog` | `/` | `/` |
 | `/blog/*` (14 Artikel) | `/` (UMBAU-Textvorgabe) | `/` |
-| `/projekte/climaqx` | *(nicht in UMBAU)* | `/` `‹A›` |
-| `/projekte/pinkchilli` | *(nicht in UMBAU)* | `/` `‹A›` |
-| `/projekte/indira-indorf` | *(nicht in UMBAU)* | `/` `‹A›` |
+| `/projekte/climaqx` | `/#projekte` ✔ | `/#projekte` (Flag `NE`) |
+| `/projekte/pinkchilli` | `/#projekte` ✔ | `/#projekte` (Flag `NE`) |
+| `/projekte/indira-indorf` | `/#projekte` ✔ | `/#projekte` (Flag `NE`) |
+
+> **Entscheidung Mika:** Projekt-Detailseiten leiten auf `/#projekte`.
+> Technisch via `RewriteRule … /#projekte [R=301,L,NE]` — das `NE`-Flag
+> verhindert, dass Apache das `#` zu `%23` kodiert, sodass der Anker im
+> Location-Header erhalten bleibt.
 
 Konkret als kompakte Catch-all-Regeln (decken auch die alten Slug-Varianten mit ab):
 
@@ -172,16 +177,22 @@ Diese zeigen aktuell auf Seiten, die gelöscht werden; ohne Anpassung entstünde
 
 ## Checkliste nach UMBAU-Arbeitsreihenfolge
 
-### Schritt 1 — Grundgerüst Onepager
-- [ ] In `index.html` alle Sektionen als leere, korrekt angeankerte Blöcke in
-      der Reihenfolge aus Teil 3 anlegen: `#top`, `#ergebnisse`, `#problem`,
+### Schritt 1 — Grundgerüst Onepager  ✅ ERLEDIGT (noch nicht committet)
+- [x] In `index.html` alle Sektionen als leere, korrekt angeankerte Blöcke in
+      der Reihenfolge aus Teil 3 angelegt: `#top`, `#ergebnisse`, `#problem`,
       `#methode` (`#shop-einrichten`, `#shopify-wachstum`), `#ablauf`,
       `#projekte`, `#stimmen`, `#ueber`, `#faq`, `#kontakt`.
-- [ ] `partials/header.html`: Anker-Navigation (Methode/Ergebnisse/Projekte/
-      Über mich + Kontakt-Button), Mega-Menü entfernen.
-- [ ] Sticky-Header sicherstellen, Smooth-Scroll (CSS `scroll-behavior: smooth`
-      bzw. vorhandene JS-Logik), `scroll-margin-top` für Anker unter Sticky-Header.
-- [ ] **Anhalten, Ergebnis zeigen.**
+- [x] `partials/header.html`: Anker-Navigation (Methode/Ergebnisse/Projekte/
+      Über mich + Kontakt-Button „Kostenloses Erstgespräch"), Mega-Menü entfernt.
+      Nav-Links absolut (`/#…`), damit sie auch von Impressum/Datenschutz greifen.
+- [x] Sticky-Header sichergestellt (bereits `position:sticky`); Auto-Hide beim
+      Scrollen in `js/main.js` entfernt → Header bleibt sichtbar (UMBAU Teil 2).
+- [x] Smooth-Scroll (bereits `scroll-behavior:smooth`) + `scroll-padding-top:90px`
+      in `css/style.css` ergänzt, damit Überschriften nicht unter dem Header liegen.
+- [x] Verifiziert: Build ok, 1×H1, JSON-LD valide, kein Horizontal-Overflow
+      (Desktop/Mobil), Anker-Sprung landet bei 90px (Header 81px), Mobile-Drawer
+      öffnet mit den 4 Anker-Links.
+- [x] **Ergebnis gezeigt — nicht committet (auf Wunsch).**
 
 ### Schritt 2 — Bestehende Inhalte in Sektionen übernehmen
 - [ ] Hero, Ergebnisse, Projekte, Testimonials, Über, FAQ, Kontakt gemäß
@@ -245,18 +256,16 @@ Diese zeigen aktuell auf Seiten, die gelöscht werden; ohne Anpassung entstünde
 
 ---
 
-## Offene Punkte / Annahmen `‹A›` (bitte bestätigen)
+## Offene Punkte / Annahmen `‹A›`
 
-1. **Projekt-Detailseiten-Redirects** — `/projekte/climaqx`,
-   `/projekte/pinkchilli`, `/projekte/indira-indorf` stehen **nicht** in der
-   UMBAU-Redirect-Tabelle, würden nach dem Löschen aber 404 liefern. **Annahme:**
-   301 → `/` (analog `/projekte`). OK so?
-2. **Retainer-Name** — UMBAU 4.3 ist Platzhalter; bis zu deiner Entscheidung
-   verwende ich den Arbeitstitel **„Shopify-Wachstum"**, zentral definiert, damit
-   er später in einem Schritt ersetzbar ist. Passt der Arbeitstitel?
-3. **`llms.txt`** — nicht in UMBAU erwähnt, enthält aber Nicht-Shopify-Leistungen
-   und gelöschte URLs. Aus der Regel „alle Nicht-Shopify-Erwähnungen entfernen"
-   folgt: umschreiben auf Shopify-only. Bestätigen?
+**Von Mika entschieden (Stand jetzt):**
+1. ✔ **Projekt-Detailseiten-Redirects** → **`/#projekte`** (via `NE`-Flag,
+   siehe Redirect-Plan). Erledigt in der Tabelle.
+2. ✔ **Retainer-Name** → Arbeitstitel **„Shopify-Wachstum"** bestätigt; zentral
+   definiert, später in einem Schritt ersetzbar.
+3. ✔ **`llms.txt`** → wird auf Shopify-only umgeschrieben (Schritt 8).
+
+**Noch offen:**
 4. **`analyse-handler.php`** — verwaist (kein HTML referenziert es mehr). Löschen?
 5. **Kontaktformular-Wiring** — `contact-handler.php` bleibt; aktuell referenziert
    kein HTML den Handler direkt sichtbar (evtl. via JS). Bei Umsetzung des

@@ -92,20 +92,14 @@
     });
   }
 
-  /* ---------- Header: shadow + hide-on-scroll-down ---------- */
+  /* ---------- Header: Schatten beim Scrollen ----------
+     Onepager: Der Sticky-Header bleibt beim Scrollen sichtbar (UMBAU Teil 2),
+     damit der Kontakt-Button immer erreichbar ist — kein Ausblenden mehr. */
   var header = document.getElementById('siteHeader');
   if (header) {
-    var lastY = window.scrollY;
     var ticking = false;
     var onScroll = function () {
-      var y = window.scrollY;
-      header.classList.toggle('is-scrolled', y > 8);
-      if (y > 400 && y > lastY + 4) {
-        header.classList.add('is-hidden');
-      } else if (y < lastY - 4) {
-        header.classList.remove('is-hidden');
-      }
-      lastY = y;
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
       ticking = false;
     };
     window.addEventListener('scroll', function () {
